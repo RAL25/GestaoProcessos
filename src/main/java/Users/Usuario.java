@@ -5,10 +5,14 @@
 package Users;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.Period;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 /**
  *
@@ -22,13 +26,23 @@ public class Usuario implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
+    @Column(length = 65)
     private String nome;
+    
     private Integer cpf;
+    
+    @Column(length = 250)
     private String email;   //Único
+    
     private String senha;
+    
+    private LocalDate nascimento;
+    
+    @Transient
+    private Byte idade;
 
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
-    
+
     public Long getId() {
         return id;
     }
@@ -68,9 +82,24 @@ public class Usuario implements Serializable {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    //</editor-fold>
 
-    
+    public LocalDate getNascimento() {
+        return nascimento;
+    }
+
+    public void setNascimento(LocalDate nascimento) {
+        this.nascimento = nascimento;
+    }
+
+    public Byte getIdade() {
+        return idade;
+    }
+
+    public void setIdade(Byte idade) {
+        this.idade = (byte) Period.between(nascimento, LocalDate.now()).getYears();
+    }
+
+    //</editor-fold>
 
     /*@Override
     public int hashCode() {
@@ -98,6 +127,7 @@ public class Usuario implements Serializable {
                 " nome="+nome+
                 " cpf="+cpf+
                 " email="+email+
+                " idade="+idade+
                 "]";
     }
     
