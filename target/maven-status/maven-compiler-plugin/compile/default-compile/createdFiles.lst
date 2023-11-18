@@ -1,2 +1,9 @@
-hello.class
+Beans/testDados.class
+Beans/MailService.class
+Beans/UsuarioBean.class
 Util/Util.class
+Beans/SalvarDados.class
+Beans/MailServiceLocal.class
+Beans/Ativar.class
+GestaoProcessos/Publicacoes.class
+GestaoProcessos/Usuario.class

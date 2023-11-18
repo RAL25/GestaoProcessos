@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Users;
+package GestaoProcessos;
 
 import java.io.Serializable;
 import javax.persistence.Column;
@@ -26,7 +26,7 @@ public class Usuario implements Serializable {
     @Column(length = 65)
     private String nome;
     
-    private Integer cpf;
+    private Integer cpf;    //Único
     
     @Column(length = 250)
     private String email;   //Único
