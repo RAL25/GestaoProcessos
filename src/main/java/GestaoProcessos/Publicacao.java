@@ -41,70 +41,84 @@ public class Publicacao implements Serializable {
     private LocalDateTime createdAt;
     
     private LocalDateTime updatedAt;
-
-    public Publicacao() {
-        this.createdAt = LocalDateTime.now();
-        this.updatedAt = LocalDateTime.now();
-    }
-
-    public Publicacao(String titulo, String conteudo, Categoria categoria) {
-        this();
-        this.titulo = titulo;
-        this.conteudo = conteudo;
-        this.categoria = categoria;
-    }
     
-    public Long getId() {
-        return id;
-    }
+    //<editor-fold defaultstate="collapsed" desc="construtores">
+        public Publicacao() {
+            this.createdAt = LocalDateTime.now();
+            this.updatedAt = LocalDateTime.now();
+        }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+        public Publicacao(String titulo, String conteudo, Categoria categoria, Edital edital) {
+            this();
+            this.titulo = titulo;
+            this.conteudo = conteudo;
+            this.categoria = categoria;
+            this.edital = edital;
+        }
 
-    public String getTitulo() {
-        return titulo;
-    }
+    //</editor-fold>
+    
+    //<editor-fold defaultstate="collapsed" desc="getters/setters">
+        public Long getId() {
+            return id;
+        }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-        setUpdatedAt(LocalDateTime.now());
-    }
+        public void setId(Long id) {
+            this.id = id;
+        }
 
-    public String getConteudo() {
-        return conteudo;
-    }
+        public String getTitulo() {
+            return titulo;
+        }
 
-    public void setConteudo(String conteudo) {
-        this.conteudo = conteudo;
-        setUpdatedAt(LocalDateTime.now());
-    }
+        public void setTitulo(String titulo) {
+            this.titulo = titulo;
+            setUpdatedAt(LocalDateTime.now());
+        }
 
-    public Categoria getCategoria() {
-        return categoria;
-    }
+        public String getConteudo() {
+            return conteudo;
+        }
 
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-        setUpdatedAt(LocalDateTime.now());
+        public void setConteudo(String conteudo) {
+            this.conteudo = conteudo;
+            setUpdatedAt(LocalDateTime.now());
+        }
 
-    }
+        public Categoria getCategoria() {
+            return categoria;
+        }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
+        public void setCategoria(Categoria categoria) {
+            this.categoria = categoria;
+            setUpdatedAt(LocalDateTime.now());
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
+        }
 
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
+        public LocalDateTime getCreatedAt() {
+            return createdAt;
+        }
 
-    public void setUpdatedAt(LocalDateTime updateAt) {
-        this.updatedAt = updateAt;
-    }
+        public void setCreatedAt(LocalDateTime createdAt) {
+            this.createdAt = createdAt;
+        }
+
+        public LocalDateTime getUpdatedAt() {
+            return updatedAt;
+        }
+
+        public void setUpdatedAt(LocalDateTime updateAt) {
+            this.updatedAt = updateAt;
+        }
+
+        public Edital getEdital() {
+            return edital;
+        }
+
+        public void setEdital(Edital edital) {
+            this.edital = edital;
+        }
+    //</editor-fold>
 
     @Override
     public String toString() {

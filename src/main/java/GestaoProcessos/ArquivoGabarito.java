@@ -21,9 +21,16 @@ public class ArquivoGabarito
         implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    
+    //<editor-fold defaultstate="collapsed" desc="construtores">
+        public ArquivoGabarito() {
+            super();
+        }
 
-    public ArquivoGabarito() {
-    }
+        public ArquivoGabarito(String nome, String path) {
+            super(nome, path);
+        }
+    //</editor-fold>
 
     @Override
     public String toString() {

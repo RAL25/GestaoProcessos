@@ -29,38 +29,35 @@ public class Arquivo implements Serializable {
     private String nome;
     
     private String path;
+    
+    //<editor-fold defaultstate="collapsed" desc="construtores">
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Arquivo)) {
-            return false;
+        public Arquivo() {
         }
-        Arquivo other = (Arquivo) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
+        
+        public Arquivo(String nome, String path) {
+            this.nome = nome;
+            this.path = path;
         }
-        return true;
-    }
 
-    @Override
-    public String toString() {
-        return "GestaoProcessos.Arquivo[ id=" + id + " ]";
-    }
+    //</editor-fold>
+        
+    //<editor-fold defaultstate="collapsed" desc="getters/setters">
+        public String getNome() {
+            return nome;
+        }
+
+        public void setNome(String nome) {
+            this.nome = nome;
+        }
+
+        public String getPath() {
+            return path;
+        }
+
+        public void setPath(String path) {
+            this.path = path;
+        }
+    //</editor-fold>
 
 }

@@ -36,38 +36,80 @@ public class Prova implements Serializable {
     private Short dia;
     
     private String cor;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Prova)) {
-            return false;
+    
+    //<editor-fold defaultstate="collapsed" desc="construtores">
+        public Prova() {
         }
-        Prova other = (Prova) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
 
+        public Prova(LocalDate data, ArquivoProva arquivoprova, ArquivoGabarito arquivoGabarito, Short dia, String cor) {
+            this.data = data;
+            this.arquivoprova = arquivoprova;
+            this.arquivoGabarito = arquivoGabarito;
+            this.dia = dia;
+            this.cor = cor;
+        }
+    //</editor-fold>
+    
+    //<editor-fold defaultstate="collapsed" desc="getters/setters">
+    
+        public Long getId() {
+            return id;
+        }
+
+        public void setId(Long id) {
+            this.id = id;
+        }
+
+        public LocalDate getData() {
+            return data;
+        }
+
+        public void setData(LocalDate data) {
+            this.data = data;
+        }
+
+        public ArquivoProva getArquivoprova() {
+            return arquivoprova;
+        }
+
+        public void setArquivoprova(ArquivoProva arquivoprova) {
+            this.arquivoprova = arquivoprova;
+        }
+
+        public ArquivoGabarito getArquivoGabarito() {
+            return arquivoGabarito;
+        }
+
+        public void setArquivoGabarito(ArquivoGabarito arquivoGabarito) {
+            this.arquivoGabarito = arquivoGabarito;
+        }
+
+        public Short getDia() {
+            return dia;
+        }
+
+        public void setDia(Short dia) {
+            this.dia = dia;
+        }
+
+        public String getCor() {
+            return cor;
+        }
+
+        public void setCor(String cor) {
+            this.cor = cor;
+        }
+    //</editor-fold>
+        
     @Override
     public String toString() {
-        return "GestaoProcessos.Prova[ id=" + id + " ]";
+        return "Prova{" 
+                + "id=" + id + ","
+                + " data=" + data + ","
+                + " arquivoprova=" + arquivoprova + ","
+                + " arquivoGabarito=" + arquivoGabarito + ","
+                + " dia=" + dia + ","
+                + " cor=" + cor 
+                + '}';
     }
-
 }

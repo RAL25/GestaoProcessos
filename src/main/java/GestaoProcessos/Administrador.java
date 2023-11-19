@@ -18,9 +18,17 @@ public class Administrador
         implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
-    public Administrador() {
-    }
+    
+    
+    //<editor-fold defaultstate="collapsed" desc="construtores">
+        public Administrador(String nome, String cpf, String email, String senha) {        
+            super(nome, cpf, email, senha);
+        }
+        
+        public Administrador() {
+            super();
+        }
+    //</editor-fold>
 
     @Override
     public String toString() {

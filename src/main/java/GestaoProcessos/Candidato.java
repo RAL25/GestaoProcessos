@@ -7,15 +7,10 @@ package GestaoProcessos;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.Objects;
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
 import javax.persistence.OneToMany;
-import javax.persistence.PrePersist;
-import javax.ws.rs.DefaultValue;
 
 /**
  * Classe Candidato
@@ -34,38 +29,48 @@ public class Candidato
             fetch = FetchType.EAGER,
             cascade = CascadeType.ALL)
     private List<Participacao> participacoes;
-
-    public Candidato() {
-        this.receberNoticias = false;
-    }
     
-    public Candidato( Boolean receberNoticias) {
-        this.receberNoticias = receberNoticias;
-    }
+    //<editor-fold defaultstate="collapsed" desc="construtores">
+        public Candidato() {
+            super();
+            this.receberNoticias = false;
+        }
 
-    public Boolean getReceberNoticias() {
-        return receberNoticias;
-    }
+        public Candidato(Boolean receberNoticias, List<Participacao> participacoes, String nome, String cpf, String email, String senha) {
+            super(nome, cpf, email, senha);
+            this.receberNoticias = receberNoticias;
+            this.participacoes = participacoes;
+        }
 
-    public void setReceberNoticias(Boolean receberNoticias) {
-        this.receberNoticias = receberNoticias;
-    }
+        public Candidato( Boolean receberNoticias) {
+            this.receberNoticias = receberNoticias;
+        }
+    //</editor-fold>
+        
+    //<editor-fold defaultstate="collapsed" desc="getters/setters">
+        public Boolean getReceberNoticias() {
+            return receberNoticias;
+        }
 
-    public List<Participacao> getParticipacoes() {
-        return participacoes;
-    }
+        public void setReceberNoticias(Boolean receberNoticias) {
+            this.receberNoticias = receberNoticias;
+        }
 
-    public void setParticipacoes(List<Participacao> participacoes) {
-        this.participacoes = participacoes;
-    }
+        public List<Participacao> getParticipacoes() {
+            return participacoes;
+        }
+
+        public void setParticipacoes(List<Participacao> participacoes) {
+            this.participacoes = participacoes;
+        }
+    //</editor-fold>
 
     @Override
     public String toString() {
         return "Candidato{" 
-                + "receberNoticias=" + receberNoticias 
+                + "receberNoticias=" + receberNoticias + ","
+                + " participacoes=" + participacoes 
                 + '}';
     }
-    
-    
 
 }

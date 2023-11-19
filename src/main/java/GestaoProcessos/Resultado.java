@@ -28,45 +28,49 @@ public class Resultado implements Serializable {
     
     @OneToOne
     private Participacao participacao;
+    
+    //<editor-fold defaultstate="collapsed" desc="construtores">
+        public Resultado() {
 
-    public Resultado(Double nota, Participacao participacao) {
-        this.nota = nota;
-        this.participacao = participacao;
-    }
+        }
+        public Resultado(Double nota, Participacao participacao) {
+            this.nota = nota;
+            this.participacao = participacao;
+        }
+    //</editor-fold>
+        
+    //<editor-fold defaultstate="collapsed" desc="getters/setters">
+        public Long getId() {
+            return id;
+        }
 
-    public Resultado() {
-    }
+        public void setId(Long id) {
+            this.id = id;
+        }
 
-    public Long getId() {
-        return id;
-    }
+        public Double getNota() {
+            return nota;
+        }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+        public void setNota(Double nota) {
+            this.nota = nota;
+        }
 
-    public Double getNota() {
-        return nota;
-    }
+        public Participacao getParticipacao() {
+            return participacao;
+        }
 
-    public void setNota(Double nota) {
-        this.nota = nota;
-    }
-
-    public Participacao getParticipacao() {
-        return participacao;
-    }
-
-    public void setParticipacao(Participacao participacao) {
-        this.participacao = participacao;
-    }
+        public void setParticipacao(Participacao participacao) {
+            this.participacao = participacao;
+        }
+    //</editor-fold>
 
     @Override
     public String toString() {
-        return "Resultado{" + "id=" + id + ","
+        return "Resultado{" 
+                + "id=" + id + ","
                 + " nota=" + nota + ","
                 + " participacao=" + participacao 
                 + '}';
     }
-
 }

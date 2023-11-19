@@ -21,9 +21,17 @@ public class ArquivoEdital
         implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
-    public ArquivoEdital() {
-    }
+    
+    //<editor-fold defaultstate="collapsed" desc="construtores">
+        public ArquivoEdital() {
+            super();
+        }
+        
+        public ArquivoEdital(String nome, String path) {    
+            super(nome, path);
+        }
+        
+    //</editor-fold>
 
     @Override
     public String toString() {

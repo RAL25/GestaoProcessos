@@ -25,23 +25,40 @@ public class Categoria implements Serializable {
     
     @Column(length=50)
     private String nome;
+    
+    //<editor-fold defaultstate="collapsed" desc="construtores">
+        public Categoria() {
+        }
 
-    public Categoria(String nome) {
-        this.nome = nome;
-    }
+        public Categoria(String nome) {
+            this.nome = nome;
+        }
+    //</editor-fold>
+        
+    //<editor-fold defaultstate="collapsed" desc="getters/setters">
+        public Long getId() {
+            return id;
+        }
 
-    public Long getId() {
-        return id;
-    }
+        public void setId(Long id) {
+            this.id = id;
+        }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+        public String getNome() {
+            return nome;
+        }
+
+        public void setNome(String nome) {
+            this.nome = nome;
+        }
+//</editor-fold>
 
     @Override
     public String toString() {
         return "Categoria{" 
-                + "id=" + id + ", "
-                + "nome=" + nome + '}';
-    }
+                + "id=" + id + ","
+                + " nome=" + nome 
+                + '}';
+    }    
+
 }

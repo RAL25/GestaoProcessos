@@ -45,61 +45,78 @@ public class ProcessoSeletivo implements Serializable {
             cascade = CascadeType.ALL)
     private List<Participacao> candidatos;
 
+    //<editor-fold defaultstate="collapsed" desc="construtores">
+        public ProcessoSeletivo() {     
+        }
+
+        public ProcessoSeletivo(String nome, String descricao, Boolean aberto, Edital edital, Prova prova, List<Participacao> candidatos) {
+            this.nome = nome;
+            this.descricao = descricao;
+            this.aberto = aberto;
+            this.edital = edital;
+            this.prova = prova;
+            this.candidatos = candidatos;
+        }
+
+    //</editor-fold>
+        
+    //<editor-fold defaultstate="collapsed" desc="getters/setters">
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+        public void setId(Long id) {
+            this.id = id;
+        }
 
-    public String getNome() {
-        return nome;
-    }
+        public String getNome() {
+            return nome;
+        }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+        public void setNome(String nome) {
+            this.nome = nome;
+        }
 
-    public String getDescricao() {
-        return descricao;
-    }
+        public String getDescricao() {
+            return descricao;
+        }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+        public void setDescricao(String descricao) {
+            this.descricao = descricao;
+        }
 
-    public Boolean getAberto() {
-        return aberto;
-    }
+        public Boolean getAberto() {
+            return aberto;
+        }
 
-    public void setAberto(Boolean aberto) {
-        this.aberto = aberto;
-    }
+        public void setAberto(Boolean aberto) {
+            this.aberto = aberto;
+        }
 
-    public Edital getEdital() {
-        return edital;
-    }
+        public Edital getEdital() {
+            return edital;
+        }
 
-    public void setEdital(Edital edital) {
-        this.edital = edital;
-    }
+        public void setEdital(Edital edital) {
+            this.edital = edital;
+        }
 
-    public Prova getProva() {
-        return prova;
-    }
+        public Prova getProva() {
+            return prova;
+        }
 
-    public void setProva(Prova prova) {
-        this.prova = prova;
-    }
+        public void setProva(Prova prova) {
+            this.prova = prova;
+        }
+        public List<Participacao> getCandidatos() {
+            return candidatos;
+        }
 
-    public List<Participacao> getCandidatos() {
-        return candidatos;
-    }
+        public void setCandidatos(List<Participacao> candidatos) {
+            this.candidatos = candidatos;
+        }
+    //</editor-fold>
 
-    public void setCandidatos(List<Participacao> candidatos) {
-        this.candidatos = candidatos;
-    }
     
     @Override
     public String toString() {

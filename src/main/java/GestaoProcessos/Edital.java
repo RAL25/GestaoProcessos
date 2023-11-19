@@ -34,37 +34,60 @@ public class Edital implements Serializable {
     
     private String descricao;
 
+    //<editor-fold defaultstate="collapsed" desc="construtores">
+        
+        public Edital() {
+        }
+
+        public Edital(LocalDate data, Integer numero, ArquivoEdital arquivoEdital, String descricao) {
+            this.data = data;
+            this.numero = numero;
+            this.arquivoEdital = arquivoEdital;
+            this.descricao = descricao;
+        }
+
+    //</editor-fold>
+        
+    //<editor-fold defaultstate="collapsed" desc="getters/setters">
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Edital)) {
-            return false;
+        public void setId(Long id) {
+            this.id = id;
         }
-        Edital other = (Edital) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
+        
+        public LocalDate getData() {
+            return data;
         }
-        return true;
-    }
 
-    @Override
-    public String toString() {
-        return "GestaoProcessos.Edital[ id=" + id + " ]";
-    }
+        public void setData(LocalDate data) {
+            this.data = data;
+        }
+
+        public Integer getNumero() {
+            return numero;
+        }
+
+        public void setNumero(Integer numero) {
+            this.numero = numero;
+        }
+
+        public ArquivoEdital getArquivoEdital() {
+            return arquivoEdital;
+        }
+
+        public void setArquivoEdital(ArquivoEdital arquivoEdital) {
+            this.arquivoEdital = arquivoEdital;
+        }
+
+        public String getDescricao() {
+            return descricao;
+        }
+
+        public void setDescricao(String descricao) {
+            this.descricao = descricao;
+        }
+//</editor-fold>
 
 }

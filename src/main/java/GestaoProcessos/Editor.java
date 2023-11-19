@@ -19,12 +19,17 @@ public class Editor
 
     private static final long serialVersionUID = 1L;
 
-    public Editor() {
-    }
+    //<editor-fold defaultstate="collapsed" desc="construtores">
+        public Editor() {
+        }
+
+        public Editor(String nome, String cpf, String email, String senha) {
+            super(nome, cpf, email, senha);
+        }
+    //</editor-fold>
 
     @Override
     public String toString() {
         return "Editor{" + '}';
     }
-
 }

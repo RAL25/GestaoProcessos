@@ -35,30 +35,45 @@ public class Participacao implements Serializable {
     @JoinColumn(name = "candidato_id")
     private Candidato candidato;
 
+
+    //<editor-fold defaultstate="collapsed" desc="construtores">
+
+        public Participacao() {
+        }
+
+        public Participacao(ProcessoSeletivo processoSeletivo, Candidato candidato) {
+            this.processoSeletivo = processoSeletivo;
+            this.candidato = candidato;
+        }
+        
+    //</editor-fold>
+        
+    //<editor-fold defaultstate="collapsed" desc="getters/setters">
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+        public void setId(Long id) {
+            this.id = id;
+        }
 
-    public ProcessoSeletivo getProcessoSeletivo() {
-        return processoSeletivo;
-    }
+        public ProcessoSeletivo getProcessoSeletivo() {
+            return processoSeletivo;
+        }
 
-    public void setProcessoSeletivo(ProcessoSeletivo processoSeletivo) {
-        this.processoSeletivo = processoSeletivo;
-    }
+        public void setProcessoSeletivo(ProcessoSeletivo processoSeletivo) {
+            this.processoSeletivo = processoSeletivo;
+        }
 
-    public Candidato getCandidato() {
-        return candidato;
-    }
-
-    public void setCandidato(Candidato candidato) {
-        this.candidato = candidato;
-    }
-
+        public Candidato getCandidato() {
+            return candidato;
+        }
+        
+        public void setCandidato(Candidato candidato) {
+            this.candidato = candidato;
+        }
+    //</editor-fold>
+        
     @Override
     public String toString() {
         return "Participacao{" 

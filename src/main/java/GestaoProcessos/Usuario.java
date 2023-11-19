@@ -37,6 +37,20 @@ public class Usuario implements Serializable {
     
     private String senha;
 
+    
+    
+    //<editor-fold defaultstate="collapsed" desc="construtores">
+        public Usuario() {
+        }
+
+        public Usuario(String nome, String cpf, String email, String senha) {
+            this.nome = nome;
+            this.cpf = cpf;
+            this.email = email;
+            this.senha = senha;
+        }
+    //</editor-fold>
+
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
 
     public Long getId() {

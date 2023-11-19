@@ -7,9 +7,6 @@ package GestaoProcessos;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 /**
  * Classe ArquivoProva
@@ -22,8 +19,15 @@ public class ArquivoProva
 
     private static final long serialVersionUID = 1L;
 
-    public ArquivoProva() {
-    }
+    //<editor-fold defaultstate="collapsed" desc="construtores">
+        public ArquivoProva() {
+
+        }
+
+        public ArquivoProva(String nome, String path) {
+            super(nome, path);
+        }
+    //</editor-fold>
 
     @Override
     public String toString() {
