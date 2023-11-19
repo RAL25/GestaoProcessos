@@ -7,7 +7,9 @@ package GestaoProcessos;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,10 +29,10 @@ public class Prova implements Serializable {
     
     private LocalDate data;
     
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private ArquivoProva arquivoprova;
     
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private ArquivoGabarito arquivoGabarito;
     
     private Short dia;

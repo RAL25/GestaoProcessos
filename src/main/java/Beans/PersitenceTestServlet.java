@@ -4,20 +4,30 @@
  */
 package Beans;
 
+import GestaoProcessos.ArquivoGabarito;
+import GestaoProcessos.ArquivoProva;
+import GestaoProcessos.Prova;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDate;
+import java.time.Month;
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.transaction.Transactional;
 
 /**
  *
  * @author Rian Alves Leal <ral2 at ifnmg.edu.br>
  */
-@WebServlet(name = "PersitenceTestServlet", urlPatterns = {"/PersitenceTests"})
+@WebServlet(name = "PersitenceTest", urlPatterns = {"/PersitenceTests"})
+@Transactional
 public class PersitenceTestServlet extends HttpServlet {
+    @Inject
+    ProvaSessionBeanLocal provabean;
     
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,6 +41,15 @@ public class PersitenceTestServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
+         ArquivoProva arquivoProva = new ArquivoProva("Prova-1","caminhoParaArquivoProva");
+        ArquivoGabarito arquivoGabarito= new ArquivoGabarito("Gabarito-Prova-1","caminhoParaArquivoGabarito-Prova");
+
+        Prova prova = new Prova(LocalDate.of(2023, Month.MARCH, 2),arquivoProva, arquivoGabarito, (short)1,"azul");        
+        provabean.salvar(prova);
+        
+        Prova provabuscada = provabean.buscarPorId((long)1);       
+        
 
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -40,7 +59,8 @@ public class PersitenceTestServlet extends HttpServlet {
             out.println("<title>Servlet testDados</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet testDados at " + request.getContextPath() + "</h1>");
+            out.println("<h1>"+ provabuscada.toString() +"</h1>");
+//            out.println("<h1>Servlet testDados at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
