@@ -43,29 +43,31 @@ public class Participacao implements Serializable {
         this.id = id;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
+    public ProcessoSeletivo getProcessoSeletivo() {
+        return processoSeletivo;
     }
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Participacao)) {
-            return false;
-        }
-        Participacao other = (Participacao) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
+    public void setProcessoSeletivo(ProcessoSeletivo processoSeletivo) {
+        this.processoSeletivo = processoSeletivo;
+    }
+
+    public Candidato getCandidato() {
+        return candidato;
+    }
+
+    public void setCandidato(Candidato candidato) {
+        this.candidato = candidato;
     }
 
     @Override
     public String toString() {
-        return "GestaoProcessos.Participacao[ id=" + id + " ]";
+        return "Participacao{" 
+                + "id=" + id + ", "
+                + "processoSeletivo=" + processoSeletivo + ", "
+                + "candidato=" + candidato 
+                + '}';
     }
+    
+    
 
 }

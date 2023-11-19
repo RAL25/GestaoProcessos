@@ -6,10 +6,14 @@
 package GestaoProcessos;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 /**
@@ -35,6 +39,11 @@ public class ProcessoSeletivo implements Serializable {
     
     @OneToOne
     private Prova prova;
+    
+     @OneToMany(mappedBy = "processoSeletivo",
+            fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL)
+    private List<Participacao> candidatos;
 
     public Long getId() {
         return id;
@@ -84,6 +93,14 @@ public class ProcessoSeletivo implements Serializable {
         this.prova = prova;
     }
 
+    public List<Participacao> getCandidatos() {
+        return candidatos;
+    }
+
+    public void setCandidatos(List<Participacao> candidatos) {
+        this.candidatos = candidatos;
+    }
+    
     @Override
     public String toString() {
         return "ProcessoSeletivo{" + "id=" + id + ","

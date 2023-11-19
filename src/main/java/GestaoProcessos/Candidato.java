@@ -6,10 +6,14 @@
 package GestaoProcessos;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.ws.rs.DefaultValue;
 
@@ -25,6 +29,11 @@ public class Candidato
     private static final long serialVersionUID = 1L;
     
     private Boolean receberNoticias;
+    
+    @OneToMany(mappedBy = "candidato",
+            fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL)
+    private List<Participacao> participacoes;
 
     public Candidato() {
         this.receberNoticias = false;
@@ -40,6 +49,14 @@ public class Candidato
 
     public void setReceberNoticias(Boolean receberNoticias) {
         this.receberNoticias = receberNoticias;
+    }
+
+    public List<Participacao> getParticipacoes() {
+        return participacoes;
+    }
+
+    public void setParticipacoes(List<Participacao> participacoes) {
+        this.participacoes = participacoes;
     }
 
     @Override
