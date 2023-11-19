@@ -14,24 +14,26 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 
 /**
- * Classe Resultado
+ * Classe Participacao
  * @author yodem
  */
 @Entity
-public class Resultado implements Serializable {
+public class Participacao implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    private Double nota;
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "processoSeletivo_id")
+    private ProcessoSeletivo processoSeletivo;
     
-    @OneToOne
-    private Participacao participacao;
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "candidato_id")
+    private Candidato candidato;
 
     public Long getId() {
         return id;
@@ -51,10 +53,10 @@ public class Resultado implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Resultado)) {
+        if (!(object instanceof Participacao)) {
             return false;
         }
-        Resultado other = (Resultado) object;
+        Participacao other = (Participacao) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -63,7 +65,7 @@ public class Resultado implements Serializable {
 
     @Override
     public String toString() {
-        return "GestaoProcessos.Resultado[ id=" + id + " ]";
+        return "GestaoProcessos.Participacao[ id=" + id + " ]";
     }
 
 }
