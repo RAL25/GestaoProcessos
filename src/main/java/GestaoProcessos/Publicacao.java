@@ -34,6 +34,9 @@ public class Publicacao implements Serializable {
 
     @OneToOne()
     private Categoria categoria;
+    
+    @OneToOne
+    private Edital edital;
 
     private LocalDateTime createdAt;
     
