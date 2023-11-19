@@ -29,7 +29,8 @@ public class Usuario implements Serializable {
     @Column(length = 65)
     private String nome;
     
-    private Integer cpf;    //Único
+    @Column(length = 11)
+    private String cpf;    //Único
     
     @Column(length = 250)
     private String email;   //Único
@@ -54,11 +55,11 @@ public class Usuario implements Serializable {
         this.nome = nome;
     }
 
-    public Integer getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(Integer cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 

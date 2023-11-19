@@ -1,23 +1,27 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSF/JSFManagedBean.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/J2EE/EJB30/StatelessEjbClass.java to edit this template
  */
 package Beans;
 
-import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
-import java.io.Serializable;
+import GestaoProcessos.Usuario;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 /**
  *
  * @author Rian Alves Leal <ral2 at ifnmg.edu.br>
  */
-@Named(value = "usuarioBean")
-@SessionScoped
-public class UsuarioBean implements Serializable {
-
+@Stateless
+public class UsuarioBean implements UsuarioBeanLocal {
+    @PersistenceContext
+    EntityManager entityManager;
     
-    public UsuarioBean() {
+    //<-------------Persistência para salvar dados------------->//
+    @Override
+    public void salvar(Usuario usuario) {
+        entityManager.persist(usuario);
     }
     
 }
