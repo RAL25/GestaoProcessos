@@ -6,14 +6,10 @@
 package GestaoProcessos;
 
 import java.io.Serializable;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 /**
@@ -33,6 +29,14 @@ public class Resultado implements Serializable {
     @OneToOne
     private Participacao participacao;
 
+    public Resultado(Double nota, Participacao participacao) {
+        this.nota = nota;
+        this.participacao = participacao;
+    }
+
+    public Resultado() {
+    }
+
     public Long getId() {
         return id;
     }
@@ -41,29 +45,28 @@ public class Resultado implements Serializable {
         this.id = id;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
+    public Double getNota() {
+        return nota;
     }
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Resultado)) {
-            return false;
-        }
-        Resultado other = (Resultado) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
+    public void setNota(Double nota) {
+        this.nota = nota;
+    }
+
+    public Participacao getParticipacao() {
+        return participacao;
+    }
+
+    public void setParticipacao(Participacao participacao) {
+        this.participacao = participacao;
     }
 
     @Override
     public String toString() {
-        return "GestaoProcessos.Resultado[ id=" + id + " ]";
+        return "Resultado{" + "id=" + id + ","
+                + " nota=" + nota + ","
+                + " participacao=" + participacao 
+                + '}';
     }
 
 }

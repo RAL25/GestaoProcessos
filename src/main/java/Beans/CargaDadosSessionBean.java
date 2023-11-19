@@ -5,6 +5,7 @@
 package Beans;
 
 import GestaoProcessos.Administrador;
+import GestaoProcessos.Candidato;
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
@@ -29,6 +30,13 @@ public class CargaDadosSessionBean {
         adm.setEmail("rian@mail.com");
         adm.setSenha("abcd12345");
         
+        Candidato candidato = new Candidato();
+        candidato.setNome("Yodemis Junior Soares Nascimento");
+        candidato.setEmail("yodemis123@mail.com");
+        candidato.setCpf("2555844122");
+        candidato.setSenha("123456789");
+        
         usuarioBean.salvar(adm);
+        usuarioBean.salvar(candidato);
     }
 }

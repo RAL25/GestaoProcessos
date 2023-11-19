@@ -7,7 +7,11 @@ package GestaoProcessos;
 
 import java.io.Serializable;
 import java.util.Objects;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.PrePersist;
+import javax.ws.rs.DefaultValue;
 
 /**
  * Classe Candidato
@@ -19,10 +23,11 @@ public class Candidato
         implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    
     private Boolean receberNoticias;
 
     public Candidato() {
+        this.receberNoticias = false;
     }
     
     public Candidato( Boolean receberNoticias) {
@@ -38,28 +43,11 @@ public class Candidato
     }
 
     @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 89 * hash + Objects.hashCode(this.receberNoticias);
-        return hash;
+    public String toString() {
+        return "Candidato{" 
+                + "receberNoticias=" + receberNoticias 
+                + '}';
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Candidato other = (Candidato) obj;
-        return Objects.equals(this.receberNoticias, other.receberNoticias);
-    }
-    
-    
     
     
 

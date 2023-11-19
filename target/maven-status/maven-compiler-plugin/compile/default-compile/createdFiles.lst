@@ -1,4 +1,3 @@
-Beans\testDados.class
 GestaoProcessos\Arquivo.class
 GestaoProcessos\Editor.class
 GestaoProcessos\Edital.class
@@ -20,4 +19,5 @@ Util\Util.class
 Beans\UsuarioBean.class
 Beans\Ativar.class
 Beans\MailService.class
+Beans\PersitenceTestServlet.class
 GestaoProcessos\Usuario.class
