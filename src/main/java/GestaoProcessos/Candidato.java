@@ -6,6 +6,7 @@
 package GestaoProcessos;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -34,6 +35,7 @@ public class Candidato
         public Candidato() {
             super();
             this.receberNoticias = false;
+            this.participacoes = new ArrayList<>();
         }
         
         public Candidato( Boolean receberNoticias) {

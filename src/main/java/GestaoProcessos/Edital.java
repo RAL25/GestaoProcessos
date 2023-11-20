@@ -8,6 +8,7 @@ package GestaoProcessos;
 import java.io.Serializable;
 import java.time.LocalDate;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -34,6 +35,7 @@ public class Edital implements Serializable {
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private ArquivoEdital arquivoEdital;
     
+    @Column(length = 1000)
     private String descricao;
 
     //<editor-fold defaultstate="collapsed" desc="construtores">

@@ -35,13 +35,16 @@ public class CargaDadosSessionBean {
     private ProvaSessionBeanLocal provaBean;
     
     @Inject
-    private EditalSessionBeanLocal EditalBean;
+    private EditalSessionBeanLocal editalBean;
     
     @Inject
     private ParticipacaoSessionBeanLocal participacaoBean;
     
     @Inject
     private ProcessoSeletivoSessionBeanLocal processoBean;
+    
+    @Inject
+    private CategoriaSessionBeanLocal categoriaBean;
     
     @Inject
     private PublicacaoSessionBeanLocal publicacaoBean;
@@ -114,5 +117,17 @@ public class CargaDadosSessionBean {
         usuarioBean.salvar(candidato);
         
         provaBean.salvar(provaDia1);
+        
+        editalBean.salvar(edital);
+        
+        participacaoBean.salvar(participacao);
+        
+        processoBean.salvar(processo);
+        
+        categoriaBean.salvar(categoria1);
+        
+        publicacaoBean.salvar(publicacao);
+        
+        arquivoBean.salvar(arquivo);
     }
 }
