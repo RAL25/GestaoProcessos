@@ -16,4 +16,10 @@ public interface UsuarioBeanLocal {
     
     //<-------------Persistência para salvar dados------------->//
     public void salvar(Usuario usuario);
+    
+    public Usuario buscarPorId(Long id);
+    
+    public void editar(Usuario usuario);
+    
+    public void deletar(Usuario usuario);
 }

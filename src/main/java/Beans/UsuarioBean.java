@@ -23,5 +23,20 @@ public class UsuarioBean implements UsuarioBeanLocal {
     public void salvar(Usuario usuario) {
         entityManager.persist(usuario);
     }
+
+    @Override
+    public Usuario buscarPorId(Long id) {
+        return entityManager.find(Usuario.class, id);
+    }
+
+    @Override
+    public void editar(Usuario usuario) {
+        entityManager.refresh(usuario);
+    }
+
+    @Override
+    public void deletar(Usuario usuario) {
+        entityManager.remove(usuario);
+    }
     
 }

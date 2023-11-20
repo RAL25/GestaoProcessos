@@ -30,6 +30,8 @@ public class Editor
 
     @Override
     public String toString() {
-        return "Editor{" + '}';
+        return "Editor{" 
+                + super.toString() 
+                + '}';
     }
 }

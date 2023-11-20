@@ -34,7 +34,7 @@ public class ArquivoGabarito
 
     @Override
     public String toString() {
-        return "ArquivoGabarito{" + '}';
+        return super.toString();
     }
     
 }

@@ -7,8 +7,10 @@ package GestaoProcessos;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,11 +34,14 @@ public class Publicacao implements Serializable {
     @Column(length=1000)
     private String conteudo;
 
-    @OneToOne()
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Categoria categoria;
     
     @OneToOne
     private Edital edital;
+    
+    @OneToOne
+    private Prova prova;
 
     private LocalDateTime createdAt;
     
@@ -54,6 +59,13 @@ public class Publicacao implements Serializable {
             this.conteudo = conteudo;
             this.categoria = categoria;
             this.edital = edital;
+        }
+        public Publicacao(String titulo, String conteudo, Categoria categoria, Prova prova) {
+            this();
+            this.titulo = titulo;
+            this.conteudo = conteudo;
+            this.categoria = categoria;
+            this.prova = prova;
         }
 
     //</editor-fold>
@@ -118,6 +130,15 @@ public class Publicacao implements Serializable {
         public void setEdital(Edital edital) {
             this.edital = edital;
         }
+
+        public Prova getProva() {
+            return prova;
+        }
+
+        public void setProva(Prova prova) {
+            this.prova = prova;
+        }
+        
     //</editor-fold>
 
     @Override

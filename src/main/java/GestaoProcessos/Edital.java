@@ -7,7 +7,9 @@ package GestaoProcessos;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,7 +31,7 @@ public class Edital implements Serializable {
     
     private Integer numero;
     
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private ArquivoEdital arquivoEdital;
     
     private String descricao;
@@ -89,5 +91,18 @@ public class Edital implements Serializable {
             this.descricao = descricao;
         }
 //</editor-fold>
+
+    @Override
+    public String toString() {
+        return "Edital{" 
+                + "id=" + id + ","
+                + " data=" + data + ","
+                + " numero=" + numero + ","
+                + " arquivoEdital=" + arquivoEdital + ","
+                + " descricao=" + descricao 
+                + '}';
+    }
+        
+    
 
 }

@@ -25,19 +25,16 @@ public class Usuario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
     @Column(length = 65)
     private String nome;
     
-    @Column(length = 11)
-    private String cpf;    //Único
+    @Column(length = 11, unique = true)
+    private String cpf;    
     
-    @Column(length = 250)
-    private String email;   //Único
+    @Column(length = 250, unique = true)
+    private String email;   
     
     private String senha;
-
-    
     
     //<editor-fold defaultstate="collapsed" desc="construtores">
         public Usuario() {

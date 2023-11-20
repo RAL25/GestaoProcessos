@@ -31,7 +31,7 @@ public class ArquivoProva
 
     @Override
     public String toString() {
-        return "ArquivoProva{" + '}';
+        return super.toString();
     }
     
     

@@ -35,16 +35,22 @@ public class Candidato
             super();
             this.receberNoticias = false;
         }
+        
+        public Candidato( Boolean receberNoticias) {
+            this.receberNoticias = receberNoticias;
+        }
 
+        public Candidato(Boolean receberNoticias, String nome, String cpf, String email, String senha) {
+            super(nome, cpf, email, senha);
+            this.receberNoticias = receberNoticias;
+        }
         public Candidato(Boolean receberNoticias, List<Participacao> participacoes, String nome, String cpf, String email, String senha) {
             super(nome, cpf, email, senha);
             this.receberNoticias = receberNoticias;
             this.participacoes = participacoes;
         }
 
-        public Candidato( Boolean receberNoticias) {
-            this.receberNoticias = receberNoticias;
-        }
+        
     //</editor-fold>
         
     //<editor-fold defaultstate="collapsed" desc="getters/setters">
@@ -68,6 +74,7 @@ public class Candidato
     @Override
     public String toString() {
         return "Candidato{" 
+                + super.toString()+ ","
                 + "receberNoticias=" + receberNoticias + ","
                 + " participacoes=" + participacoes 
                 + '}';

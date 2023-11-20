@@ -60,4 +60,9 @@ public class Arquivo implements Serializable {
         }
     //</editor-fold>
 
+    @Override
+    public String toString() {
+        return "{" + "id=" + id + ", nome=" + nome + ", path=" + path + '}';
+    }
+
 }

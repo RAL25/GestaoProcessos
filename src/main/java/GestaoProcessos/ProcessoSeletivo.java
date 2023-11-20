@@ -48,6 +48,14 @@ public class ProcessoSeletivo implements Serializable {
     //<editor-fold defaultstate="collapsed" desc="construtores">
         public ProcessoSeletivo() {     
         }
+        
+        public ProcessoSeletivo(String nome, String descricao, Boolean aberto, Edital edital, Prova prova) {
+            this.nome = nome;
+            this.descricao = descricao;
+            this.aberto = aberto;
+            this.edital = edital;
+            this.prova = prova;
+        }
 
         public ProcessoSeletivo(String nome, String descricao, Boolean aberto, Edital edital, Prova prova, List<Participacao> candidatos) {
             this.nome = nome;
