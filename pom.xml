@@ -16,14 +16,6 @@
         <jakartaee>8.0</jakartaee>
     </properties>
     
-    <dependencies>
-        <dependency>
-            <groupId>jakarta.platform</groupId>
-            <artifactId>jakarta.jakartaee-api</artifactId>
-            <version>8.0.0</version>
-        </dependency>
-    </dependencies>
-    
      <build>
         <plugins>
             <plugin>
@@ -73,4 +65,11 @@
             </plugin>
         </plugins>
     </build>
+    <dependencies>
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-api</artifactId>
+            <version>8.0.0</version>
+        </dependency>
+    </dependencies>
 </project>
