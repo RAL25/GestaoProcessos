@@ -2,8 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package Beans;
+package Servlets;
 
+import Beans.EditalSessionBeanLocal;
+import Beans.ParticipacaoSessionBeanLocal;
+import Beans.ProcessoSeletivoSessionBeanLocal;
+import Beans.ProvaSessionBeanLocal;
+import Beans.PublicacaoSessionBeanLocal;
+import Beans.UsuarioBeanLocal;
 import GestaoProcessos.ArquivoEdital;
 import GestaoProcessos.ArquivoGabarito;
 import GestaoProcessos.ArquivoProva;
