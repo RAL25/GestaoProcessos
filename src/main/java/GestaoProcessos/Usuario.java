@@ -36,16 +36,23 @@ public class Usuario implements Serializable {
     
     private String senha;
     
+    private Boolean receberNoticia;
+    
+    private TipoUsuario tipo;
+    
     //<editor-fold defaultstate="collapsed" desc="construtores">
         public Usuario() {
         }
 
-        public Usuario(String nome, String cpf, String email, String senha) {
+        public Usuario(String nome, String cpf, String email, String senha, Boolean receberNoticia, TipoUsuario tipo) {
             this.nome = nome;
             this.cpf = cpf;
             this.email = email;
             this.senha = senha;
+            this.receberNoticia = receberNoticia;
+            this.tipo = tipo;
         }
+        
     //</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
@@ -88,6 +95,22 @@ public class Usuario implements Serializable {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public Boolean getReceberNoticia() {
+        return receberNoticia;
+    }
+
+    public void setReceberNoticia(Boolean receberNoticia) {
+        this.receberNoticia = receberNoticia;
+    }
+
+    public TipoUsuario getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoUsuario tipo) {
+        this.tipo = tipo;
     }
 
     //</editor-fold>

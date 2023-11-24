@@ -8,7 +8,8 @@ package GestaoProcessos;
  *
  * @author Gabriel Sizilio <gabriel.sizilio>
  */
-public enum Categoria {
-    NOTICIA, EDITAL, ORIENTACAO, PROVA_GABARITO
+public enum TipoUsuario {
+    
+    ADMINISTRADOR, EDITOR, CANDIDATO
     
 }

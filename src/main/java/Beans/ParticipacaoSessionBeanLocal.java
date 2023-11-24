@@ -4,7 +4,7 @@
  */
 package Beans;
 
-import GestaoProcessos.Participacao;
+import GestaoProcessos.Inscricao;
 import javax.ejb.Local;
 
 /**
@@ -13,11 +13,11 @@ import javax.ejb.Local;
  */
 @Local
 public interface ParticipacaoSessionBeanLocal {
-    public void salvar(Participacao participacao);
+    public void salvar(Inscricao participacao);
     
-    public Participacao buscarPorId(Long id);
+    public Inscricao buscarPorId(Long id);
     
-    public void editar(Participacao participacao);
+    public void editar(Inscricao participacao);
     
-    public void deletar(Participacao participacao);
+    public void deletar(Inscricao participacao);
 }

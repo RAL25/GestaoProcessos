@@ -44,7 +44,7 @@ public class ProcessoSeletivo implements Serializable {
      @OneToMany(mappedBy = "processoSeletivo",
             fetch = FetchType.EAGER,
             cascade = CascadeType.ALL)
-    private List<Participacao> candidatos;
+    private List<Inscricao> candidatos;
 
     //<editor-fold defaultstate="collapsed" desc="construtores">
         public ProcessoSeletivo() {     
@@ -59,7 +59,7 @@ public class ProcessoSeletivo implements Serializable {
             this.prova = prova;
         }
 
-        public ProcessoSeletivo(String nome, String descricao, Boolean aberto, Edital edital, Prova prova, List<Participacao> candidatos) {
+        public ProcessoSeletivo(String nome, String descricao, Boolean aberto, Edital edital, Prova prova, List<Inscricao> candidatos) {
             this.nome = nome;
             this.descricao = descricao;
             this.aberto = aberto;
@@ -118,11 +118,11 @@ public class ProcessoSeletivo implements Serializable {
         public void setProva(Prova prova) {
             this.prova = prova;
         }
-        public List<Participacao> getCandidatos() {
+        public List<Inscricao> getCandidatos() {
             return candidatos;
         }
 
-        public void setCandidatos(List<Participacao> candidatos) {
+        public void setCandidatos(List<Inscricao> candidatos) {
             this.candidatos = candidatos;
         }
     //</editor-fold>

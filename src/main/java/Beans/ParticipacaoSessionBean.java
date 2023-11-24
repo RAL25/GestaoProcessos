@@ -4,8 +4,7 @@
  */
 package Beans;
 
-import GestaoProcessos.Participacao;
-import GestaoProcessos.Usuario;
+import GestaoProcessos.Inscricao;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -20,22 +19,22 @@ public class ParticipacaoSessionBean implements ParticipacaoSessionBeanLocal {
     EntityManager entityManager;
 
     @Override
-    public void salvar(Participacao participacao) {
+    public void salvar(Inscricao participacao) {
         entityManager.persist(participacao);
     }
 
     @Override
-    public Participacao buscarPorId(Long id) {
-        return entityManager.find(Participacao.class, id);
+    public Inscricao buscarPorId(Long id) {
+        return entityManager.find(Inscricao.class, id);
     }
 
     @Override
-    public void editar(Participacao participacao) {
+    public void editar(Inscricao participacao) {
         entityManager.refresh(participacao);
     }
 
     @Override
-    public void deletar(Participacao participacao) {
+    public void deletar(Inscricao participacao) {
         entityManager.remove(participacao);
     }
 

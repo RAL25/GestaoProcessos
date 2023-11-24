@@ -7,15 +7,11 @@ package Beans;
 import GestaoProcessos.ArquivoEdital;
 import GestaoProcessos.ArquivoGabarito;
 import GestaoProcessos.ArquivoProva;
-import GestaoProcessos.Candidato;
 import GestaoProcessos.Categoria;
 import GestaoProcessos.Edital;
-import GestaoProcessos.Editor;
-import GestaoProcessos.Participacao;
 import GestaoProcessos.ProcessoSeletivo;
 import GestaoProcessos.Prova;
 import GestaoProcessos.Publicacao;
-import GestaoProcessos.Resultado;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
@@ -40,8 +36,6 @@ public class PersistenceTestServlet extends HttpServlet {
     @Inject
     EditalSessionBeanLocal editalbean;
     @Inject
-    CategoriaSessionBeanLocal categoriabean;
-    @Inject
     PublicacaoSessionBeanLocal publicacaobean;
     @Inject
     ProcessoSeletivoSessionBeanLocal processoSeletivobean;
@@ -49,8 +43,6 @@ public class PersistenceTestServlet extends HttpServlet {
     UsuarioBeanLocal usuariobean;
     @Inject
     ParticipacaoSessionBeanLocal participacaobean;
-    @Inject
-    ResultadoSessionBeanLocal resultadobean;
     
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -84,17 +76,9 @@ public class PersistenceTestServlet extends HttpServlet {
             // Busca
             Edital editalBuscado = editalbean.BuscarPorId(edital.getId());
             
-        // Categoria
-            // Criação
-            Categoria categoria = new Categoria("Noticias");
-            categoriabean.salvar(categoria);
-            
-            // Busca
-            Categoria categoriaBuscada = categoriabean.buscarPorId(categoria.getId());
-            
         // Publicacao
             // Criação 
-            Publicacao publicacao = new Publicacao("Edital Enem 2023", "Atenção ao edital para o enem...", categoria, edital );
+            Publicacao publicacao = new Publicacao("Edital Enem 2023", "Atenção ao edital para o enem...", Categoria.EDITAL, edital );
             publicacaobean.salvar(publicacao);
             
             // Busca
@@ -109,38 +93,6 @@ public class PersistenceTestServlet extends HttpServlet {
             // Busca
             ProcessoSeletivo processoSeletivoBuscado = processoSeletivobean.BuscarPorId(processoSeletivo.getId());
             
-        // Candidato
-            // Criacao
-            Candidato candidato = new Candidato(Boolean.TRUE, "Ana Zayra", "11155544489", "ana@mail.com", "ana123");
-            usuariobean.salvar(candidato);
-            
-            // Busca
-            Candidato candidatoBuscado = (Candidato)usuariobean.buscarPorId(candidato.getId());
-        
-        // Editor
-            // Criacao
-            Editor editor = new Editor("Beatriz Yana", "11135543489", "beatriz@mail.com", "beatriz123");
-            usuariobean.salvar(editor);
-            
-            // Busca
-            Editor editorBuscado = (Editor)usuariobean.buscarPorId(editor.getId());
-            
-            
-        // Participacao
-            // Criacao
-            Participacao participacao = new Participacao(processoSeletivo, candidato);
-            participacaobean.salvar(participacao);
-            
-            // Busca
-            Participacao participacaoBuscada = participacaobean.buscarPorId(participacao.getId());
-        // Resultado
-            // Criacao
-            Resultado resultado = new Resultado(9.2, participacao);
-            resultadobean.salvar(resultado);
-            
-            // Busca
-            Resultado resultadoBuscado = resultadobean.buscarPorId(resultado.getId());
-            
 
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -154,20 +106,10 @@ public class PersistenceTestServlet extends HttpServlet {
             out.println("<p>"+ provaBuscada.toString() +"</p>");            
             out.println("<h1>Edital Buscado:</h1>");
             out.println("<p>"+ editalBuscado.toString() +"</p>");
-            out.println("<h1>Categoria Buscada:</h1>");
-            out.println("<p>"+ categoriaBuscada.toString() +"</p>");
             out.println("<h1>Publicacao Buscada:</h1>");
             out.println("<p>"+ publicacaoBuscada.toString() +"</p>");
             out.println("<h1>Processo Seletivo Buscado:</h1>");
             out.println("<p>"+ processoSeletivoBuscado.toString() +"</p>");
-            out.println("<h1>Candidato Buscado:</h1>");
-            out.println("<p>"+ candidatoBuscado.toString() +"</p>");
-            out.println("<h1>Editor Buscado:</h1>");
-            out.println("<p>"+ editorBuscado.toString() +"</p>");
-            out.println("<h1>Participacao Buscada:</h1>");
-            out.println("<p>"+ participacaoBuscada.toString() +"</p>");
-            out.println("<h1>Resultado Buscado:</h1>");
-            out.println("<p>"+ resultadoBuscado.toString() +"</p>");
             out.println("</body>");
             out.println("</html>");
         }

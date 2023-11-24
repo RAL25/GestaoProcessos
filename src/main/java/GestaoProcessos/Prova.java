@@ -27,7 +27,7 @@ public class Prova implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    private LocalDate data;
+    private LocalDate dataProva;
     
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private ArquivoProva arquivoprova;
@@ -43,8 +43,8 @@ public class Prova implements Serializable {
         public Prova() {
         }
 
-        public Prova(LocalDate data, ArquivoProva arquivoprova, ArquivoGabarito arquivoGabarito, Short dia, String cor) {
-            this.data = data;
+        public Prova(LocalDate dataProva, ArquivoProva arquivoprova, ArquivoGabarito arquivoGabarito, Short dia, String cor) {
+            this.dataProva = dataProva;
             this.arquivoprova = arquivoprova;
             this.arquivoGabarito = arquivoGabarito;
             this.dia = dia;
@@ -63,11 +63,11 @@ public class Prova implements Serializable {
         }
 
         public LocalDate getData() {
-            return data;
+            return dataProva;
         }
 
-        public void setData(LocalDate data) {
-            this.data = data;
+        public void setData(LocalDate dataProva) {
+            this.dataProva = dataProva;
         }
 
         public ArquivoProva getArquivoprova() {
@@ -107,7 +107,7 @@ public class Prova implements Serializable {
     public String toString() {
         return "Prova{" 
                 + "id=" + id + ","
-                + " data=" + data + ","
+                + " dataProva=" + dataProva + ","
                 + " arquivoprova=" + arquivoprova + ","
                 + " arquivoGabarito=" + arquivoGabarito + ","
                 + " dia=" + dia + ","

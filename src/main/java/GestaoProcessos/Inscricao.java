@@ -6,6 +6,7 @@
 package GestaoProcessos;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -16,11 +17,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 /**
- * Classe Participacao
+ * Classe Inscricao
  * @author yodem
  */
 @Entity
-public class Participacao implements Serializable {
+public class Inscricao implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -33,22 +34,28 @@ public class Participacao implements Serializable {
     
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "candidato_id")
-    private Candidato candidato;
+    private Usuario candidato;
 
+    private LocalDate dataInscricao;
+    
+    private Double nota;
+    
+//<editor-fold defaultstate="collapsed" desc="construtores">
 
-    //<editor-fold defaultstate="collapsed" desc="construtores">
-
-        public Participacao() {
+        public Inscricao() {
         }
 
-        public Participacao(ProcessoSeletivo processoSeletivo, Candidato candidato) {
+        public Inscricao(ProcessoSeletivo processoSeletivo, Usuario candidato, LocalDate dataInscricao, Double nota) {
             this.processoSeletivo = processoSeletivo;
             this.candidato = candidato;
+            this.dataInscricao = dataInscricao;
+            this.nota = nota;
         }
         
     //</editor-fold>
         
-    //<editor-fold defaultstate="collapsed" desc="getters/setters">
+//<editor-fold defaultstate="collapsed" desc="getters/setters">
+        
     public Long getId() {
         return id;
     }
@@ -65,24 +72,40 @@ public class Participacao implements Serializable {
             this.processoSeletivo = processoSeletivo;
         }
 
-        public Candidato getCandidato() {
+        public Usuario getCandidato() {
             return candidato;
         }
-        
-        public void setCandidato(Candidato candidato) {
+
+        public void setCandidato(Usuario candidato) {
             this.candidato = candidato;
         }
+
+        public LocalDate getDataInscricao() {
+            return dataInscricao;
+        }
+
+        public void setDataInscricao(LocalDate dataInscricao) {
+            this.dataInscricao = dataInscricao;
+        }
+
+        public Double getNota() {
+            return nota;
+        }
+
+        public void setNota(Double nota) {
+            this.nota = nota;
+        }
+
     //</editor-fold>
-        
+
     @Override
     public String toString() {
-        return "Participacao{" 
-                + "id=" + id + ", "
+        return "Inscricao{" + 
+                "id=" + id + ", "
                 + "processoSeletivo=" + processoSeletivo + ", "
-                + "candidato=" + candidato 
-                + '}';
+                + "candidato=" + candidato + ", "
+                + "dataInscricao=" + dataInscricao + ", "
+                + "nota=" + nota + 
+                '}';
     }
-    
-    
-
 }
