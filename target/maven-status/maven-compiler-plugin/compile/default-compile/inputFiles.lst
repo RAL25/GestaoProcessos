@@ -1,32 +1,31 @@
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/Beans/EditalSessionBeanLocal.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/Beans/ParticipacaoSessionBeanLocal.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/Beans/PublicacaoSessionBean.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/GestaoProcessos/Categoria.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/GestaoProcessos/ArquivoProva.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/Beans/ProvaSessionBeanLocal.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/Beans/ParticipacaoSessionBean.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/Beans/ProvaSessionBean.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/GestaoProcessos/Arquivo.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/Beans/PersistenceTestServlet.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/Util/Util.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/GestaoProcessos/ArquivoGabarito.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/GestaoProcessos/ProcessoSeletivo.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/Beans/MailService.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/Beans/UsuarioBeanLocal.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/Beans/ArquivoSessionBeanLocal.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/GestaoProcessos/Inscricao.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/GestaoProcessos/ArquivoEdital.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/Beans/PublicacaoSessionBeanLocal.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/GestaoProcessos/Publicacao.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/Beans/ProcessoSeletivoSessionBeanLocal.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/Beans/MailServiceLocal.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/GestaoProcessos/Edital.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/Beans/UsuarioBean.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/Beans/ArquivoSessionBean.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/Beans/EditalSessionBean.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/Beans/Ativar.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/Beans/CargaDadosSessionBean.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/GestaoProcessos/Usuario.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/Beans/ProcessoSeletivoSessionBean.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/GestaoProcessos/TipoUsuario.java
-/media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/gestaoProcessos2/src/main/java/GestaoProcessos/Prova.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/Beans/MailServiceLocal.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/GestaoProcessos/ProcessoSeletivo.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/Beans/PublicacaoSessionBeanLocal.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/GestaoProcessos/ArquivoGabarito.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/Beans/ParticipacaoSessionBean.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/Beans/ProcessoSeletivoSessionBeanLocal.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/Beans/PublicacaoSessionBean.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/Beans/MailService.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/Beans/EditalSessionBeanLocal.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/GestaoProcessos/Arquivo.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/Beans/UsuarioBeanLocal.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/GestaoProcessos/Categoria.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/Beans/ArquivoSessionBeanLocal.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/GestaoProcessos/Edital.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/Beans/ProvaSessionBeanLocal.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/Beans/ParticipacaoSessionBeanLocal.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/Beans/EditalSessionBean.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/GestaoProcessos/Usuario.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/Beans/ProvaSessionBean.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/GestaoProcessos/Inscricao.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/Servlets/PersistenceTestServlet.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/GestaoProcessos/Publicacao.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/Beans/UsuarioBean.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/Beans/ProcessoSeletivoSessionBean.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/GestaoProcessos/TipoUsuario.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/GestaoProcessos/ArquivoProva.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/GestaoProcessos/Prova.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/GestaoProcessos/ArquivoEdital.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/Util/Util.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/Beans/ArquivoSessionBean.java
+/media/rian25/DADOS/ifnmg/período 5/Desenvolvimento WEB/Projects/GestaoProcessos/src/main/java/Beans/CargaDadosSessionBean.java
