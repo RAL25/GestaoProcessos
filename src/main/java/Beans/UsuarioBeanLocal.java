@@ -22,4 +22,6 @@ public interface UsuarioBeanLocal {
     public void editar(Usuario usuario);
     
     public void deletar(Usuario usuario);
+    
+    public Usuario buscarPorEmail(String email);
 }

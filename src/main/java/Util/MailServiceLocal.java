@@ -2,15 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/J2EE/EJB30/SessionLocal.java to edit this template
  */
-package Beans;
+package Util;
 
 import javax.ejb.Local;
+import javax.mail.MessagingException;
 
 /**
  *
- * @author Rian Alves Leal <ral2 at ifnmg.edu.br>
+ * @author Gabriel Sizilio <gabriel.sizilio>
  */
 @Local
 public interface MailServiceLocal {
+
+    void sendEmail(String nome, String to, String link) 
+            throws MessagingException;
     
 }

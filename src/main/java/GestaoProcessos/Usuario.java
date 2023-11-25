@@ -4,7 +4,9 @@
  */
 package GestaoProcessos;
 
+import Util.Util;
 import java.io.Serializable;
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.Transient;
 
 /**
  *
@@ -20,7 +23,8 @@ import javax.persistence.InheritanceType;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Usuario implements Serializable {
-
+    
+    
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,6 +43,12 @@ public class Usuario implements Serializable {
     private Boolean receberNoticia;
     
     private TipoUsuario tipo;
+    
+    private Boolean ativo;
+    
+    private String salt;
+    
+    private UUID key;
     
     //<editor-fold defaultstate="collapsed" desc="construtores">
         public Usuario() {
@@ -94,7 +104,10 @@ public class Usuario implements Serializable {
     }
 
     public void setSenha(String senha) {
-        this.senha = senha;
+        String[] hash = Util.hash(senha);
+        this.senha = (hash[Util.ENCPASSWD]);
+        
+        setSalt(hash[Util.SALT]);
     }
 
     public Boolean getReceberNoticia() {
@@ -113,8 +126,32 @@ public class Usuario implements Serializable {
         this.tipo = tipo;
     }
 
-    //</editor-fold>
+    public Boolean getAtivo() {
+        return ativo;
+    }
 
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
+    }
+
+    public UUID getKey() {
+        return key;
+    }
+
+    public void setKey(UUID key) {
+        this.key = key;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+    
+    //</editor-fold>
+    
     @Override
     public String toString() {
         return "Usuario{" 
@@ -122,7 +159,6 @@ public class Usuario implements Serializable {
                 + ", nome=" + nome + ","
                 + " cpf=" + cpf + ","
                 + " email=" + email + ","
-                + " senha=" + senha 
                 + '}';
     }
 
