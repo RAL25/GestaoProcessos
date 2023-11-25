@@ -5,7 +5,6 @@
 package Beans;
 
 import GestaoProcessos.Usuario;
-import Util.MailServiceLocal;
 import Util.Util;
 import java.io.Serializable;
 import java.util.UUID;
@@ -16,6 +15,7 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.mail.MessagingException;
+import Util.MailServiceLocal;
 
 /**
  *
