@@ -8,6 +8,7 @@ import GestaoProcessos.Usuario;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 /**
  *
@@ -27,6 +28,13 @@ public class UsuarioBean implements UsuarioBeanLocal {
     @Override
     public Usuario buscarPorId(Long id) {
         return entityManager.find(Usuario.class, id);
+    }
+    
+    @Override
+    public Usuario buscarPorEmail(String email) {
+        return entityManager.createQuery("SELECT usuario FROM Usuario usuario WHERE usuario.email = :email", Usuario.class)
+                .setParameter("email", email)
+                .getSingleResult();
     }
 
     @Override
