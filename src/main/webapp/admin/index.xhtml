@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../WEB-INF/Templates/template1.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+    
+    <h:head>
+        <title>Web Activation Key send by Email</title>
+    </h:head>
+    
+    <ui:define name="top">
+        top
+    </ui:define>
+
+    <ui:define name="content">
+        <h:body>
+        <h1>Web Activation Key send by Email</h1>
+
+        <h2>Welcome!</h2>
+
+        <h:form>
+            <h:commandLink
+                value="Logout"
+                action="#{userBean.logout()}" />
+        </h:form>
+    </h:body>
+    </ui:define>
+
+</ui:composition>
