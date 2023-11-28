@@ -7,52 +7,41 @@
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 
-        <h:head>
-            <title>Login</title>
-        </h:head>
-    
-    <ui:define name="top">
-        <h1>Web Activation Key send by Email</h1>
-    </ui:define>
+    <h:head>
+        <title>Login</title>
+    </h:head>
 
     <ui:define name="content">
-          <h:body>
-            <h2>Access</h2>
+        <h1>Login</h1>
 
-            <h3 style="color: red;">
-                <h:outputText
-                    rendered="#{userBean.authenticated eq false}"
-                    value="Wrong credentials. Try again." />
-            </h3>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel
+                    for="email"
+                    value="Email" />
+                <h:inputText
+                    id="email"
+                    required="true"
+                    requiredMessage="Fill the email"
+                    value="#{userBean.email}"
+                    pt:autofocus="autofocus">
+                    <f:validateRegex 
+                        pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+                </h:inputText>
 
-            <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel
-                        for="email"
-                        value="Email" />
-                    <h:inputText
-                        id="email"
-                        required="true"
-                        requiredMessage="Fill the email"
-                        value="#{userBean.email}"
-                        pt:autofocus="autofocus">
-                        <f:validateRegex 
-                            pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
-                    </h:inputText>
+                <h:outputLabel
+                    for="password"
+                    value="Password" />
+                <h:inputSecret
+                    id="password"
+                    value="#{userBean.senha}" />
 
-                    <h:outputLabel
-                        for="password"
-                        value="Password" />
-                    <h:inputSecret
-                        id="password"
-                        value="#{userBean.password}" />
+                <h:commandButton
+                    value="Process"
+                    action="#{userBean.processPassword()}" />
+            </h:panelGrid>
+        </h:form>
 
-                    <h:commandButton
-                        value="Process"
-                        action="#{userBean.processPassword()}" />
-                </h:panelGrid>
-            </h:form>
-           </h:body>
     </ui:define>
 
 </ui:composition>

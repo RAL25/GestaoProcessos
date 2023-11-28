@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+                template="./Templates/template1.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <ui:define name="content">
+        <h:form>
+            <h:panelGrid
+                columns="2">
+                <h:outputLabel
+                    for="name"
+                    value="Name" />
+                <h:inputText
+                    id="name"
+                    value="#{userBean.usuario.nome}"
+                    pt:autofocus="autofocus"/>
+
+                <h:outputLabel
+                    for="email"
+                    value="Email" />
+                <h:inputText
+                    id="email"
+                    disabled="true"
+                    value="#{userBean.usuario.email}" />
+
+                <h:outputLabel
+                    for="password"
+                    value="Password" />
+                <h:inputSecret
+                    id="password"
+                    value="#{userBean.usuario.senha}" />
+
+                <h:commandButton
+                    value="Register"
+                    action="#{userBean.userRegistration()}" />
+            </h:panelGrid>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

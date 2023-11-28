@@ -82,6 +82,7 @@ public class UserBean implements Serializable {
 
         // Recupera usuário do banco de dados
         Usuario registeredUser = usuarioBean.buscarPorEmail(email);
+//        Usuario registeredUser = null;
 
         if (registeredUser == null) {
             Usuario usuario = new Usuario();
