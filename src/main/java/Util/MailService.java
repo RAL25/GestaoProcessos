@@ -22,7 +22,7 @@ import javax.mail.internet.MimeMultipart;
 @Stateless
 public class MailService implements MailServiceLocal {
 
-    @Resource(name = "java:/WebAppActivation")
+    @Resource(name = "java:/OutlookEmail")
     private Session mailSession;
 
     @Override
@@ -30,7 +30,7 @@ public class MailService implements MailServiceLocal {
 
         MimeMessage mail = new MimeMessage(mailSession);
 
-        mail.setFrom("webappactivation@outlook.com");
+        mail.setFrom("rian250@outlook.com");
         mail.setSubject("System Key Activation");
         mail.setRecipient(Message.RecipientType.TO,
                 new InternetAddress(to));

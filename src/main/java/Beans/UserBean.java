@@ -119,7 +119,8 @@ public class UserBean implements Serializable {
                         usuario.getEmail()));
 
         String link = "http://127.0.0.1:8080"
-                + "/WebAcctivationKeyByMail"
+//                + "/WebAcctivationKeyByMail"
+                +"/GestaoProcessos-1.0-SNAPSHOT"
                 + "/Activation?email=" + usuario.getEmail()
                 + "&activationKey=" + usuario.getKey();
         System.out.println(">> " + link);
