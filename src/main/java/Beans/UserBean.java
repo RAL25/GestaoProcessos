@@ -79,14 +79,15 @@ public class UserBean implements Serializable {
     //</editor-fold>
 
     public String processPassword() {
-
+        
         // Recupera usuário do banco de dados
         Usuario registeredUser = usuarioBean.buscarPorEmail(email);
-//        Usuario registeredUser = null;
+
 
         if (registeredUser == null) {
-            Usuario usuario = new Usuario();
+            usuario = new Usuario();
             usuario.setEmail(email);
+            System.out.println(">> " + usuario.getEmail());
             return "registration?faces-redirect=true";
 
         } else {
