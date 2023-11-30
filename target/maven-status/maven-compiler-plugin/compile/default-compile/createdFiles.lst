@@ -30,3 +30,4 @@ Beans/PublicacaoSessionBeanLocal.class
 GestaoProcessos/Categoria.class
 GestaoProcessos/ArquivoProva.class
 GestaoProcessos/TipoUsuario.class
+Util/Activation.class
