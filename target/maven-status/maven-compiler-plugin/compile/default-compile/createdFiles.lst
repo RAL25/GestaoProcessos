@@ -4,7 +4,6 @@ Beans/UsuarioService.class
 Beans/ParticipacaoSessionBeanLocal.class
 GestaoProcessos/Arquivo.class
 Beans/ProvaSessionBeanLocal.class
-Beans/ServicesBean.class
 GestaoProcessos/Usuario.class
 Util/MailServiceLocal.class
 GestaoProcessos/Inscricao.class
@@ -17,6 +16,7 @@ Beans/CargaDadosSessionBean.class
 GestaoProcessos/ArquivoEdital.class
 GestaoProcessos/Edital.class
 Beans/UsuarioServiceLocal.class
+Beans/UserService.class
 Util/MailService.class
 GestaoProcessos/Prova.class
 Servlets/PersistenceTestServlet.class

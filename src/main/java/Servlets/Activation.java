@@ -4,7 +4,7 @@
  */
 package Servlets;
 
-import Beans.ServicesBean;
+import Beans.UserService;
 import Beans.UsuarioService;
 import GestaoProcessos.Usuario;
 import java.io.IOException;
@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Beans.UsuarioServiceLocal;
+import javax.persistence.EntityManager;
 
 /**
  *
@@ -26,7 +27,7 @@ import Beans.UsuarioServiceLocal;
 public class Activation extends HttpServlet {
 
     @Inject
-    private ServicesBean serviceBean;
+    private UserService serviceBean;
     
     @Inject
     private UsuarioServiceLocal usuarioService;
@@ -47,12 +48,15 @@ public class Activation extends HttpServlet {
             Usuario user = usuarioService.buscarPorEmail(email);
             if (user != null && user.getKey().toString().equals(key)) {
                 user.setAtivo(true);
-                usuarioService.salvar(user);
                 serviceBean.setEmail(email);
+                System.out.println(">> >> >>" + user.getAtivo());
+                usuarioService.editar(user);
+//                em.persist(user);
                 response.sendRedirect("activation.xhtml");
             } else {
                 response.sendRedirect("checkemail.xhtml");
             }
+//            response.sendRedirect("activation.xhtml");
         }
     }
 
@@ -68,8 +72,8 @@ public class Activation extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        processRequest(request, response);
-        System.out.println("qualquer cousa!");
+        processRequest(request, response);
+//        System.out.println("qualquer cousa!");
     }
 
     /**

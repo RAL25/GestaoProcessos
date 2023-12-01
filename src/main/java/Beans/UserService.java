@@ -21,9 +21,9 @@ import Util.MailServiceLocal;
  *
  * @author Gabriel Sizilio <gabriel.sizilio>
  */
-@Named(value = "userBean")
+@Named(value = "userService")
 @SessionScoped
-public class ServicesBean implements Serializable {
+public class UserService implements Serializable {
 
     @Inject
     UsuarioServiceLocal usuarioBean;
@@ -37,7 +37,7 @@ public class ServicesBean implements Serializable {
 
     private Usuario usuario;
 
-    public ServicesBean() {
+    public UserService() {
         usuario = new Usuario();
     }
     
@@ -132,7 +132,7 @@ public class ServicesBean implements Serializable {
                     usuario.getEmail(), link);
             
         } catch (MessagingException ex) {
-            Logger.getLogger(ServicesBean.class.getName())
+            Logger.getLogger(UserService.class.getName())
                     .log(Level.SEVERE, null, ex);
         }
 

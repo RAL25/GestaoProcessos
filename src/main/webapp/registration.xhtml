@@ -15,7 +15,7 @@
                     value="Name" />
                 <h:inputText
                     id="name"
-                    value="#{userBean.usuario.nome}"
+                    value="#{userService.usuario.nome}"
                     pt:autofocus="autofocus"/>
 
                 <h:outputLabel
@@ -24,18 +24,18 @@
                 <h:inputText
                     id="email"
                     disabled="true"
-                    value="#{userBean.usuario.email}" />
+                    value="#{userService.usuario.email}" />
 
                 <h:outputLabel
                     for="password"
                     value="Password" />
                 <h:inputSecret
                     id="password"
-                    value="#{userBean.usuario.senha}" />
+                    value="#{userService.usuario.senha}" />
 
                 <h:commandButton
                     value="Register"
-                    action="#{userBean.userRegistration()}" />
+                    action="#{userService.userRegistration()}" />
             </h:panelGrid>
         </h:form>
     </ui:define>

@@ -47,7 +47,7 @@ public class UsuarioService implements UsuarioServiceLocal {
 
     @Override
     public void editar(Usuario usuario) {
-        entityManager.refresh(usuario);
+        entityManager.merge(usuario);
     }
 
     @Override
