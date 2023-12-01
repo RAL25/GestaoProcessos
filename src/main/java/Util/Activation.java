@@ -4,7 +4,7 @@
  */
 package Util;
 
-import Beans.UserBean;
+import Beans.ServicesBean;
 import Beans.UsuarioBean;
 import GestaoProcessos.Usuario;
 import java.io.IOException;
@@ -25,7 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 public class Activation extends HttpServlet {
 
     @Inject
-    private UserBean userBean;
+    private ServicesBean serviceBean;
     
     private UsuarioBean usuarioBean = new UsuarioBean();
 
@@ -44,9 +44,9 @@ public class Activation extends HttpServlet {
             Usuario user = usuarioBean.buscarPorEmail(email);
             
             if (user != null && user.getKey().toString().equals(key)) {
-//                user.setActive(true);
+                user.setAtivo(true);
                 usuarioBean.salvar(user);
-                userBean.setEmail(email);
+                serviceBean.setEmail(email);
                 response.sendRedirect("activation.xhtml");
             } else {
                 response.sendRedirect("checkemail.xhtml");
