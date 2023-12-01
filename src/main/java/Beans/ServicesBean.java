@@ -26,7 +26,7 @@ import Util.MailServiceLocal;
 public class ServicesBean implements Serializable {
 
     @Inject
-    UsuarioBeanLocal usuarioBean;
+    UsuarioServiceLocal usuarioBean;
     
     @Inject
     MailServiceLocal mailService;

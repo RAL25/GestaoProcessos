@@ -2,8 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package Beans;
+package Servlets;
 
+import Beans.EditalSessionBeanLocal;
+import Beans.ParticipacaoSessionBeanLocal;
+import Beans.ProcessoSeletivoSessionBeanLocal;
+import Beans.ProvaSessionBeanLocal;
+import Beans.PublicacaoSessionBeanLocal;
 import GestaoProcessos.ArquivoEdital;
 import GestaoProcessos.ArquivoGabarito;
 import GestaoProcessos.ArquivoProva;
@@ -23,6 +28,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.transaction.Transactional;
+import Beans.UsuarioServiceLocal;
 
 /**
  *
@@ -40,7 +46,7 @@ public class PersistenceTestServlet extends HttpServlet {
     @Inject
     ProcessoSeletivoSessionBeanLocal processoSeletivobean;
     @Inject
-    UsuarioBeanLocal usuariobean;
+    UsuarioServiceLocal usuariobean;
     @Inject
     ParticipacaoSessionBeanLocal participacaobean;
     

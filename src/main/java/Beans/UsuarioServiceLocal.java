@@ -12,7 +12,7 @@ import javax.ejb.Local;
  * @author Rian Alves Leal <ral2 at ifnmg.edu.br>
  */
 @Local
-public interface UsuarioBeanLocal {
+public interface UsuarioServiceLocal {
     
     //<-------------Persistência para salvar dados------------->//
     public void salvar(Usuario usuario);

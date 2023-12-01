@@ -1,9 +1,10 @@
 Beans/EditalSessionBeanLocal.class
-Beans/UsuarioBeanLocal.class
-Beans/PersistenceTestServlet.class
+Servlets/Activation.class
+Beans/UsuarioService.class
 Beans/ParticipacaoSessionBeanLocal.class
 GestaoProcessos/Arquivo.class
 Beans/ProvaSessionBeanLocal.class
+Beans/ServicesBean.class
 GestaoProcessos/Usuario.class
 Util/MailServiceLocal.class
 GestaoProcessos/Inscricao.class
@@ -15,14 +16,14 @@ GestaoProcessos/Publicacao.class
 Beans/CargaDadosSessionBean.class
 GestaoProcessos/ArquivoEdital.class
 GestaoProcessos/Edital.class
+Beans/UsuarioServiceLocal.class
 Util/MailService.class
 GestaoProcessos/Prova.class
+Servlets/PersistenceTestServlet.class
 Beans/ArquivoSessionBeanLocal.class
-Beans/UsuarioBean.class
 Util/Util.class
 Beans/ParticipacaoSessionBean.class
 Beans/EditalSessionBean.class
-Beans/UserBean.class
 GestaoProcessos/ProcessoSeletivo.class
 GestaoProcessos/ArquivoGabarito.class
 Beans/ProcessoSeletivoSessionBean.class
@@ -30,4 +31,3 @@ Beans/PublicacaoSessionBeanLocal.class
 GestaoProcessos/Categoria.class
 GestaoProcessos/ArquivoProva.class
 GestaoProcessos/TipoUsuario.class
-Util/Activation.class

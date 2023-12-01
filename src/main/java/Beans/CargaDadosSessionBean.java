@@ -29,7 +29,7 @@ import javax.inject.Inject;
 public class CargaDadosSessionBean {
 
     @Inject
-    private UsuarioBeanLocal usuarioBean;
+    private UsuarioServiceLocal usuarioBean;
     
     @Inject
     private ProvaSessionBeanLocal provaBean;

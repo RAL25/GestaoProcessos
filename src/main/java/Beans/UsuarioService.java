@@ -16,7 +16,8 @@ import javax.persistence.TypedQuery;
  * @author Rian Alves Leal <ral2 at ifnmg.edu.br>
  */
 @Stateless
-public class UsuarioBean implements UsuarioBeanLocal {
+public class UsuarioService implements UsuarioServiceLocal {
+    
     @PersistenceContext
     EntityManager entityManager;
     
