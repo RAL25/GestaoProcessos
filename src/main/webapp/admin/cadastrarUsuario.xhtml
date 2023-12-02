@@ -6,7 +6,6 @@
                 template="./../WEB-INF/Templates/template1.xhtml"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:f="http://xmlns.jcp.org/jsf/core">
-
     <ui:define name="top">
         top
     </ui:define>
@@ -15,21 +14,16 @@
         <h:form>
             <h:panelGrid
                 columns="2">
-
                 <h:outputLabel
                     for="tipo"
                     value="Tipo de Usuário"
-                        <h:selectOneListbox
-                            id = "tipo"
-                            value="#{userService.usuario.tipo}"
-                            />
                     />
 
-                <f:selectItems 
-                    value = "#{TipoUsuario}"
-                    var = "t"
-                    itemLabel="t"
-                    />
+                <h:selectOneMenu id="tipo" value="#{userService.usuario.tipo}">
+                    <f:selectItem itemLabel="EDITOR" itemValue="EDITOR"/>                  
+                    <f:selectItem itemLabel="CANDIDATO" itemValue="CANDIDATO"/>
+                </h:selectOneMenu>
+
                 <h:outputLabel
                     for="name"
                     value="Name"
@@ -39,22 +33,20 @@
                     value="#{userService.usuario.nome}"
                     />
 
-                <h:outputLabel
-                    for="cpf"
-                    value="CPF: "
-                    />
-
-                <h:inputText
-                    id="cpf"
-                    value="#{userService.usuario.cpf}"
-                    />
+                <h:outputLabel 
+                    for="cpf" 
+                    value="CPF" />
+                <h:inputText 
+                    id="cpf" 
+                    value="#{userService.usuario.cpf}">
+                    <f:validateLongRange minimum="0" />
+                </h:inputText>
 
                 <h:outputLabel
                     for="email"
                     value="Email" />
                 <h:inputText
                     id="email"
-                    disabled="true"
                     value="#{userService.usuario.email}" />
 
                 <h:outputLabel
