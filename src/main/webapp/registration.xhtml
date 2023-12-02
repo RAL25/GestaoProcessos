@@ -23,6 +23,7 @@
                     value="#{userService.usuario.nome}"
                     pt:autofocus="autofocus"/>
                 
+                
                 <h:outputLabel 
                     for="cpf" 
                     value="CPF" />
@@ -56,6 +57,10 @@
                     label="Deseja receber notícias quinzenais por email?"
                     value="#{userService.usuario.receberNoticia}">
                 </h:selectBooleanCheckbox>
+                
+                <h:selectOneMenu id="tipo" value="#{userService.usuario.tipo}" style="display:none;">
+                    <f:selectItem itemLabel="CANDIDATO" itemValue="CANDIDATO"/>
+                </h:selectOneMenu>
                 
                 <h:commandButton
                     value="Register"

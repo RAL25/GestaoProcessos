@@ -113,7 +113,8 @@ public class UserService implements Serializable {
     public String userRegistration() {
         usuario.setKey(UUID.randomUUID());
         usuario.setAtivo(false);
-        usuario.setTipo(TipoUsuario.CANDIDATO);
+        System.out.println(">>"+ usuario.getTipo());
+        
         usuarioBean.salvar(usuario);
 
         System.out.println(">> User registration: "
