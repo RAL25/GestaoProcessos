@@ -11,11 +11,13 @@ Beans/ArquivoSessionBean.class
 Beans/ProcessoSeletivoSessionBeanLocal.class
 Beans/ProvaSessionBean.class
 Beans/PublicacaoSessionBean.class
+Beans/MenuService.class
 GestaoProcessos/Publicacao.class
 Beans/CargaDadosSessionBean.class
 GestaoProcessos/ArquivoEdital.class
 GestaoProcessos/Edital.class
 Beans/UsuarioServiceLocal.class
+Beans/MenuAplication.class
 Beans/UserService.class
 Util/MailService.class
 GestaoProcessos/Prova.class

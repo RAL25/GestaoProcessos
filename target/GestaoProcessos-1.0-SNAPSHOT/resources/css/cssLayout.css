@@ -8,6 +8,7 @@
 }
 
 #bottom {
+    float: bottom;
     position: relative;
     background-color: #c2dfef;
     padding: 5px;
@@ -22,10 +23,12 @@
 }
 
 #right {
-    float: right;
+    display: inline;
+    position: relative;
+    /*float: right;*/
     background-color: #ece3a5;
     padding: 5px;
-    width: 150px;
+    /*width: 150px;*/
 }
 
 .center_content {
