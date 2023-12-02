@@ -22,7 +22,7 @@ import javax.mail.internet.MimeMultipart;
 @Stateless
 public class MailService implements MailServiceLocal {
 
-    @Resource(name = "java:/gestaoProcessoMail")
+    @Resource(name = "java:/gestaoProcessosMail")
     private Session mailSession;
 
     @Override

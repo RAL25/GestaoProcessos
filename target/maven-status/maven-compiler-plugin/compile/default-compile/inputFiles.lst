@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/GestaoProcessos/src/main/java/Beans/UsuarioService.java
 /media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/GestaoProcessos/src/main/java/GestaoProcessos/ArquivoGabarito.java
 /media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/GestaoProcessos/src/main/java/Beans/PublicacaoSessionBeanLocal.java
@@ -31,3 +32,38 @@
 /media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/GestaoProcessos/src/main/java/Servlets/Activation.java
 /media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/GestaoProcessos/src/main/java/Beans/CargaDadosSessionBean.java
 /media/gabriel/Gabriel/Faculdade/5_Período/WEB - Desenvolvimento Web/TCD/GestaoProcessos/src/main/java/Beans/ParticipacaoSessionBeanLocal.java
+=======
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\Beans\ArquivoSessionBeanLocal.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\Servlets\PersistenceTestServlet.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\Servlets\Activation.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\Beans\ProvaSessionBeanLocal.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\Beans\UserService.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\GestaoProcessos\TipoUsuario.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\GestaoProcessos\ArquivoProva.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\GestaoProcessos\Publicacao.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\GestaoProcessos\Categoria.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\Beans\ParticipacaoSessionBean.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\Beans\EditalSessionBean.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\GestaoProcessos\Inscricao.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\Beans\EditalSessionBeanLocal.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\Beans\ProcessoSeletivoSessionBeanLocal.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\GestaoProcessos\ArquivoEdital.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\Beans\UsuarioServiceLocal.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\GestaoProcessos\ArquivoGabarito.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\Util\MailServiceLocal.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\GestaoProcessos\Arquivo.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\Util\MailService.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\Beans\UsuarioService.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\GestaoProcessos\Edital.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\Beans\ProvaSessionBean.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\GestaoProcessos\Prova.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\Beans\CargaDadosSessionBean.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\GestaoProcessos\ProcessoSeletivo.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\Beans\PublicacaoSessionBeanLocal.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\Beans\ArquivoSessionBean.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\GestaoProcessos\Usuario.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\Beans\ParticipacaoSessionBeanLocal.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\Beans\PublicacaoSessionBean.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\Beans\ProcessoSeletivoSessionBean.java
+C:\Users\yodem\OneDrive\Documentos\NetBeansProjects\GestaoProcessos\src\main\java\Util\Util.java
+>>>>>>> adm
