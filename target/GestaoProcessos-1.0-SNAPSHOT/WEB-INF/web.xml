@@ -13,6 +13,32 @@
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
+    
+    
+    <security-constraint>
+        <display-name>Admin Role</display-name>
+        <web-resource-collection>
+            <web-resource-name>All App Pages</web-resource-name>
+            <url-pattern>/app/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>0</role-name>
+        </auth-constraint>
+    </security-constraint>
+    
+    <security-constraint>
+        <display-name>Users Role</display-name>
+        <web-resource-collection>
+            <web-resource-name>Profile Page</web-resource-name>
+            <url-pattern>/app/index.xhtml</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>0</role-name>
+            <role-name>1</role-name>
+            <role-name>2</role-name>
+        </auth-constraint>
+    </security-constraint>
+    
     <session-config>
         <session-timeout>
             30
