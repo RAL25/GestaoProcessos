@@ -4,6 +4,7 @@
  */
 package Beans;
 
+import GestaoProcessos.TipoUsuario;
 import GestaoProcessos.Usuario;
 import Util.Util;
 import java.io.Serializable;
@@ -112,6 +113,7 @@ public class UserService implements Serializable {
     public String userRegistration() {
         usuario.setKey(UUID.randomUUID());
         usuario.setAtivo(false);
+        usuario.setTipo(TipoUsuario.CANDIDATO);
         usuarioBean.salvar(usuario);
 
         System.out.println(">> User registration: "
