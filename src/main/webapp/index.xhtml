@@ -2,20 +2,59 @@
 <!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
                 template="./WEB-INF/Templates/template1.xhtml">
 
     <ui:define name="top">
-                <h1>Seja Bem Vindo à Tela Inicial!</h1>
+        <h1>Seja bem-vindo, acompanhe as últimas notícias</h1>
     </ui:define>
-    
+
     <ui:define name="content">
-          <h1>Fazer Login</h1>
-          <a href="login.xhtml"><button>Ir Para o Login</button></a>
-        
-        <!--<title>Teste de Persistencia</title>-->
-        
-        <h1>Testes de Persistência</h1>
-        <a href="PersistenceTest"><button>Ir Para Testes</button></a>
+        <div>
+            <h1>Fazer Login</h1>
+            <a href="login.xhtml"><button>Ir Para o Login</button></a>
+        </div>
+
+        <div id="noticias">
+
+            <div id="noticia">
+                <h1>
+                    Titulo noticia 1
+                </h1>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel euismod sem. Aliquam a lacus orci. Praesent pellentesque, est eu varius eleifend, arcu risus interdum lorem, vel varius orci purus non mauris. Nullam eu tincidunt erat. Donec sit amet cursus nisi, ac ultricies orci. Donec consequat dolor felis, sit amet fermentum sem aliquam ut. Aenean tincidunt arcu tempor dui venenatis, in maximus ipsum elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam porta, dui scelerisque auctor fringilla, libero magna pellentesque ante, sagittis rhoncus erat urna eu leo. Curabitur turpis risus, molestie nec volutpat a, rutrum eu tortor. Nullam vitae neque malesuada diam pulvinar vehicula vitae sit amet felis. Sed convallis porttitor enim, ac bibendum tortor vehicula at.
+                </p>
+            </div>
+            
+            <div id="noticia">
+                <h1>
+                    Titulo noticia 2
+                </h1>
+
+                <p>
+                    Quisque tincidunt luctus turpis eu hendrerit. Sed vestibulum, arcu nec sollicitudin ultrices, nulla sapien mattis lectus, ac sodales nulla ex vel lacus. Praesent justo ante, volutpat gravida aliquam vehicula, vehicula ac eros. In hendrerit orci in nisi convallis, et tempus lacus ornare. Quisque efficitur tempor suscipit. Sed pulvinar euismod nunc, eget congue elit blandit nec. Cras at diam sed urna finibus imperdiet eget accumsan erat. Suspendisse ipsum erat, tempus eu rutrum ac, dictum mollis ligula. Donec quis erat ac ligula sodales pharetra. Vestibulum est leo, ultrices in blandit sed, consectetur sed nibh. Nulla quis pulvinar mauris. Sed fringilla quam nulla, et ultricies nulla interdum et.
+                </p>
+            </div>
+            
+            <div id="noticia">
+                <h1>
+                    Titulo noticia 3
+                </h1>
+
+                <p>
+                    Praesent pulvinar sit amet arcu et maximus. Duis venenatis augue nisi, sed viverra erat pulvinar ut. Nunc gravida tincidunt justo, vitae pellentesque dui. Etiam gravida porttitor ligula id blandit. Proin et blandit nisi, in vestibulum nisl. Morbi nec magna porttitor, ultrices ante at, dapibus erat. Donec lobortis, mauris in varius cursus, velit orci aliquet augue, tincidunt varius sapien eros et tortor. Praesent gravida lacus porttitor libero elementum dapibus. Mauris faucibus dictum auctor. Suspendisse suscipit dui a risus congue interdum. Morbi fermentum dignissim consequat. Nullam nec nisi in nisl dictum interdum. Morbi vitae ante quis dui interdum tincidunt.
+                </p>
+            </div>
+
+        </div>
+
+        <div>
+            <!--<title>Teste de Persistencia</title>-->
+
+            <h1>Testes de Persistência</h1>
+            <a href="PersistenceTest"><button>Ir Para Testes</button></a>
+        </div>
     </ui:define>
 
 </ui:composition>

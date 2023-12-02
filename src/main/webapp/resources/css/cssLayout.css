@@ -30,7 +30,7 @@
 
 .center_content {
     position: relative;
-    background-color: #dddddd;
+    background-color: #ffffff;
     padding: 5px;
 }
 
@@ -58,4 +58,17 @@
   text-decoration : underline;
 }
 
+/*NOTICIAS*/
 
+#noticias {
+    text-align: center;
+    margin: 40px 40px;
+    width: 900px;
+}
+
+#noticia {
+    padding: 20px 5px;
+    margin: 10px 0px;
+    border:solid #009999;
+    border-radius: 10px;
+}
