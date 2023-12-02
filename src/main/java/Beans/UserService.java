@@ -4,6 +4,7 @@
  */
 package Beans;
 
+import GestaoProcessos.TipoUsuario;
 import GestaoProcessos.Usuario;
 import Util.Util;
 import java.io.Serializable;
@@ -21,12 +22,12 @@ import Util.MailServiceLocal;
  *
  * @author Gabriel Sizilio <gabriel.sizilio>
  */
-@Named(value = "userBean")
+@Named(value = "userService")
 @SessionScoped
-public class UserBean implements Serializable {
+public class UserService implements Serializable {
 
     @Inject
-    UsuarioBeanLocal usuarioBean;
+    UsuarioServiceLocal usuarioBean;
     
     @Inject
     MailServiceLocal mailService;
@@ -37,7 +38,7 @@ public class UserBean implements Serializable {
 
     private Usuario usuario;
 
-    public UserBean() {
+    public UserService() {
         usuario = new Usuario();
     }
     
@@ -79,13 +80,15 @@ public class UserBean implements Serializable {
     //</editor-fold>
 
     public String processPassword() {
-
+        
         // Recupera usuário do banco de dados
         Usuario registeredUser = usuarioBean.buscarPorEmail(email);
 
+
         if (registeredUser == null) {
-            Usuario usuario = new Usuario();
+            usuario = new Usuario();
             usuario.setEmail(email);
+            System.out.println(">> " + usuario.getEmail());
             return "registration?faces-redirect=true";
 
         } else {
@@ -110,6 +113,8 @@ public class UserBean implements Serializable {
     public String userRegistration() {
         usuario.setKey(UUID.randomUUID());
         usuario.setAtivo(false);
+        System.out.println(">>"+ usuario.getTipo());
+        
         usuarioBean.salvar(usuario);
 
         System.out.println(">> User registration: "
@@ -117,7 +122,7 @@ public class UserBean implements Serializable {
                         usuario.getEmail()));
 
         String link = "http://127.0.0.1:8080"
-                + "/WebAcctivationKeyByMail"
+                +"/GestaoProcessos-1.0-SNAPSHOT"
                 + "/Activation?email=" + usuario.getEmail()
                 + "&activationKey=" + usuario.getKey();
         System.out.println(">> " + link);
@@ -130,7 +135,7 @@ public class UserBean implements Serializable {
                     usuario.getEmail(), link);
             
         } catch (MessagingException ex) {
-            Logger.getLogger(UserBean.class.getName())
+            Logger.getLogger(UserService.class.getName())
                     .log(Level.SEVERE, null, ex);
         }
 

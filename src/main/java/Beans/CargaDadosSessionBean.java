@@ -10,8 +10,11 @@ import GestaoProcessos.Inscricao;
 import GestaoProcessos.ProcessoSeletivo;
 import GestaoProcessos.Arquivo;
 import GestaoProcessos.Publicacao;
+import GestaoProcessos.TipoUsuario;
+import GestaoProcessos.Usuario;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.UUID;
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
@@ -26,7 +29,7 @@ import javax.inject.Inject;
 public class CargaDadosSessionBean {
 
     @Inject
-    private UsuarioBeanLocal usuarioBean;
+    private UsuarioServiceLocal usuarioBean;
     
     @Inject
     private ProvaSessionBeanLocal provaBean;
@@ -96,5 +99,17 @@ public class CargaDadosSessionBean {
         publicacaoBean.salvar(publicacao);
         
         arquivoBean.salvar(arquivo);
+        
+        Usuario usuario = new Usuario();
+        usuario.setAtivo(Boolean.TRUE);
+        usuario.setCpf("12345678901");
+        usuario.setEmail("gabriel@mail.com");
+        usuario.setKey(UUID.randomUUID());
+        usuario.setReceberNoticia(Boolean.TRUE);
+        usuario.setSalt("12");
+        usuario.setSenha("123");
+        usuario.setTipo(TipoUsuario.CANDIDATO);
+        
+        usuarioBean.salvar(usuario);
     }
 }

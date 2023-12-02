@@ -5,6 +5,7 @@
 package Beans;
 
 import GestaoProcessos.Usuario;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,7 +16,8 @@ import javax.persistence.TypedQuery;
  * @author Rian Alves Leal <ral2 at ifnmg.edu.br>
  */
 @Stateless
-public class UsuarioBean implements UsuarioBeanLocal {
+public class UsuarioService implements UsuarioServiceLocal {
+    
     @PersistenceContext
     EntityManager entityManager;
     
@@ -32,14 +34,20 @@ public class UsuarioBean implements UsuarioBeanLocal {
     
     @Override
     public Usuario buscarPorEmail(String email) {
-        return entityManager.createQuery("SELECT usuario FROM Usuario usuario WHERE usuario.email = :email", Usuario.class)
+        List<Usuario> usuarios = entityManager.createQuery("SELECT usuario FROM Usuario usuario WHERE usuario.email = :email", Usuario.class)
                 .setParameter("email", email)
-                .getSingleResult();
+                .getResultList();
+        
+        if(usuarios.isEmpty()) {
+             return null;
+        } else {
+            return usuarios.get(0);
+        }
     }
 
     @Override
     public void editar(Usuario usuario) {
-        entityManager.refresh(usuario);
+        entityManager.merge(usuario);
     }
 
     @Override
