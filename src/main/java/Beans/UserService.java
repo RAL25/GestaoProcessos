@@ -96,6 +96,7 @@ public class UserService implements Serializable {
             if (Util.isAuthentic(senha, registeredUser)) {
                 if (registeredUser.getAtivo()) {
                     autenticado = true;
+                    usuario = registeredUser;
                     return "/admin/index?faces-redirect=true";
                 } else {
                     // ou informa que a validação do email é requerida

@@ -102,6 +102,7 @@ public class CargaDadosSessionBean {
         
         Usuario usuario = new Usuario();
         usuario.setAtivo(Boolean.TRUE);
+        usuario.setNome("Gabriel");
         usuario.setCpf("12345678901");
         usuario.setEmail("gabriel@mail.com");
         usuario.setKey(UUID.randomUUID());

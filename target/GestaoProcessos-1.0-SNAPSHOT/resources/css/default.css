@@ -13,8 +13,14 @@ h1 {
     font-weight: bold;
     margin: 0px;
     padding: 0px;
-    color: #D20005;
+    color: #000000;
 }
+
+footer {
+    text-align: center;
+    background-color: #ff9999;
+}
+
 
 a:link, a:visited {
   color: #045491;

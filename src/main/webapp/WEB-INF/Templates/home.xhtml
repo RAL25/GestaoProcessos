@@ -8,21 +8,21 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <h:outputStylesheet name="css/default.css"/>
         <h:outputStylesheet name="css/cssLayout.css"/>
-        <title>Gestão Processos</title>
+        <title>Home</title>
     </h:head>
 
     <h:body>
-
+        
         <header id="top">
-            <ui:insert name="top"></ui:insert>
+            <ui:insert name="top">Top template home</ui:insert>
         </header>
-
-        <main id="content" class="center_content">
-            <ui:insert name="content">Content</ui:insert>
+        
+        <main id="content">
+            <ui:insert name="content">Content template home</ui:insert>
         </main>
-
+        
         <footer>
-            <ui:include src="footer.xhtml"/>
+            <ui:include src="footer.xhtml" />
         </footer>
 
     </h:body>
