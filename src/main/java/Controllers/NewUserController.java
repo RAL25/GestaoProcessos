@@ -1,10 +1,16 @@
 package Controllers;
 
+import Beans.UserService;
 import Beans.UsuarioServiceLocal;
 import GestaoProcessos.Usuario;
+import Util.MailServiceLocal;
+import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.mail.MessagingException;
 
 /**
  *
@@ -16,6 +22,9 @@ public class NewUserController {
     
     @Inject
     UsuarioServiceLocal dataService;
+    
+    @Inject
+    MailServiceLocal mailService;
     
     private Usuario user;
 
@@ -39,10 +48,27 @@ public class NewUserController {
     //</editor-fold>
     
     public String save() {
+        user.setKey(UUID.randomUUID());
+        user.setAtivo(false);
         dataService.salvar(user);
         
-        System.out.println(">> "+ user.toString());
+        String link = "http://127.0.0.1:8080"
+                + "/gestaoprocessos"
+                + "/Activation?email=" + user.getEmail()
+                + "&activationKey=" + user.getKey();
+        System.out.println(">> " + link);
         
+        try {
+            mailService.sendEmail(user.getNome(),
+                    user.getEmail(), link);
+
+        } catch (MessagingException ex) {
+            Logger.getLogger(UserService.class.getName())
+                    .log(Level.SEVERE, null, ex);
+        }
+        
+        System.out.println(">> "+ user.toString());
+
         return "/app/index?faces-redirect=true";
     }
     

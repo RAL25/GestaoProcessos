@@ -48,11 +48,10 @@ public class Activation extends HttpServlet {
             Usuario user = usuarioService.buscarPorEmail(email);
             if (user != null && user.getKey().toString().equals(key)) {
                 user.setAtivo(true);
-                serviceBean.setEmail(email);
-                System.out.println(">> >> >>" + user.getAtivo());
+//                serviceBean.setEmail(email);
                 usuarioService.editar(user);
 //                em.persist(user);
-                response.sendRedirect("activation.xhtml");
+                response.sendRedirect("login.xhtml");
             } else {
                 response.sendRedirect("checkemail.xhtml");
             }
@@ -73,7 +72,6 @@ public class Activation extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-//        System.out.println("qualquer cousa!");
     }
 
     /**
