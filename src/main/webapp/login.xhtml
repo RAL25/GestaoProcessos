@@ -5,6 +5,7 @@
                 template="./WEB-INF/Templates/template1.xhtml"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
                 xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 
     <h:head>
@@ -12,36 +13,43 @@
     </h:head>
 
     <ui:define name="content">
-        <h1>Login</h1>
-
-        <h:form>
-            <h:panelGrid columns="2">
-                <h:outputLabel
-                    for="email"
-                    value="Email" />
-                <h:inputText
-                    id="email"
-                    required="true"
-                    requiredMessage="Fill the email"
-                    value="#{loginController.email}"
-                    pt:autofocus="autofocus">
-                    <f:validateRegex 
-                        pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
-                </h:inputText>
-
-                <h:outputLabel
-                    for="password"
-                    value="Password" />
-                <h:inputSecret
-                    id="password"
-                    value="#{loginController.senha}" />
-
-                <h:commandButton
-                    value="Process"
-                    action="#{loginController.execute}" />
-            </h:panelGrid>
-        </h:form>
-
+        <div class="container flex flex-column vertical-center">
+            <h:form class="flex flex-column form-container">
+                <h1 class="titulo-grande">Acesse sua conta!</h1>                  
+                <p:panelGrid class="form-medio" columns="2">
+                    <p:outputLabel
+                        for="email"
+                        value="Email"/>
+                    <p:inputText
+                        id="email"
+                        required="true"
+                        requiredMessage="Preeencha o email"
+                        value="#{loginController.email}"
+                        pt:autofocus="autofocus">
+                        <f:validateRegex 
+                            pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+                    </p:inputText>
+                    <h:outputLabel
+                        for="password"
+                        value="Password" />
+                    <p:password
+                        id="password"
+                        required="true"
+                        requiredMessage="Preencha a senha"
+                        value="#{loginController.senha}" />
+                </p:panelGrid>
+                <div class="flex envio">
+                    <p:link>Esqueci a senha</p:link>
+                    <p:commandButton
+                        value="Entrar"
+                        action="#{loginController.execute}" />
+                </div>
+                <div class="esqueci">
+                    <p >Ainda não tem uma conta?</p>
+                    <p:link href="./registration.xhtml">Criar conta</p:link>
+                </div>
+            </h:form>
+        </div>
     </ui:define>
 
 </ui:composition>

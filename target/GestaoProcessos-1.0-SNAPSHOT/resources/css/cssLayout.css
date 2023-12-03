@@ -2,6 +2,7 @@
     max-width: 1280px;
     width: 1200px;
     margin: 0 auto;
+    min-height: 80vh;
 }
 
 #bottom {
@@ -54,6 +55,58 @@
   font-weight : bold;
   text-decoration : underline;
 }*/
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flex-column{
+   flex-direction: column;
+}
+.flex-row{
+    flex-direction: row;
+}
+
+.vertical-center {
+    justify-content: center;
+    margin: 0;
+}
+
+.form-container {
+  height: 40vh;
+  align-items: center;
+}
+.titulo-grande {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.envio {
+    width: 90%;
+    justify-content: space-between;
+    
+}
+
+.form-medio {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+body .ui-panelgrid .ui-panelgrid-cell {
+    border: none;
+}
+.ui-panelgrid .ui-panelgrid-cell {
+    border-style: hidden;
+}
+
+.esqueci {
+    width: 100%;
+    font-size: 14px;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 30px
+}
 
 /*NOTICIAS*/
 
