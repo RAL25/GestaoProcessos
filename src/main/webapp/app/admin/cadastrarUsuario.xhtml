@@ -20,7 +20,7 @@
                     value="Tipo de Usuário"
                     />
 
-                <h:selectOneMenu id="tipo" value="#{userService.usuario.tipo}">
+                <h:selectOneMenu id="tipo" value="#{newUserController.user.tipo}">
                     <f:selectItem itemLabel="EDITOR" itemValue="EDITOR"/>                  
                     <f:selectItem itemLabel="CANDIDATO" itemValue="CANDIDATO"/>
                 </h:selectOneMenu>
@@ -31,7 +31,7 @@
                     />
                 <h:inputText
                     id="name"
-                    value="#{userService.usuario.nome}"
+                    value="#{newUserController.user.nome}"
                     />
 
                 <h:outputLabel 
@@ -39,7 +39,7 @@
                     value="CPF" />
                 <h:inputText 
                     id="cpf" 
-                    value="#{userService.usuario.cpf}">
+                    value="#{newUserController.user.cpf}">
                     <f:validateLongRange minimum="0" />
                 </h:inputText>
 
@@ -48,14 +48,14 @@
                     value="Email" />
                 <h:inputText
                     id="email"
-                    value="#{userService.usuario.email}" />
+                    value="#{newUserController.user.email}" />
 
                 <h:outputLabel
                     for="password"
                     value="Password" />
                 <h:inputSecret
                     id="password"
-                    value="#{userService.usuario.senha}" />
+                    value="#{newUserController.user.senha}" />
 
                 <h:outputLabel
                     for="recebernoticias"
@@ -64,11 +64,11 @@
 
                 <h:selectBooleanCheckbox 
                     id = "receberNoticias"
-                    value="#{userService.usuario.receberNoticia}" />
+                    value="#{newUserController.user.receberNoticia}" />
 
                 <h:commandButton
                     value="Register"
-                    action="#{userService.userRegistration()}" />
+                    action="#{newUserController.save()}" />
             </h:panelGrid>
         </h:form>
     </ui:define>

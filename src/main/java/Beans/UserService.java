@@ -97,37 +97,6 @@ public class UserService implements Serializable {
         return securityContext.isCallerInRole("0");
     }
     
-    public String processPassword() {
-
-        // Recupera usuário do banco de dados
-        Usuario registeredUser = usuarioBean.buscarPorEmail(email);
-
-        if (registeredUser == null) {
-            usuario = new Usuario();
-            usuario.setEmail(email);
-            System.out.println(">> " + usuario.getEmail());
-            return "registration?faces-redirect=true";
-
-        } else {
-            // Se o usuário está cadastrado, valida acesso
-            if (Util.isAuthentic(senha, registeredUser)) {
-                if (registeredUser.getAtivo()) {
-                    autenticado = true;
-                    usuario = registeredUser;
-                    return "/admin/index?faces-redirect=true";
-                } else {
-                    // ou informa que a validação do email é requerida
-                    return "checkemail?faces-redirect=true";
-                }
-
-            } else {
-                // ou informa falha no acesso
-                autenticado = false;
-                return null;
-            }
-        }
-    }
-
     public String userRegistration() {
         usuario.setKey(UUID.randomUUID());
         usuario.setAtivo(false);
@@ -140,7 +109,7 @@ public class UserService implements Serializable {
                         usuario.getEmail()));
 
         String link = "http://127.0.0.1:8080"
-                + "/GestaoProcessos-1.0-SNAPSHOT"
+                + "/gestaoprocessos"
                 + "/Activation?email=" + usuario.getEmail()
                 + "&activationKey=" + usuario.getKey();
         System.out.println(">> " + link);
