@@ -15,9 +15,10 @@
             <h:form>
                 <h:commandLink
                     value="Logout"
-                    action="#{userService.logout()}" />
-
-                <h:commandButton 
+                    action="#{userService.logout()}"
+                    rendered="#{userService.permiteCadastrarUsuario()}" />
+                
+                <p:commandButton 
                     value="Cadastrar novo usuario" 
                     action="/app/admin/cadastrarUsuario?faces-redirect=true"
                     rendered="#{userService.permiteCadastrarUsuario()}"
