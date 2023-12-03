@@ -109,8 +109,14 @@ public class CargaDadosSessionBean {
         usuario.setReceberNoticia(Boolean.TRUE);
         usuario.setSalt("12");
         usuario.setSenha("123");
-        usuario.setTipo(TipoUsuario.CANDIDATO);
+        usuario.setTipo(TipoUsuario.ADMINISTRADOR);
+        
+        Usuario candidato = new Usuario("Rian", "98765432199", "rian@mail.com", "123", Boolean.TRUE, TipoUsuario.CANDIDATO);
+        
+        Usuario editora = new Usuario("Yodemisa", "54312387612", "yodemis@mail.com", "123", Boolean.TRUE, TipoUsuario.EDITOR);
         
         usuarioBean.salvar(usuario);
+        usuarioBean.salvar(candidato);
+        usuarioBean.salvar(editora);
     }
 }

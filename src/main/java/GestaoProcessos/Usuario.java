@@ -104,10 +104,7 @@ public class Usuario implements Serializable {
     }
 
     public void setSenha(String senha) {
-        String[] hash = Util.hash(senha);
-        this.senha = (hash[Util.ENCPASSWD]);
-        
-        setSalt(hash[Util.SALT]);
+       this.senha = senha;
     }
 
     public Boolean getReceberNoticia() {

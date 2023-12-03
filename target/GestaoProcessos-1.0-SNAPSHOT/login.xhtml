@@ -23,7 +23,7 @@
                     id="email"
                     required="true"
                     requiredMessage="Fill the email"
-                    value="#{userService.email}"
+                    value="#{loginController.email}"
                     pt:autofocus="autofocus">
                     <f:validateRegex 
                         pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
@@ -34,11 +34,11 @@
                     value="Password" />
                 <h:inputSecret
                     id="password"
-                    value="#{userService.senha}" />
+                    value="#{loginController.senha}" />
 
                 <h:commandButton
                     value="Process"
-                    action="#{userService.processPassword()}" />
+                    action="#{loginController.execute}" />
             </h:panelGrid>
         </h:form>
 
