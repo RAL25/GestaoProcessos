@@ -25,7 +25,9 @@ h1 {
 
 footer {
     text-align: center;
-    background-color: #ff9999;
+    background-color: #F8F9FA;
+    padding: 10px;
+    border: 1px solid #DEE2E6;
 }
 
 

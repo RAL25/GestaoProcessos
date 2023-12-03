@@ -1,10 +1,8 @@
-/*#top {
-    position: relative;
-    background-color: #00ffff;
-    color: #000000;
-    padding: 5px;
-    margin: 0px 0px 10px 0px;
-}*/
+.container {
+    max-width: 1280px;
+    width: 1200px;
+    margin: 0 auto;
+}
 
 #bottom {
     position: relative;
@@ -59,15 +57,9 @@
 
 /*NOTICIAS*/
 
-#noticias {
-    text-align: center;
-    margin: 40px 40px;
-    width: 900px;
-}
-
-#noticia {
-    padding: 20px 5px;
-    margin: 10px 0px;
-    border:solid #009999;
-    border-radius: 10px;
+.notice-card {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
