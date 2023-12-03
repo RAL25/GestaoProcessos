@@ -1,13 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: #ffffff;
     font-size: 12px;
-    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    font-family: Inter,  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
     color: #000000;  
-    margin: 10px;
 }
 
 h1 {
-    font-family: Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    font-family: Inter, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
 /*    border-bottom: 1px solid #AFAFAF; */
     font-size:  16px;
     font-weight: bold;
@@ -18,7 +25,9 @@ h1 {
 
 footer {
     text-align: center;
-    background-color: #ff9999;
+    background-color: #F8F9FA;
+    padding: 10px;
+    border: 1px solid #DEE2E6;
 }
 
 

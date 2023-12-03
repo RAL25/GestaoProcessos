@@ -10,21 +10,5 @@
         <h1>Seja bem-vindo, #{userService.usuario.nome}!</h1>
     </ui:define>
 
-    <ui:define name="content">
-        <h:body>
-            <h:form>
-                <h:commandLink
-                    value="Logout"
-                    action="#{userService.logout()}" />
-
-                <h:commandButton 
-                    value="Cadastrar novo usuario" 
-                    action="/app/admin/cadastrarUsuario?faces-redirect=true"
-                    rendered="#{userService.permiteCadastrarUsuario()}"
-                    />
-            </h:form>
-
-        </h:body>
-    </ui:define>
 
 </ui:composition>
