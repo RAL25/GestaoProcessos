@@ -14,6 +14,16 @@
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
     
+    <security-role>
+        <description>System administrator</description>
+        <role-name>0</role-name>
+    </security-role>
+    
+    <security-role>
+        <description>Common authenticated user</description>
+        <role-name>1</role-name>
+        <role-name>2</role-name>
+    </security-role>
     
     <security-constraint>
         <display-name>Admin Role</display-name>

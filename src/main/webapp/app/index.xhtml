@@ -3,7 +3,8 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 template="./../WEB-INF/Templates/home.xhtml"
-                xmlns:h="http://xmlns.jcp.org/jsf/html">
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui">
 
     <ui:define name="top">
         <h1>Seja bem-vindo, #{userService.usuario.nome}!</h1>
@@ -15,8 +16,14 @@
                 <h:commandLink
                     value="Logout"
                     action="#{userService.logout()}" />
+
+                <h:commandButton 
+                    value="Cadastrar novo usuario" 
+                    action="/app/admin/cadastrarUsuario?faces-redirect=true"
+                    rendered="#{userService.permiteCadastrarUsuario()}"
+                    />
             </h:form>
-            <a href="cadastrarUsuario.xhtml"><button>Cadastrar Usuário</button></a>
+
         </h:body>
     </ui:define>
 
