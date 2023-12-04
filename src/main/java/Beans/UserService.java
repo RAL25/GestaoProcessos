@@ -4,47 +4,61 @@
  */
 package Beans;
 
-import GestaoProcessos.TipoUsuario;
 import GestaoProcessos.Usuario;
 import Util.Util;
 import java.io.Serializable;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.mail.MessagingException;
 import Util.MailServiceLocal;
+import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
+import javax.security.enterprise.SecurityContext;
 
 /**
  *
  * @author Gabriel Sizilio <gabriel.sizilio>
  */
 @Named(value = "userService")
-@SessionScoped
+@RequestScoped
 public class UserService implements Serializable {
 
     @Inject
     UsuarioServiceLocal usuarioBean;
-    
+
     @Inject
     MailServiceLocal mailService;
-    
+
+    @Inject
+    SecurityContext securityContext;
+
+    @Inject
+    FacesContext facesContext;
+
+    @Inject
+    UsuarioServiceLocal dataService;
+
     private String email;
     private String senha;
     private Boolean autenticado;
 
     private Usuario usuario;
 
+    @PostConstruct
+    public void initialize() {
+        email = securityContext.getCallerPrincipal().getName();
+        this.usuario = dataService.buscarPorEmail(email);
+    }
+
     public UserService() {
         usuario = new Usuario();
     }
-    
-    //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
-    
 
+    //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
     public String getEmail() {
         return email;
     }
@@ -76,45 +90,18 @@ public class UserService implements Serializable {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
-    
+
     //</editor-fold>
-
-    public String processPassword() {
-        
-        // Recupera usuário do banco de dados
-        Usuario registeredUser = usuarioBean.buscarPorEmail(email);
-
-
-        if (registeredUser == null) {
-            usuario = new Usuario();
-            usuario.setEmail(email);
-            System.out.println(">> " + usuario.getEmail());
-            return "registration?faces-redirect=true";
-
-        } else {
-            // Se o usuário está cadastrado, valida acesso
-            if (Util.isAuthentic(senha, registeredUser)) {
-                if (registeredUser.getAtivo()) {
-                    autenticado = true;
-                    return "/admin/index?faces-redirect=true";
-                } else {
-                    // ou informa que a validação do email é requerida
-                    return "checkemail?faces-redirect=true";
-                }
-
-            } else {
-                // ou informa falha no acesso
-                autenticado = false;
-                return null;
-            }
-        }
+    
+    public boolean permiteCadastrarUsuario() {
+        return securityContext.isCallerInRole("0");
     }
-
+    
     public String userRegistration() {
         usuario.setKey(UUID.randomUUID());
         usuario.setAtivo(false);
-        System.out.println(">>"+ usuario.getTipo());
-        
+        System.out.println(">>" + usuario.getTipo());
+
         usuarioBean.salvar(usuario);
 
         System.out.println(">> User registration: "
@@ -122,7 +109,7 @@ public class UserService implements Serializable {
                         usuario.getEmail()));
 
         String link = "http://127.0.0.1:8080"
-                +"/GestaoProcessos-1.0-SNAPSHOT"
+                + "/gestaoprocessos"
                 + "/Activation?email=" + usuario.getEmail()
                 + "&activationKey=" + usuario.getKey();
         System.out.println(">> " + link);
@@ -133,7 +120,7 @@ public class UserService implements Serializable {
         try {
             mailService.sendEmail(usuario.getNome(),
                     usuario.getEmail(), link);
-            
+
         } catch (MessagingException ex) {
             Logger.getLogger(UserService.class.getName())
                     .log(Level.SEVERE, null, ex);

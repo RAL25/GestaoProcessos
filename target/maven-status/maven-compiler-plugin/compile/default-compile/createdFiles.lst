@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 GestaoProcessos\Arquivo.class
 GestaoProcessos\Edital.class
 Beans\EditalSessionBean.class
@@ -32,7 +31,7 @@ Beans\UserService.class
 Util\MailServiceLocal.class
 Beans\ParticipacaoSessionBean.class
 GestaoProcessos\Usuario.class
-=======
+GestaoProcessos/ApplicationConfig.class
 Beans/EditalSessionBeanLocal.class
 Servlets/Activation.class
 Beans/UsuarioService.class
@@ -40,7 +39,10 @@ Beans/ParticipacaoSessionBeanLocal.class
 GestaoProcessos/Arquivo.class
 Beans/ProvaSessionBeanLocal.class
 GestaoProcessos/Usuario.class
+Controllers/NewUserController.class
 Util/MailServiceLocal.class
+Controllers/LoginController.class
+Controllers/LoginController$1.class
 GestaoProcessos/Inscricao.class
 Beans/ArquivoSessionBean.class
 Beans/ProcessoSeletivoSessionBeanLocal.class
@@ -68,4 +70,3 @@ Beans/PublicacaoSessionBeanLocal.class
 GestaoProcessos/Categoria.class
 GestaoProcessos/ArquivoProva.class
 GestaoProcessos/TipoUsuario.class
->>>>>>> 8c09815 (Adicionado templates e as páginas de teste para os perfis)

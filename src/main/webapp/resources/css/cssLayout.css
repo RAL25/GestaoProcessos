@@ -1,10 +1,8 @@
-
-#top {
-    position: relative;
-    background-color: #036fab;
-    color: white;
-    padding: 5px;
-    margin: 0px 0px 10px 0px;
+.container {
+    max-width: 1280px;
+    width: 1200px;
+    margin: 0 auto;
+    min-height: 80vh;
 }
 
 #bottom {
@@ -33,7 +31,7 @@
 
 .center_content {
     position: relative;
-    background-color: #dddddd;
+    background-color: #ffffff;
     padding: 5px;
 }
 
@@ -49,7 +47,7 @@
     margin: 0px 170px 0px 170px;
 }
 
-#top a:link, #top a:visited {
+/*#top a:link, #top a:visited {
   color: white;
   font-weight : bold;
   text-decoration: none;
@@ -59,6 +57,65 @@
   color: black;
   font-weight : bold;
   text-decoration : underline;
+}*/
+
+.flex {
+    display: flex;
+    align-items: center;
 }
 
+.flex-column{
+   flex-direction: column;
+}
+.flex-row{
+    flex-direction: row;
+}
 
+.vertical-center {
+    justify-content: center;
+    margin: 0;
+}
+
+.form-container {
+  height: 40vh;
+  align-items: center;
+}
+.titulo-grande {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.envio {
+    width: 90%;
+    justify-content: space-between;
+    
+}
+
+.form-medio {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+body .ui-panelgrid .ui-panelgrid-cell {
+    border: none;
+}
+.ui-panelgrid .ui-panelgrid-cell {
+    border-style: hidden;
+}
+
+.novaconta {
+    width: 100%;
+    font-size: 14px;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 30px
+}
+
+/*NOTICIAS*/
+
+.notice-card {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
