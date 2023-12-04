@@ -1,5 +1,8 @@
 package Controllers;
 
+import Beans.UsuarioService;
+import Beans.UsuarioServiceLocal;
+import GestaoProcessos.Usuario;
 import java.io.IOException;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
@@ -31,6 +34,9 @@ public class LoginController {
     @Inject
     SecurityContext securityContext;
 
+    @Inject
+    UsuarioServiceLocal dataService;
+
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
     public String getEmail() {
         return email;
@@ -50,16 +56,25 @@ public class LoginController {
     //</editor-fold>
 
     public void execute() throws IOException {
-        switch (processAuthentication()) {
-            case SEND_CONTINUE:
-                facesContext.responseComplete();
-                break;
-            case SEND_FAILURE:
-                facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Invalid Credentials", null));
-                break;
-            case SUCCESS:
-                getExternalContext().redirect(getExternalContext().getRequestContextPath() + "/app/index.xhtml");
-                break;
+
+        Usuario usuario = dataService.buscarPorEmail(email);
+        if (!usuario.getAtivo()) {
+            facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                    "Cheque seu email para ativar sua conta",
+                    null));
+        } else {
+
+            switch (processAuthentication()) {
+                case SEND_CONTINUE:
+                    facesContext.responseComplete();
+                    break;
+                case SEND_FAILURE:
+                    facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Invalid Credentials", null));
+                    break;
+                case SUCCESS:
+                    getExternalContext().redirect(getExternalContext().getRequestContextPath() + "/app/index.xhtml");
+                    break;
+            }
         }
     }
 
