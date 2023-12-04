@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 GestaoProcessos\Arquivo.class
 GestaoProcessos\Edital.class
 Beans\EditalSessionBean.class
@@ -31,3 +32,40 @@ Beans\UserService.class
 Util\MailServiceLocal.class
 Beans\ParticipacaoSessionBean.class
 GestaoProcessos\Usuario.class
+=======
+Beans/EditalSessionBeanLocal.class
+Servlets/Activation.class
+Beans/UsuarioService.class
+Beans/ParticipacaoSessionBeanLocal.class
+GestaoProcessos/Arquivo.class
+Beans/ProvaSessionBeanLocal.class
+GestaoProcessos/Usuario.class
+Util/MailServiceLocal.class
+GestaoProcessos/Inscricao.class
+Beans/ArquivoSessionBean.class
+Beans/ProcessoSeletivoSessionBeanLocal.class
+Beans/ProvaSessionBean.class
+Beans/PublicacaoSessionBean.class
+Beans/MenuService.class
+GestaoProcessos/Publicacao.class
+Beans/CargaDadosSessionBean.class
+GestaoProcessos/ArquivoEdital.class
+GestaoProcessos/Edital.class
+Beans/UsuarioServiceLocal.class
+Beans/MenuAplication.class
+Beans/UserService.class
+Util/MailService.class
+GestaoProcessos/Prova.class
+Servlets/PersistenceTestServlet.class
+Beans/ArquivoSessionBeanLocal.class
+Util/Util.class
+Beans/ParticipacaoSessionBean.class
+Beans/EditalSessionBean.class
+GestaoProcessos/ProcessoSeletivo.class
+GestaoProcessos/ArquivoGabarito.class
+Beans/ProcessoSeletivoSessionBean.class
+Beans/PublicacaoSessionBeanLocal.class
+GestaoProcessos/Categoria.class
+GestaoProcessos/ArquivoProva.class
+GestaoProcessos/TipoUsuario.class
+>>>>>>> 8c09815 (Adicionado templates e as páginas de teste para os perfis)
