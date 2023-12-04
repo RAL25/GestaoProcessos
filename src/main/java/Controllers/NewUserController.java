@@ -50,6 +50,7 @@ public class NewUserController {
     public String save() {
         user.setKey(UUID.randomUUID());
         user.setAtivo(false);
+        this.removeMask();
         dataService.salvar(user);
         
         String link = "http://127.0.0.1:8080"
@@ -70,6 +71,13 @@ public class NewUserController {
         System.out.println(">> "+ user.toString());
 
         return "/app/index?faces-redirect=true";
+    }
+    
+    public void removeMask() {
+        String cpf = user.getCpf();
+        if (cpf != null) {
+            user.setCpf(cpf.replaceAll("[^0-9]", ""));
+        }
     }
     
 }

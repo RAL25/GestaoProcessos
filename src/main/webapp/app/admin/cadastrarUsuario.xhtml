@@ -5,72 +5,79 @@
                 xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
                 template="./../../WEB-INF/Templates/template1.xhtml"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
                 xmlns:f="http://xmlns.jcp.org/jsf/core">
     <ui:define name="top">
         top
     </ui:define>
 
     <ui:define name="content">
-        <a href="../index.xhtml" target="target">voltar</a>
-        <h:form>
-            <h:panelGrid
-                columns="2">
-                <h:outputLabel
-                    for="tipo"
-                    value="Tipo de Usuário"
-                    />
+        <div class="container flex flex-column vertical-center">
+            <h:form>
+                <p:panelGrid
+                    columns="2">
+                    <p:outputLabel
+                        for="tipo"
+                        value="Tipo de Usuário"
+                        />
+                    <p:selectOneMenu id="tipo" value="#{newUserController.user.tipo}">
+                        <f:selectItem itemLabel="EDITOR" itemValue="EDITOR"/>                  
+                        <f:selectItem itemLabel="CANDIDATO" itemValue="CANDIDATO"/>
+                    </p:selectOneMenu>
 
-                <h:selectOneMenu id="tipo" value="#{newUserController.user.tipo}">
-                    <f:selectItem itemLabel="EDITOR" itemValue="EDITOR"/>                  
-                    <f:selectItem itemLabel="CANDIDATO" itemValue="CANDIDATO"/>
-                </h:selectOneMenu>
+                    <p:outputLabel
+                        for="name"
+                        value="Name"
+                        />
+                    <p:inputText
+                        id="name"
+                        value="#{newUserController.user.nome}"
+                        />
 
-                <h:outputLabel
-                    for="name"
-                    value="Name"
-                    />
-                <h:inputText
-                    id="name"
-                    value="#{newUserController.user.nome}"
-                    />
+                    <p:outputLabel 
+                        for="cpf" 
+                        value="CPF" />
+                    <p:inputMask
+                        id="cpf" 
+                        value="#{newUserController.user.cpf}"
+                        mask="999.999.999-99">
+                    </p:inputMask>
 
-                <h:outputLabel 
-                    for="cpf" 
-                    value="CPF" />
-                <h:inputText 
-                    id="cpf" 
-                    value="#{newUserController.user.cpf}">
-                    <f:validateLongRange minimum="0" />
-                </h:inputText>
+                    <p:outputLabel
+                        for="email"
+                        value="Email" />
+                    <p:inputText
+                        id="email"
+                        value="#{newUserController.user.email}" />
 
-                <h:outputLabel
-                    for="email"
-                    value="Email" />
-                <h:inputText
-                    id="email"
-                    value="#{newUserController.user.email}" />
+                    <p:outputLabel
+                        for="password"
+                        value="Password" />
+                    <p:password
+                        id="password"
+                        value="#{newUserController.user.senha}" />
 
-                <h:outputLabel
-                    for="password"
-                    value="Password" />
-                <h:inputSecret
-                    id="password"
-                    value="#{newUserController.user.senha}" />
+                    <p:outputLabel
+                        for="recebernoticias"
+                        value="Deseja receber notícias quinzenais?"
+                        />
+                    <p:selectBooleanCheckbox 
+                        id = "recebernoticias"
+                        value="#{newUserController.user.receberNoticia}" />
 
-                <h:outputLabel
-                    for="recebernoticias"
-                    value="Deseja receber notícias quinzenais?"
-                    />
+                </p:panelGrid>
 
-                <h:selectBooleanCheckbox 
-                    id = "receberNoticias"
-                    value="#{newUserController.user.receberNoticia}" />
+                <div class="flex envio">
+                    <p:linkButton
+                        href="../index.xhtml">Voltar</p:linkButton>
+                    <p:commandButton
+                        value="Cadastrar"
+                        action="#{newUserController.save()}"
+                        process="@form"/>
+                </div>
+            </h:form>
+        </div>
 
-                <h:commandButton
-                    value="Register"
-                    action="#{newUserController.save()}" />
-            </h:panelGrid>
-        </h:form>
     </ui:define>
 
 </ui:composition>
