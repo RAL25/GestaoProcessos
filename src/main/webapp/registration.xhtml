@@ -10,7 +10,8 @@
 
     <ui:define name="content">
         <div class="container flex flex-column vertical-center">
-            <h:form>
+            <h:form id="cadUsuario">
+                <h1>Cadastrar candidato</h1>
                 <p:selectOneMenu id="tipo" value="#{newUserController.user.tipo}" style="display: none">
                     <f:selectItem itemLabel="CANDIDATO" itemValue="CANDIDATO"/>
                 </p:selectOneMenu>
@@ -21,7 +22,6 @@
                 <p:panelGrid
                     columns="2">
 
-
                     <p:outputLabel
                         for="name"
                         value="Name"
@@ -29,6 +29,8 @@
                     <p:inputText
                         id="name"
                         value="#{newUserController.user.nome}"
+                        required="true"
+                        requiredMessage="Nome é obrigatório"
                         />
 
                     <p:outputLabel 
@@ -37,7 +39,9 @@
                     <p:inputMask
                         id="cpf" 
                         value="#{newUserController.user.cpf}"
-                        mask="999.999.999-99">
+                        mask="999.999.999-99"
+                        required="true"
+                        requiredMessage="CPF é obrigatório">
                     </p:inputMask>
 
                     <p:outputLabel
@@ -45,14 +49,28 @@
                         value="Email" />
                     <p:inputText
                         id="email"
-                        value="#{newUserController.user.email}" />
+                        value="#{newUserController.user.email}" 
+                        required="true" 
+                        requiredMessage="Email é obrigatório" />
 
                     <p:outputLabel
-                        for="password"
-                        value="Password" />
+                        for="password1"
+                        value="Senha" />
                     <p:password
-                        id="password"
-                        value="#{newUserController.user.senha}" />
+                        id="password1"
+                        value="#{newUserController.user.senha}" 
+                        match="password2"
+                        required="true"
+                        requiredMessage="Senha é obrigatório"/>
+
+                    <p:outputLabel
+                        for="password2"
+                        value="Senha" />
+                    <p:password
+                        id="password2"
+                        value="#{newUserController.user.senha}"
+                        required="true"
+                        requiredMessage="Reescrever a senha é obrigatório"/>
 
                     <p:outputLabel
                         for="recebernoticias"
@@ -64,22 +82,29 @@
 
                 </p:panelGrid>
 
-                <p:captcha 
+<!--                <p:captcha 
                     id="captcha"
                     label="Captcha" 
                     language="pt-BR"
                     theme="light"
                     size="normal"
-                    requiredMessage="Você é um robô? Se não for, marque o captcha. ;)" />
+                    required="true"
+                    requiredMessage="Você é um robô? Se não for, marque o captcha. ;)" />-->
 
                 <div class="flex envio">
                     <p:linkButton
                         href="./login.xhtml">Voltar</p:linkButton>
+                
                     <p:commandButton
+                        id="cadastrarButton"
                         value="Cadastrar"
                         action="#{newUserController.save()}"
                         process="@form"/>
                 </div>
+                
+                <p:blockUI
+                    block="cadUsuario"
+                    trigger="cadastrarButton" />
             </h:form>
         </div>
     </ui:define>  
