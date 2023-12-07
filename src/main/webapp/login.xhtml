@@ -15,8 +15,13 @@
     <ui:define name="content">
         <div class="container flex flex-column vertical-center">
             <h:form class="flex flex-column form-container">
-                <h1 class="titulo-grande">Acesse sua conta!</h1>                  
+                <h1 class="titulo-grande">Acesse sua conta!</h1>
+                <p:messages>
+                    <p:autoUpdate />
+                </p:messages>
+
                 <p:panelGrid class="form-medio" columns="2">
+                    
                     <p:outputLabel
                         for="email"
                         value="Email"/>
@@ -24,11 +29,11 @@
                         id="email"
                         required="true"
                         requiredMessage="Preeencha o email"
-                        value="#{loginController.email}"
-                        pt:autofocus="autofocus">
+                        value="#{loginController.email}">
                         <f:validateRegex 
-                            pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+                            pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$"/>
                     </p:inputText>
+                    
                     <h:outputLabel
                         for="password"
                         value="Password" />
@@ -36,8 +41,11 @@
                         id="password"
                         required="true"
                         requiredMessage="Preencha a senha"
+                        toggleMask="true" 
+                        redisplay="true"
                         value="#{loginController.senha}" />
                 </p:panelGrid>
+                
                 <div class="flex envio">
                     <p:link>Esqueci a senha</p:link>
                     <p:commandButton

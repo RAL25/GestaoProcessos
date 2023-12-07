@@ -15,6 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Transient;
+import javax.validation.constraints.Email;
 
 /**
  *
@@ -34,7 +35,7 @@ public class Usuario implements Serializable {
     
     @Column(length = 11, unique = true)
     private String cpf;    
-    
+    @Email(message = "Email errado!")
     @Column(length = 250, unique = true)
     private String email;   
     

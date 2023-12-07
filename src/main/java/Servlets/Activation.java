@@ -42,20 +42,22 @@ public class Activation extends HttpServlet {
         System.out.println(">> >> >>" + email);
         
         if (email == null || key == null) {
-            response.sendRedirect("checkemail.xhtml");
+            response.sendRedirect("index.xhtml");
             
         } else {
+            
             Usuario user = usuarioService.buscarPorEmail(email);
             if (user != null && user.getKey().toString().equals(key)) {
                 user.setAtivo(true);
 //                serviceBean.setEmail(email);
                 usuarioService.editar(user);
 //                em.persist(user);
-                response.sendRedirect("login.xhtml");
+            response.sendRedirect("activation.xhtml");
+//                response.sendRedirect("login.xhtml");
             } else {
                 response.sendRedirect("checkemail.xhtml");
             }
-//            response.sendRedirect("activation.xhtml");
+            response.sendRedirect("activation.xhtml");
         }
     }
 

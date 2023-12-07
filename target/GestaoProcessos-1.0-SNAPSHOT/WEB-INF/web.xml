@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+    
+    <context-param>
+        <param-name>
+            primefaces.PRIVATE_CAPTCHA_KEY
+        </param-name>
+        <param-value>
+            Lf6_SgpAAAAALlPTvieJFrD20yHUuuzMDN8zd-U
+        </param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>
+            primefaces.PUBLIC_CAPTCHA_KEY
+        </param-name>
+        <param-value>
+            6Lf6_SgpAAAAAF7l_Y1DziIpQRWPvc1Okibsll5r
+        </param-value>
+    </context-param>
+    
+    
     <context-param>
         <param-name>javax.faces.PROJECT_STAGE</param-name>
         <param-value>Development</param-value>
@@ -19,7 +39,7 @@
         <role-name>0</role-name>
     </security-role>
     
-    <security-role>
+    <security-role> 
         <description>Common authenticated user</description>
         <role-name>1</role-name>
         <role-name>2</role-name>

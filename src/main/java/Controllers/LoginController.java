@@ -4,6 +4,7 @@ import Beans.UsuarioService;
 import Beans.UsuarioServiceLocal;
 import GestaoProcessos.Usuario;
 import java.io.IOException;
+import java.io.Serializable;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.ExternalContext;
@@ -20,12 +21,10 @@ import javax.validation.constraints.NotEmpty;
 
 @Named
 @RequestScoped
-public class LoginController {
+public class LoginController implements Serializable{
 
-    @NotEmpty
     private String email;
 
-    @NotEmpty
     private String senha;
 
     @Inject

@@ -14,8 +14,13 @@
                 <p:selectOneMenu id="tipo" value="#{newUserController.user.tipo}" style="display: none">
                     <f:selectItem itemLabel="CANDIDATO" itemValue="CANDIDATO"/>
                 </p:selectOneMenu>
+
+                <p:messages id="messages" showDetail="false">
+                    <p:autoUpdate/>
+                </p:messages>
                 <p:panelGrid
                     columns="2">
+
 
                     <p:outputLabel
                         for="name"
@@ -58,6 +63,14 @@
                         value="#{newUserController.user.receberNoticia}" />
 
                 </p:panelGrid>
+
+                <p:captcha 
+                    id="captcha"
+                    label="Captcha" 
+                    language="pt-BR"
+                    theme="light"
+                    size="normal"
+                    requiredMessage="Você é um robô? Se não for, marque o captcha. ;)" />
 
                 <div class="flex envio">
                     <p:linkButton

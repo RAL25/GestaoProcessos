@@ -4,13 +4,16 @@ import Beans.UserService;
 import Beans.UsuarioServiceLocal;
 import GestaoProcessos.Usuario;
 import Util.MailServiceLocal;
+import java.io.Serializable;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.mail.MessagingException;
+import javax.validation.constraints.Email;
 
 /**
  *
@@ -18,7 +21,7 @@ import javax.mail.MessagingException;
  */
 @Named
 @RequestScoped
-public class NewUserController {
+public class NewUserController implements Serializable{
     
     @Inject
     UsuarioServiceLocal dataService;
@@ -27,7 +30,10 @@ public class NewUserController {
     MailServiceLocal mailService;
     
     private Usuario user;
-
+    
+    
+    private String email;
+    
     /**
      * Creates a new instance of NewUserController
      */
@@ -44,6 +50,15 @@ public class NewUserController {
         this.user = user;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
+    
 
     //</editor-fold>
     
