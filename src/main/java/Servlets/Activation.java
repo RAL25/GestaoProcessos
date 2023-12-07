@@ -17,43 +17,46 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Beans.UsuarioServiceLocal;
+import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+import javax.inject.Named;
 import javax.persistence.EntityManager;
 
 /**
  *
  * @author Rian Alves Leal <ral2 at ifnmg.edu.br>
  */
+
+@RequestScoped
 @WebServlet(name = "Activation", urlPatterns = {"/Activation"})
 public class Activation extends HttpServlet {
 
-    @Inject
-    private UserService serviceBean;
-    
+
     @Inject
     private UsuarioServiceLocal usuarioService;
-    
+
     protected void processRequest(
             HttpServletRequest request,
             HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         String email = request.getParameter("email");
         String key = request.getParameter("activationKey");
         System.out.println(">> >> >>" + email);
-        
+
         if (email == null || key == null) {
             response.sendRedirect("index.xhtml");
-            
+
         } else {
-            
+
             Usuario user = usuarioService.buscarPorEmail(email);
             if (user != null && user.getKey().toString().equals(key)) {
                 user.setAtivo(true);
-//                serviceBean.setEmail(email);
                 usuarioService.editar(user);
-//                em.persist(user);
-            response.sendRedirect("activation.xhtml");
-//                response.sendRedirect("login.xhtml");
+                response.sendRedirect("login.xhtml");
+                
+                
             } else {
                 response.sendRedirect("checkemail.xhtml");
             }
