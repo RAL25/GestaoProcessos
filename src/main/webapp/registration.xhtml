@@ -10,15 +10,19 @@
 
     <ui:define name="content">
         <div class="container flex flex-column vertical-center">
+            
             <h:form id="cadUsuario">
+                
                 <h1>Cadastrar candidato</h1>
+                
                 <p:selectOneMenu id="tipo" value="#{newUserController.user.tipo}" style="display: none">
                     <f:selectItem itemLabel="CANDIDATO" itemValue="CANDIDATO"/>
                 </p:selectOneMenu>
-
+                
                 <p:messages id="messages" showDetail="false">
                     <p:autoUpdate/>
                 </p:messages>
+                
                 <p:panelGrid
                     columns="2">
 
@@ -61,11 +65,12 @@
                         value="#{newUserController.user.senha}" 
                         match="password2"
                         required="true"
-                        requiredMessage="Senha é obrigatório"/>
+                        requiredMessage="Senha é obrigatório"
+                        feedback="true"/>
 
                     <p:outputLabel
                         for="password2"
-                        value="Senha" />
+                        value="Reescreva a senha" />
                     <p:password
                         id="password2"
                         value="#{newUserController.user.senha}"

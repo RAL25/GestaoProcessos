@@ -10,6 +10,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.mail.MessagingException;
@@ -62,11 +64,12 @@ public class NewUserController implements Serializable{
 
     //</editor-fold>
     
-    public String save() {
+    public String save() throws InterruptedException {
         user.setKey(UUID.randomUUID());
         user.setAtivo(false);
         this.removeMask();
         dataService.salvar(user);
+        
         
         String link = "http://127.0.0.1:8080"
                 + "/gestaoprocessos"
@@ -77,7 +80,7 @@ public class NewUserController implements Serializable{
         try {
             mailService.sendEmail(user.getNome(),
                     user.getEmail(), link);
-
+            
         } catch (MessagingException ex) {
             Logger.getLogger(UserService.class.getName())
                     .log(Level.SEVERE, null, ex);
@@ -85,7 +88,7 @@ public class NewUserController implements Serializable{
         
         System.out.println(">> "+ user.toString());
 
-        return "/app/index?faces-redirect=true";
+        return "/checkemail?faces-redirect=true";
     }
     
     public void removeMask() {

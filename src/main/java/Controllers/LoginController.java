@@ -21,7 +21,7 @@ import javax.validation.constraints.NotEmpty;
 
 @Named
 @RequestScoped
-public class LoginController implements Serializable{
+public class LoginController implements Serializable {
 
     private String email;
 
@@ -57,24 +57,33 @@ public class LoginController implements Serializable{
     public void execute() throws IOException {
 
         Usuario usuario = dataService.buscarPorEmail(email);
-        if (!usuario.getAtivo()) {
-            facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
-                    "Cheque seu email para ativar sua conta",
-                    null));
+
+        if (usuario == null) {
+            addMessage(FacesMessage.SEVERITY_WARN, "Usuário não cadastrado no sistema!", null);
         } else {
 
-            switch (processAuthentication()) {
-                case SEND_CONTINUE:
-                    facesContext.responseComplete();
-                    break;
-                case SEND_FAILURE:
-                    facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Credenciais inválidas!", null));
-                    break;
-                case SUCCESS:
-                    getExternalContext().redirect(getExternalContext().getRequestContextPath() + "/app/index.xhtml");
-                    break;
+            if (!usuario.getAtivo()) {
+                addMessage(FacesMessage.SEVERITY_WARN, "Cheque seu email para ativar sua conta", null);
+            } else {
+
+                switch (processAuthentication()) {
+                    case SEND_CONTINUE:
+                        facesContext.responseComplete();
+                        break;
+                    case SEND_FAILURE:
+                        facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Credenciais inválidas!", null));
+                        break;
+                    case SUCCESS:
+                        getExternalContext().redirect(getExternalContext().getRequestContextPath() + "/app/index.xhtml");
+                        break;
+                }
             }
         }
+    }
+    
+    public void addMessage(FacesMessage.Severity severity, String summary, String detail) {
+        FacesContext.getCurrentInstance().
+                addMessage("msgs", new FacesMessage(severity, summary, detail));
     }
 
     private AuthenticationStatus processAuthentication() {

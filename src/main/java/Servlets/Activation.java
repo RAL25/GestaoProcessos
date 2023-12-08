@@ -4,13 +4,9 @@
  */
 package Servlets;
 
-import Beans.UserService;
-import Beans.UsuarioService;
 import GestaoProcessos.Usuario;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.inject.Inject;
-import javax.persistence.PersistenceContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,10 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Beans.UsuarioServiceLocal;
 import javax.enterprise.context.RequestScoped;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
-import javax.inject.Named;
-import javax.persistence.EntityManager;
 
 /**
  *
@@ -55,8 +47,6 @@ public class Activation extends HttpServlet {
                 user.setAtivo(true);
                 usuarioService.editar(user);
                 response.sendRedirect("login.xhtml");
-                
-                
             } else {
                 response.sendRedirect("checkemail.xhtml");
             }
