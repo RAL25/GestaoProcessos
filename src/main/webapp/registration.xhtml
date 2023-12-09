@@ -66,7 +66,8 @@
                         match="password2"
                         required="true"
                         requiredMessage="Senha é obrigatório"
-                        feedback="true"/>
+                        feedback="true"
+                        toggleMask="true" />
 
                     <p:outputLabel
                         for="password2"
@@ -75,7 +76,8 @@
                         id="password2"
                         value="#{newUserController.user.senha}"
                         required="true"
-                        requiredMessage="Reescrever a senha é obrigatório"/>
+                        requiredMessage="Reescrever a senha é obrigatório"
+                        toggleMask="true" />
 
                     <p:outputLabel
                         for="recebernoticias"
@@ -87,14 +89,14 @@
 
                 </p:panelGrid>
 
-<!--                <p:captcha 
+                <p:captcha 
                     id="captcha"
                     label="Captcha" 
                     language="pt-BR"
                     theme="light"
                     size="normal"
                     required="true"
-                    requiredMessage="Você é um robô? Se não for, marque o captcha. ;)" />-->
+                    requiredMessage="Você é um robô? Se não for, marque o captcha. ;)" />
 
                 <div class="flex envio">
                     <p:linkButton

@@ -8,8 +8,21 @@
 
     <ui:define name="content">
 
+        <h:form id="menu">
+            <span>
+                Logado como administrador
+            </span>
+            <p:tieredMenu style="width:200px">
+                <p:submenu label="Perfil" icon="pi pi-fw pi-user">
+                    <p:menuitem value="Recuperar senha" action="#{newUserController.recuperaSenha()}" icon="pi pi-lock"/>
+                </p:submenu>
+
+                <p:menuitem value="Quit" icon="pi pi-fw pi-power-off"/>
+            </p:tieredMenu>
+        </h:form>
+
         <div class="container">
-            <!--<h1>Seja bem-vindo, #{userService.usuario.nome}!</h1>-->
+
             <div class="notice-card">
                 <p:panel header="Titulo Notícia 1" style="width: 750px;">
                     <p:outputPanel>

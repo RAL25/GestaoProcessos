@@ -5,6 +5,7 @@ Beans/UsuarioService.class
 Beans/ParticipacaoSessionBeanLocal.class
 GestaoProcessos/Arquivo.class
 Beans/ProvaSessionBeanLocal.class
+Servlets/RecoveryPass.class
 GestaoProcessos/Usuario.class
 Controllers/NewUserController.class
 Util/MailServiceLocal.class

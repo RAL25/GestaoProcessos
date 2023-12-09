@@ -54,14 +54,15 @@ public class Usuario implements Serializable {
     //<editor-fold defaultstate="collapsed" desc="construtores">
         public Usuario() {
         }
-
-        public Usuario(String nome, String cpf, String email, String senha, Boolean receberNoticia, TipoUsuario tipo) {
+        
+        public Usuario(String nome, String cpf, String email, String senha, Boolean receberNoticia, TipoUsuario tipo, Boolean ativo) {
             this.nome = nome;
             this.cpf = cpf;
             this.email = email;
             this.senha = senha;
             this.receberNoticia = receberNoticia;
             this.tipo = tipo;
+            this.ativo = ativo;
         }
         
     //</editor-fold>

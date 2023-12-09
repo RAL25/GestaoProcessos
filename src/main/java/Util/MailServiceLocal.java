@@ -16,5 +16,7 @@ public interface MailServiceLocal {
 
     void sendEmail(String nome, String to, String link) 
             throws MessagingException;
+
+    public void recoveryPass(String nome, String to, String link) throws MessagingException;
     
 }

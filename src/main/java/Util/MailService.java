@@ -56,4 +56,35 @@ public class MailService implements MailServiceLocal {
         Transport.send(mail);
 
     }
+    
+    @Override
+    public void recoveryPass(String nome, String to, String link) throws MessagingException {
+        MimeMessage mail = new MimeMessage(mailSession);
+        
+        mail.setFrom("gestaoprocessoswebdev@outlook.com");
+        
+        mail.setSubject("Recuperacao de senha");
+        mail.setRecipient(Message.RecipientType.TO,
+                new InternetAddress(to));
+
+        MimeMultipart content = new MimeMultipart();
+
+        MimeBodyPart body = new MimeBodyPart();
+        body.setContent(
+                String.format("<html><h1>Recuperação de senha</h1>"
+                        + "<h2>Hi, %s!</h2>"
+                        + "<p style=\"background-color: #eee; padding: .25em; border: solid #999 thin; border-left: solid #999 4px;\">"
+                        + "Notamos que você solicitou a recuperação de senha. "
+                        + "Clique no link a seguir para cadastrar uma nova senha"
+                        + "<a href=\"%s\" style=\"padding: 0 .25em; background-color: #ccc;\">Nova senha</a></p>"
+                        + "<p style=\"background-color: #eee; padding: .25em; border: solid #999 thin; border-left: solid #999 4px;\">"
+                        + "Caso nos enganamos ao te enviar esse e-mail, basta desconsiderá-lo!</p>"
+                        + "</html>", nome, link),
+                "text/html; charset=utf-8");
+
+        content.addBodyPart(body);
+        mail.setContent(content);
+        Transport.send(mail);
+
+    }
 }

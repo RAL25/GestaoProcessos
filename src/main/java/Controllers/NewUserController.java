@@ -23,19 +23,18 @@ import javax.validation.constraints.Email;
  */
 @Named
 @RequestScoped
-public class NewUserController implements Serializable{
-    
+public class NewUserController implements Serializable {
+
     @Inject
     UsuarioServiceLocal dataService;
-    
+
     @Inject
     MailServiceLocal mailService;
-    
+
     private Usuario user;
-    
-    
+
     private String email;
-    
+
     /**
      * Creates a new instance of NewUserController
      */
@@ -59,8 +58,6 @@ public class NewUserController implements Serializable{
     public void setEmail(String email) {
         this.email = email;
     }
-    
-    
 
     //</editor-fold>
     
@@ -69,33 +66,50 @@ public class NewUserController implements Serializable{
         user.setAtivo(false);
         this.removeMask();
         dataService.salvar(user);
-        
-        
+
         String link = "http://127.0.0.1:8080"
                 + "/gestaoprocessos"
                 + "/Activation?email=" + user.getEmail()
                 + "&activationKey=" + user.getKey();
         System.out.println(">> " + link);
-        
+
         try {
             mailService.sendEmail(user.getNome(),
                     user.getEmail(), link);
-            
+
         } catch (MessagingException ex) {
             Logger.getLogger(UserService.class.getName())
                     .log(Level.SEVERE, null, ex);
         }
-        
-        System.out.println(">> "+ user.toString());
+
+        System.out.println(">> " + user.toString());
 
         return "/checkemail?faces-redirect=true";
     }
-    
+
     public void removeMask() {
         String cpf = user.getCpf();
         if (cpf != null) {
             user.setCpf(cpf.replaceAll("[^0-9]", ""));
         }
     }
-    
+
+    public void recuperaSenha() {
+        String link = "http://127.0.0.1:8080"
+                + "/gestaoprocessos"
+                + "//Recuperar-senha?email=" + user.getEmail()
+                + "&activationKey=" + user.getKey();
+        System.out.println(">> " + link);
+        
+        try {
+            mailService.recoveryPass(user.getNome(),
+                    user.getEmail(), link);
+
+        } catch (MessagingException ex) {
+            Logger.getLogger(UserService.class.getName())
+                    .log(Level.SEVERE, null, ex);
+        }
+        
+        System.out.println(">> " + user.toString());
+    }
 }
