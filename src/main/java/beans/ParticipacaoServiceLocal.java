@@ -12,7 +12,7 @@ import javax.ejb.Local;
  * @author yodem
  */
 @Local
-public interface ParticipacaoSessionBeanLocal {
+public interface ParticipacaoServiceLocal {
     public void salvar(Inscricao participacao);
     
     public Inscricao buscarPorId(Long id);

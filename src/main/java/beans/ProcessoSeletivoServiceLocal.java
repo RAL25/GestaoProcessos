@@ -12,7 +12,7 @@ import javax.ejb.Local;
  * @author Rian Alves Leal <ral2 at ifnmg.edu.br>
  */
 @Local
-public interface ProcessoSeletivoSessionBeanLocal {
+public interface ProcessoSeletivoServiceLocal {
     public void salvar(ProcessoSeletivo processo);
     public ProcessoSeletivo BuscarPorId(Long Id);
     public void editar(ProcessoSeletivo processo);

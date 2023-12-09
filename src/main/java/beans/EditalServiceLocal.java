@@ -12,7 +12,7 @@ import javax.ejb.Local;
  * @author Rian Alves Leal <ral2 at ifnmg.edu.br>
  */
 @Local
-public interface EditalSessionBeanLocal {
+public interface EditalServiceLocal {
     public void salvar(Edital edital);
     public Edital BuscarPorId(Long Id);
     public void editar(Edital edital);

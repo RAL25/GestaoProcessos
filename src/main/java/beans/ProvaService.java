@@ -14,7 +14,7 @@ import javax.persistence.PersistenceContext;
  * @author yodem
  */
 @Stateless
-public class ProvaSessionBean implements ProvaSessionBeanLocal {
+public class ProvaService implements ProvaSessionServiceLocal {
     @PersistenceContext
     EntityManager em;
 

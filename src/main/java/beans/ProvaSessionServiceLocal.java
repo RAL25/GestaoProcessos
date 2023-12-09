@@ -12,7 +12,7 @@ import javax.ejb.Local;
  * @author yodem
  */
 @Local
-public interface ProvaSessionBeanLocal {
+public interface ProvaSessionServiceLocal {
     
     public void salvar(Prova prova);
     

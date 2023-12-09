@@ -7,18 +7,18 @@
     </h:head>
     <h:body>
         <div style="width: 800px; margin: 0 auto; text-align: center;">
-            <h1>Access Denied</h1>
+            <h1>Acesso negado!</h1>
             <h:graphicImage
                 name="images/forbidden.png" />
             <br/>
             
             <h:link
-                rendered="#{not userController.authenticated}"
+                rendered="#{not userService.autenticado}"
                 value="Login with your credentials."
                 outcome="/login" />
             
             <h:link
-                rendered="#{userController.authenticated}"
+                rendered="#{userService.autenticado}"
                 value="Go home"
                 outcome="/app/index" />
         </div>

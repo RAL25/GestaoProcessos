@@ -4,37 +4,40 @@
  */
 package beans;
 
-import gestaoProcessos.Arquivo;
+import gestaoProcessos.Edital;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author gabriel
+ * @author Rian Alves Leal <ral2 at ifnmg.edu.br>
  */
 @Stateless
-public class ArquivoSessionBean implements ArquivoSessionBeanLocal {
+public class EditalService implements EditalServiceLocal {
+
     @PersistenceContext
     EntityManager entityManager;
-
+    
     @Override
-    public void salvar(Arquivo arquivo) {
-        entityManager.persist(arquivo);
+    public void salvar(Edital edital) {
+        entityManager.persist(edital);
     }
 
     @Override
-    public Arquivo buscarPorId(Long id) {
-        return entityManager.find(Arquivo.class, id);
+    public Edital BuscarPorId(Long Id) {
+        return entityManager.find(Edital.class, Id);
     }
 
     @Override
-    public void editar(Arquivo arquivo) {
-        entityManager.refresh(arquivo);
+    public void editar(Edital edital) {
+        entityManager.refresh(edital);
     }
 
     @Override
-    public void deletar(Arquivo arquivo) {
-        entityManager.remove(arquivo);
+    public void deletar(Edital edital) {
+        entityManager.remove(edital);
     }
+
+    
 }

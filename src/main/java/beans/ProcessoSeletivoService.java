@@ -14,7 +14,7 @@ import javax.persistence.PersistenceContext;
  * @author Rian Alves Leal <ral2 at ifnmg.edu.br>
  */
 @Stateless
-public class ProcessoSeletivoSessionBean implements ProcessoSeletivoSessionBeanLocal {
+public class ProcessoSeletivoService implements ProcessoSeletivoServiceLocal {
 
     @PersistenceContext
     EntityManager entityManager;

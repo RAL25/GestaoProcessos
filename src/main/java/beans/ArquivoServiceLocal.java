@@ -4,7 +4,7 @@
  */
 package beans;
 
-import gestaoProcessos.Publicacao;
+import gestaoProcessos.Arquivo;
 import javax.ejb.Local;
 
 /**
@@ -12,14 +12,14 @@ import javax.ejb.Local;
  * @author gabriel
  */
 @Local
-public interface PublicacaoSessionBeanLocal {
+public interface ArquivoServiceLocal {
     
-    public void salvar(Publicacao publicacao);
+    public void salvar(Arquivo arquivo);
     
-    public Publicacao buscarPorId(Long id);
+    public Arquivo buscarPorId(Long id);
     
-    public void editar(Publicacao publicacao);
+    public void editar(Arquivo arquivo);
     
-    public void deletar(Publicacao publicacao);
+    public void deletar(Arquivo arquivo);
     
 }

@@ -26,28 +26,28 @@ import javax.inject.Inject;
  */
 @Singleton
 @Startup
-public class CargaDadosSessionBean {
+public class CargaDadosService {
 
     @Inject
     private UsuarioServiceLocal usuarioBean;
     
     @Inject
-    private ProvaSessionBeanLocal provaBean;
+    private ProvaSessionServiceLocal provaBean;
     
     @Inject
-    private EditalSessionBeanLocal editalBean;
+    private EditalServiceLocal editalBean;
     
     @Inject
-    private ParticipacaoSessionBeanLocal participacaoBean;
+    private ParticipacaoServiceLocal participacaoBean;
     
     @Inject
-    private ProcessoSeletivoSessionBeanLocal processoBean;
+    private ProcessoSeletivoServiceLocal processoBean;
     
     @Inject
-    private PublicacaoSessionBeanLocal publicacaoBean;
+    private PublicacaoServiceLocal publicacaoBean;
     
     @Inject
-    private ArquivoSessionBeanLocal arquivoBean;
+    private ArquivoServiceLocal arquivoBean;
     
     @PostConstruct
     public void PopularAdm(){

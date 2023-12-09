@@ -14,7 +14,7 @@ import javax.persistence.PersistenceContext;
  * @author yodem
  */
 @Stateless
-public class ParticipacaoSessionBean implements ParticipacaoSessionBeanLocal {
+public class ParticipacaoService implements ParticipacaoServiceLocal {
     @PersistenceContext
     EntityManager entityManager;
 

@@ -4,40 +4,37 @@
  */
 package beans;
 
-import gestaoProcessos.Edital;
+import gestaoProcessos.Publicacao;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author Rian Alves Leal <ral2 at ifnmg.edu.br>
+ * @author gabriel
  */
 @Stateless
-public class EditalSessionBean implements EditalSessionBeanLocal {
-
+public class PublicacaoService implements PublicacaoServiceLocal {
     @PersistenceContext
     EntityManager entityManager;
-    
+
     @Override
-    public void salvar(Edital edital) {
-        entityManager.persist(edital);
+    public void salvar(Publicacao publicacao) {
+        entityManager.persist(publicacao);
     }
 
     @Override
-    public Edital BuscarPorId(Long Id) {
-        return entityManager.find(Edital.class, Id);
+    public Publicacao buscarPorId(Long id) {
+        return entityManager.find(Publicacao.class, id);
     }
 
     @Override
-    public void editar(Edital edital) {
-        entityManager.refresh(edital);
+    public void editar(Publicacao publicacao) {
+        entityManager.refresh(publicacao);
     }
 
     @Override
-    public void deletar(Edital edital) {
-        entityManager.remove(edital);
+    public void deletar(Publicacao publicacao) {
+        entityManager.remove(publicacao);
     }
-
-    
 }

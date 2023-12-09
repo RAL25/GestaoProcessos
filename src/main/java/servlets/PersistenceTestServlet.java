@@ -4,11 +4,6 @@
  */
 package servlets;
 
-import beans.EditalSessionBeanLocal;
-import beans.ParticipacaoSessionBeanLocal;
-import beans.ProcessoSeletivoSessionBeanLocal;
-import beans.ProvaSessionBeanLocal;
-import beans.PublicacaoSessionBeanLocal;
 import gestaoProcessos.ArquivoEdital;
 import gestaoProcessos.ArquivoGabarito;
 import gestaoProcessos.ArquivoProva;
@@ -29,6 +24,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.transaction.Transactional;
 import beans.UsuarioServiceLocal;
+import beans.EditalServiceLocal;
+import beans.ParticipacaoServiceLocal;
+import beans.ProcessoSeletivoServiceLocal;
+import beans.ProvaSessionServiceLocal;
+import beans.PublicacaoServiceLocal;
 
 /**
  *
@@ -38,17 +38,17 @@ import beans.UsuarioServiceLocal;
 @Transactional
 public class PersistenceTestServlet extends HttpServlet {
     @Inject
-    ProvaSessionBeanLocal provabean;
+    ProvaSessionServiceLocal provabean;
     @Inject
-    EditalSessionBeanLocal editalbean;
+    EditalServiceLocal editalbean;
     @Inject
-    PublicacaoSessionBeanLocal publicacaobean;
+    PublicacaoServiceLocal publicacaobean;
     @Inject
-    ProcessoSeletivoSessionBeanLocal processoSeletivobean;
+    ProcessoSeletivoServiceLocal processoSeletivobean;
     @Inject
     UsuarioServiceLocal usuariobean;
     @Inject
-    ParticipacaoSessionBeanLocal participacaobean;
+    ParticipacaoServiceLocal participacaobean;
     
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

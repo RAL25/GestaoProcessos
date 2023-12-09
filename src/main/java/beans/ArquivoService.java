@@ -4,7 +4,7 @@
  */
 package beans;
 
-import gestaoProcessos.Publicacao;
+import gestaoProcessos.Arquivo;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -14,27 +14,27 @@ import javax.persistence.PersistenceContext;
  * @author gabriel
  */
 @Stateless
-public class PublicacaoSessionBean implements PublicacaoSessionBeanLocal {
+public class ArquivoService implements ArquivoServiceLocal {
     @PersistenceContext
     EntityManager entityManager;
 
     @Override
-    public void salvar(Publicacao publicacao) {
-        entityManager.persist(publicacao);
+    public void salvar(Arquivo arquivo) {
+        entityManager.persist(arquivo);
     }
 
     @Override
-    public Publicacao buscarPorId(Long id) {
-        return entityManager.find(Publicacao.class, id);
+    public Arquivo buscarPorId(Long id) {
+        return entityManager.find(Arquivo.class, id);
     }
 
     @Override
-    public void editar(Publicacao publicacao) {
-        entityManager.refresh(publicacao);
+    public void editar(Arquivo arquivo) {
+        entityManager.refresh(arquivo);
     }
 
     @Override
-    public void deletar(Publicacao publicacao) {
-        entityManager.remove(publicacao);
+    public void deletar(Arquivo arquivo) {
+        entityManager.remove(arquivo);
     }
 }

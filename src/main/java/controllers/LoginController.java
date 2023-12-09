@@ -65,7 +65,7 @@ public class LoginController implements Serializable {
             if (!usuario.getAtivo()) {
                 addMessage(FacesMessage.SEVERITY_WARN, "Cheque seu email para ativar sua conta", null);
             } else {
-
+                
                 switch (processAuthentication()) {
                     case SEND_CONTINUE:
                         facesContext.responseComplete();
