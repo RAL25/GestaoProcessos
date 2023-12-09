@@ -24,29 +24,35 @@
         <param-name>javax.faces.PROJECT_STAGE</param-name>
         <param-value>Development</param-value>
     </context-param>
+    
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
     
     <security-role>
-        <description>System administrator</description>
+        <description>Administrador</description>
         <role-name>0</role-name>
     </security-role>
     
     <security-role> 
-        <description>Common authenticated user</description>
+        <description>Editor</description>
         <role-name>1</role-name>
+    </security-role>
+    
+    <security-role> 
+        <description>Candidato</description>
         <role-name>2</role-name>
     </security-role>
     
     <security-constraint>
-        <display-name>Admin Role</display-name>
+        <display-name>Regras Administrador</display-name>
         <web-resource-collection>
             <web-resource-name>All App Pages</web-resource-name>
             <url-pattern>/app/*</url-pattern>
@@ -55,15 +61,25 @@
             <role-name>0</role-name>
         </auth-constraint>
     </security-constraint>
+
+    <security-constraint>
+        <display-name>Regras Editor</display-name>
+        <web-resource-collection>
+            <web-resource-name>All App Pages</web-resource-name>
+            <url-pattern>/app/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>1</role-name>
+        </auth-constraint>
+    </security-constraint>
     
     <security-constraint>
-        <display-name>Users Role</display-name>
+        <display-name>Regras Candidato</display-name>
         <web-resource-collection>
             <web-resource-name>Profile Page</web-resource-name>
             <url-pattern>/app/index.xhtml</url-pattern>
         </web-resource-collection>
         <auth-constraint>
-            <role-name>0</role-name>
             <role-name>1</role-name>
             <role-name>2</role-name>
         </auth-constraint>
@@ -74,6 +90,7 @@
             30
         </session-timeout>
     </session-config>
+    
     <welcome-file-list>
         <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
