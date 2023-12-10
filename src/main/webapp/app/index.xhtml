@@ -7,6 +7,10 @@
                 xmlns:p="http://primefaces.org/ui">
 
     <ui:define name="content">
+
+        <p:messages id="msgs">
+            <p:autoUpdate />
+        </p:messages>
         
         <h:form id="menu">
             <h1>Olá #{userService.usuario.nome}!</h1>
@@ -15,13 +19,12 @@
             </span>
             <p:tieredMenu style="width:200px">
                 <p:submenu label="Perfil" icon="pi pi-fw pi-user">
-                    <p:menuitem value="Recuperar senha" action="#{newUserController.recuperaSenha()}" icon="pi pi-lock"/>
+                    <p:menuitem value="Recuperar senha" action="#{userService.recuperaSenha()}" icon="pi pi-lock"/>
                 </p:submenu>
-                
+
                 <p:submenu label="Usuários" icon="pi pi-fw pi-users" rendered="#{userService.permiteCadastrarUsuario()}">
                     <p:menuitem value="Novo usuário" action="/app/admin/cadastrarUsuario?faces-redirect=true" icon="pi pi-fw pi-user-plus" />
-                    <p:menuitem value="Remover usuário" action="/app/admin/cadastrarUsuario?faces-redirect=true" icon="pi pi-user-minus" />
-                    <p:menuitem value="Editar usuário" action="/app/admin/cadastrarUsuario?faces-redirect=true" icon="pi pi-user-edit" />
+                    <p:menuitem value="Edita/Remover usuário" action="/app/admin/usuarios?faces-redirect=true" icon="pi pi-users" />
                 </p:submenu>
 
                 <p:divider />

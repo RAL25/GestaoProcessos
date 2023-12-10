@@ -5,6 +5,7 @@
 package beans;
 
 import gestaoProcessos.Usuario;
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -24,4 +25,6 @@ public interface UsuarioServiceLocal {
     public void deletar(Usuario usuario);
     
     public Usuario buscarPorEmail(String email);
+
+    List<Usuario> buscarTodos();
 }

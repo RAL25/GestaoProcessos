@@ -60,7 +60,6 @@ public class NewUserController implements Serializable {
     }
 
     //</editor-fold>
-    
     public String save() throws InterruptedException {
         user.setKey(UUID.randomUUID());
         user.setAtivo(false);
@@ -92,24 +91,5 @@ public class NewUserController implements Serializable {
         if (cpf != null) {
             user.setCpf(cpf.replaceAll("[^0-9]", ""));
         }
-    }
-
-    public void recuperaSenha() {
-        String link = "http://127.0.0.1:8080"
-                + "/gestaoprocessos"
-                + "//Recuperar-senha?email=" + user.getEmail()
-                + "&activationKey=" + user.getKey();
-        System.out.println(">> " + link);
-        
-        try {
-            mailService.recoveryPass(user.getNome(),
-                    user.getEmail(), link);
-
-        } catch (MessagingException ex) {
-            Logger.getLogger(UserService.class.getName())
-                    .log(Level.SEVERE, null, ex);
-        }
-        
-        System.out.println(">> " + user.toString());
     }
 }

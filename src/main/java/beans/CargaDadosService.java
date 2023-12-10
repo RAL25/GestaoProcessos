@@ -104,7 +104,7 @@ public class CargaDadosService {
         usuario.setAtivo(Boolean.TRUE);
         usuario.setNome("Gabriel");
         usuario.setCpf("12345678901");
-        usuario.setEmail("gabriel@mail.com");
+        usuario.setEmail("gabrielsizilio15@gmail.com");
         usuario.setKey(UUID.randomUUID());
         usuario.setReceberNoticia(Boolean.TRUE);
         usuario.setSenha("123");

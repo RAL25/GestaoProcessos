@@ -60,6 +60,11 @@ public class UsuarioService implements UsuarioServiceLocal {
             return usuarios.get(0);
         }
     }
+    
+    @Override
+    public List<Usuario> buscarTodos() {
+        return entityManager.createQuery("SELECT usuario FROM Usuario usuario", Usuario.class).getResultList();
+    }
 
     @Override
     public void editar(Usuario usuario) {
@@ -71,4 +76,5 @@ public class UsuarioService implements UsuarioServiceLocal {
         entityManager.remove(usuario);
     }
 
+    
 }

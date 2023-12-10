@@ -31,7 +31,7 @@ public class MailService implements MailServiceLocal {
         MimeMessage mail = new MimeMessage(mailSession);
 
         mail.setFrom("gestaoprocessoswebdev@outlook.com");
-        mail.setSubject("System Key Activation");
+        mail.setSubject("Ativação de conta");
         mail.setRecipient(Message.RecipientType.TO,
                 new InternetAddress(to));
 
@@ -39,8 +39,8 @@ public class MailService implements MailServiceLocal {
 
         MimeBodyPart body = new MimeBodyPart();
         body.setContent(
-                String.format("<html><h1>System Key Activation</h1>"
-                        + "<h2>Hi, %s!</h2>"
+                String.format("<html><h1>Sistema de ativação de conta</h1>"
+                        + "<h2>Olá, %s!</h2>"
                         + "<p style=\"background-color: #eee; padding: .25em; border: solid #999 thin; border-left: solid #999 4px;\">"
                         + "Notamos que você acabou de efetuar um cadastro no sistema de gestão de processos seletivos. "
                         + "Para ativar sua conta é necessário que você clique em 'ativar conta' logo a seguir."
@@ -72,12 +72,12 @@ public class MailService implements MailServiceLocal {
         MimeBodyPart body = new MimeBodyPart();
         body.setContent(
                 String.format("<html><h1>Recuperação de senha</h1>"
-                        + "<h2>Hi, %s!</h2>"
-                        + "<p style=\"background-color: #eee; padding: .25em; border: solid #999 thin; border-left: solid #999 4px;\">"
+                        + "<h2>Olá, %s!</h2>"
+                        + "<p>"
                         + "Notamos que você solicitou a recuperação de senha. "
-                        + "Clique no link a seguir para cadastrar uma nova senha"
-                        + "<a href=\"%s\" style=\"padding: 0 .25em; background-color: #ccc;\">Nova senha</a></p>"
-                        + "<p style=\"background-color: #eee; padding: .25em; border: solid #999 thin; border-left: solid #999 4px;\">"
+                        + "Clique no link a seguir para cadastrar uma "
+                        + "<a href=\"%s\" style=\"padding: 0 .25em; background-color: #ccc;\">nova senha</a></p>"
+                        + "<p>"
                         + "Caso nos enganamos ao te enviar esse e-mail, basta desconsiderá-lo!</p>"
                         + "</html>", nome, link),
                 "text/html; charset=utf-8");

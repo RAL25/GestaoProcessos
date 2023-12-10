@@ -4,6 +4,7 @@ beans/ProvaSessionServiceLocal.class
 gestaoProcessos/ApplicationConfig.class
 beans/MenuService.class
 controllers/LoginController.class
+controllers/UsuarioController.class
 gestaoProcessos/Inscricao.class
 beans/PublicacaoService.class
 controllers/LoginController$1.class

@@ -17,6 +17,7 @@ import javax.mail.MessagingException;
 import util.MailServiceLocal;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
 import javax.security.enterprise.SecurityContext;
 
 /**
@@ -92,11 +93,10 @@ public class UserService implements Serializable {
     }
 
     //</editor-fold>
-    
     public boolean permiteCadastrarUsuario() {
         return securityContext.isCallerInRole("0");
     }
-    
+
     public String userRegistration() {
         usuario.setKey(UUID.randomUUID());
         usuario.setAtivo(false);
@@ -114,9 +114,6 @@ public class UserService implements Serializable {
                 + "&activationKey=" + usuario.getKey();
         System.out.println(">> " + link);
 
-        //
-        // Send mail
-        // 
         try {
             mailService.sendEmail(usuario.getNome(),
                     usuario.getEmail(), link);
@@ -142,4 +139,24 @@ public class UserService implements Serializable {
         return "/index?faces-redirect=true";
     }
 
+    public void recuperaSenha() {
+        String link = "http://127.0.0.1:8080"
+                + "/gestaoprocessos"
+                + "/Recuperar-senha?email=" + usuario.getEmail()
+                + "&activationKey=" + usuario.getKey();
+        System.out.println(">> " + link);
+
+        try {
+
+            mailService.recoveryPass(usuario.getNome(),
+                    usuario.getEmail(), link);
+
+            FacesContext.getCurrentInstance().addMessage("msgs", new FacesMessage(FacesMessage.SEVERITY_INFO,
+                    "Um link para recuperação foi enviada para seu email!", null));
+
+        } catch (MessagingException ex) {
+            Logger.getLogger(UserService.class.getName())
+                    .log(Level.SEVERE, null, ex);
+        }
+    }
 }
