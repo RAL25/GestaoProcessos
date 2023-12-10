@@ -35,7 +35,7 @@ public class Activation extends HttpServlet {
 
         String email = request.getParameter("email");
         String key = request.getParameter("activationKey");
-        System.out.println(">> >> >>" + email);
+        System.out.println(">> " + email);
 
         if (email == null || key == null) {
             response.sendRedirect("index.xhtml");

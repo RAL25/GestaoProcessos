@@ -5,6 +5,7 @@
 package beans;
 
 import gestaoProcessos.Publicacao;
+import java.time.LocalDateTime;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -20,6 +21,8 @@ public class PublicacaoService implements PublicacaoServiceLocal {
 
     @Override
     public void salvar(Publicacao publicacao) {
+        publicacao.setCreatedAt(LocalDateTime.now());
+        publicacao.setUpdatedAt(LocalDateTime.now());
         entityManager.persist(publicacao);
     }
 
@@ -30,6 +33,7 @@ public class PublicacaoService implements PublicacaoServiceLocal {
 
     @Override
     public void editar(Publicacao publicacao) {
+        publicacao.setUpdatedAt(LocalDateTime.now());
         entityManager.refresh(publicacao);
     }
 

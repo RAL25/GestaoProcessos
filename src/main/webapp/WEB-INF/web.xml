@@ -52,10 +52,23 @@
     </security-role>
     
     <security-constraint>
+        <display-name>Regras para todos</display-name>
+        <web-resource-collection>
+            <web-resource-name>All App Pages</web-resource-name>
+            <url-pattern>/app/index.xhtml</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>0</role-name>
+            <role-name>1</role-name>
+            <role-name>2</role-name>
+        </auth-constraint>
+    </security-constraint>
+    
+    <security-constraint>
         <display-name>Regras Administrador</display-name>
         <web-resource-collection>
             <web-resource-name>All App Pages</web-resource-name>
-            <url-pattern>/app/*</url-pattern>
+            <url-pattern>/app/admin/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>0</role-name>
@@ -66,7 +79,7 @@
         <display-name>Regras Editor</display-name>
         <web-resource-collection>
             <web-resource-name>All App Pages</web-resource-name>
-            <url-pattern>/app/editor/</url-pattern>
+            <url-pattern>/app/editor/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>1</role-name>
@@ -77,10 +90,9 @@
         <display-name>Regras Candidato</display-name>
         <web-resource-collection>
             <web-resource-name>Profile Page</web-resource-name>
-            <url-pattern>/app/index.xhtml</url-pattern>
+            <url-pattern>/app/candidato/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
-            <role-name>1</role-name>
             <role-name>2</role-name>
         </auth-constraint>
     </security-constraint>
