@@ -8,14 +8,10 @@
 
     <h:form>
         <p:menubar>
-            <p:menuitem value="Logout"  action="#{userService.logout()}" />              
             <p:menuitem value="Noticias" action="/noticias?faces-redirect=true" />   
             <p:menuitem value="Editais" action="/editais?faces-redirect=true" />   
             <p:menuitem value="Provas e Gabaritos" action="/provas?faces-redirect=true" />  
             <p:menuitem value="Orientações Gerais" action="/orientacoes?faces-redirect=true" />
-            <p:menuitem value="Cadastrar Usuário" 
-                action="/app/admin/cadastrarUsuario?faces-redirect=true"
-                rendered="#{userService.permiteCadastrarUsuario()}"/>
         </p:menubar>
     </h:form>
 

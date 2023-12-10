@@ -11,14 +11,21 @@
         <h:form id="menu">
             <h1>Olá #{userService.usuario.nome}!</h1>
             <span>
-                Logado como ...
+                Logado como #{userService.usuario.tipo}
             </span>
             <p:tieredMenu style="width:200px">
                 <p:submenu label="Perfil" icon="pi pi-fw pi-user">
                     <p:menuitem value="Recuperar senha" action="#{newUserController.recuperaSenha()}" icon="pi pi-lock"/>
                 </p:submenu>
+                
+                <p:submenu label="Usuários" icon="pi pi-fw pi-users" rendered="#{userService.permiteCadastrarUsuario()}">
+                    <p:menuitem value="Novo usuário" action="/app/admin/cadastrarUsuario?faces-redirect=true" icon="pi pi-fw pi-user-plus" />
+                    <p:menuitem value="Remover usuário" action="/app/admin/cadastrarUsuario?faces-redirect=true" icon="pi pi-user-minus" />
+                    <p:menuitem value="Editar usuário" action="/app/admin/cadastrarUsuario?faces-redirect=true" icon="pi pi-user-edit" />
+                </p:submenu>
 
-                <p:menuitem value="Quit" icon="pi pi-fw pi-power-off"/>
+                <p:divider />
+                <p:menuitem value="Quit" action="#{userService.logout()}" icon="pi pi-fw pi-power-off"/>
             </p:tieredMenu>
         </h:form>
 

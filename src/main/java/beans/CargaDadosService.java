@@ -107,7 +107,6 @@ public class CargaDadosService {
         usuario.setEmail("gabriel@mail.com");
         usuario.setKey(UUID.randomUUID());
         usuario.setReceberNoticia(Boolean.TRUE);
-        usuario.setSalt("12");
         usuario.setSenha("123");
         usuario.setTipo(TipoUsuario.ADMINISTRADOR);
         

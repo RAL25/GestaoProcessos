@@ -37,8 +37,8 @@ a:link, a:visited {
   text-decoration: none;
 }
 
-a:link:hover, a:visited:hover  {
+/*a:link:hover, a:visited:hover  {
   color: #045491;
   font-weight : bold;
   text-decoration : underline;
-}
+}*/

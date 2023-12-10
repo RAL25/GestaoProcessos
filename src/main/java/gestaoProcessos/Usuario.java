@@ -24,51 +24,49 @@ import javax.validation.constraints.Email;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Usuario implements Serializable {
-    
-    
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(length = 65)
     private String nome;
-    
+
     @Column(length = 11, unique = true)
-    private String cpf;    
-    
+    private String cpf;
+
     @Column(length = 250, unique = true)
-    private String email;   
-    
+    private String email;
+
     private String senha;
-    
+
     private Boolean receberNoticia;
-    
+
     private TipoUsuario tipo;
-    
+
     private Boolean ativo;
-    
+
     private String salt;
     
     private UUID key;
-    
+
     //<editor-fold defaultstate="collapsed" desc="construtores">
-        public Usuario() {
-        }
-        
-        public Usuario(String nome, String cpf, String email, String senha, Boolean receberNoticia, TipoUsuario tipo, Boolean ativo) {
-            this.nome = nome;
-            this.cpf = cpf;
-            this.email = email;
-            this.senha = senha;
-            this.receberNoticia = receberNoticia;
-            this.tipo = tipo;
-            this.ativo = ativo;
-        }
-        
+    public Usuario() {
+    }
+
+    public Usuario(String nome, String cpf, String email, String senha, Boolean receberNoticia, TipoUsuario tipo, Boolean ativo) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
+        this.senha = senha;
+        this.receberNoticia = receberNoticia;
+        this.tipo = tipo;
+        this.ativo = ativo;
+    }
+
     //</editor-fold>
-
+    
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
-
     public Long getId() {
         return id;
     }
@@ -106,7 +104,7 @@ public class Usuario implements Serializable {
     }
 
     public void setSenha(String senha) {
-       this.senha = senha;
+        this.senha = senha;
     }
 
     public Boolean getReceberNoticia() {
@@ -153,14 +151,16 @@ public class Usuario implements Serializable {
     
     @Override
     public String toString() {
-        return "Usuario{" 
-                + "id=" + id 
-                + ", nome=" + nome + ","
-                + " cpf=" + cpf + ","
-                + " email=" + email + ","
+        return "Usuario{" + "id=" + id + ", "
+                + "nome=" + nome + ", "
+                + "cpf=" + cpf + ", "
+                + "email=" + email + ", "
+                + "senha=" + senha + ", "
+                + "receberNoticia=" + receberNoticia + ", "
+                + "tipo=" + tipo + ", "
+                + "ativo=" + ativo + ", "
+                + "key=" + key
                 + '}';
     }
 
-    
-    
 }
