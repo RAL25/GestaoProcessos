@@ -2,6 +2,7 @@ beans/UsuarioService.class
 beans/PublicacaoServiceLocal.class
 beans/ProvaSessionServiceLocal.class
 gestaoProcessos/ApplicationConfig.class
+util/TwitterTest.class
 beans/MenuService.class
 controllers/LoginController.class
 controllers/UsuarioController.class
