@@ -30,10 +30,10 @@ public class Prova implements Serializable {
     private LocalDate dataProva;
     
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private ArquivoProva arquivoprova;
+    private Arquivo arquivoprova;
     
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private ArquivoGabarito arquivoGabarito;
+    private Arquivo arquivoGabarito;
     
     private Short dia;
     
@@ -43,7 +43,7 @@ public class Prova implements Serializable {
         public Prova() {
         }
 
-        public Prova(LocalDate dataProva, ArquivoProva arquivoprova, ArquivoGabarito arquivoGabarito, Short dia, String cor) {
+        public Prova(LocalDate dataProva, Arquivo arquivoprova, Arquivo arquivoGabarito, Short dia, String cor) {
             this.dataProva = dataProva;
             this.arquivoprova = arquivoprova;
             this.arquivoGabarito = arquivoGabarito;
@@ -70,19 +70,19 @@ public class Prova implements Serializable {
             this.dataProva = dataProva;
         }
 
-        public ArquivoProva getArquivoprova() {
+        public Arquivo getArquivoprova() {
             return arquivoprova;
         }
 
-        public void setArquivoprova(ArquivoProva arquivoprova) {
+        public void setArquivoprova(Arquivo arquivoprova) {
             this.arquivoprova = arquivoprova;
         }
 
-        public ArquivoGabarito getArquivoGabarito() {
+        public Arquivo getArquivoGabarito() {
             return arquivoGabarito;
         }
 
-        public void setArquivoGabarito(ArquivoGabarito arquivoGabarito) {
+        public void setArquivoGabarito(Arquivo arquivoGabarito) {
             this.arquivoGabarito = arquivoGabarito;
         }
 

@@ -10,17 +10,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
-import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.mail.MessagingException;
-import javax.validation.constraints.Email;
 
-/**
- *
- * @author Luis Guisso <luis dot guisso at ifnmg dot edu dot br>
- */
 @Named
 @RequestScoped
 public class NewUserController implements Serializable {

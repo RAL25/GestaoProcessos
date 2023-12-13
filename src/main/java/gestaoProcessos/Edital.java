@@ -33,7 +33,7 @@ public class Edital implements Serializable {
     private Integer numero;
     
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private ArquivoEdital arquivoEdital;
+    private Arquivo arquivoEdital;
     
     @Column(length = 1000)
     private String descricao;
@@ -43,7 +43,7 @@ public class Edital implements Serializable {
         public Edital() {
         }
 
-        public Edital(LocalDate data, Integer numero, ArquivoEdital arquivoEdital, String descricao) {
+        public Edital(LocalDate data, Integer numero, Arquivo arquivoEdital, String descricao) {
             this.data = data;
             this.numero = numero;
             this.arquivoEdital = arquivoEdital;
@@ -77,11 +77,11 @@ public class Edital implements Serializable {
             this.numero = numero;
         }
 
-        public ArquivoEdital getArquivoEdital() {
+        public Arquivo getArquivoEdital() {
             return arquivoEdital;
         }
 
-        public void setArquivoEdital(ArquivoEdital arquivoEdital) {
+        public void setArquivoEdital(Arquivo arquivoEdital) {
             this.arquivoEdital = arquivoEdital;
         }
 

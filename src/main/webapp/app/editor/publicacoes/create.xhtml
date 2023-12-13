@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../../../WEB-INF/templates/home.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+        <div class="container flex flex-column vertical-center">
+            <h1>Cadastrar nova Publicação</h1>
+
+            <h:form>
+                <p:messages id="messages" showDetail="false">
+                    <p:autoUpdate/>
+                </p:messages>
+                <p:panelGrid
+                    columns="2">
+
+                    <p:outputLabel
+                        for="tipo"
+                        value="Tipo de Publicação"
+                        />
+                    <p:selectOneMenu id="tipo" value="">
+                        <f:selectItem itemLabel="Noticia" itemValue="NOTICIA"/>                  
+                        <f:selectItem itemLabel="Provas e Gabaritos" itemValue="PROVA_GABARITO"/>
+                        <f:selectItem itemLabel="Edital" itemValue="EDITAL"/>                       
+                        <f:selectItem itemLabel="Orientações Gerais" itemValue="ORIENTACAO"/>
+                    </p:selectOneMenu>
+
+                    <p:outputLabel
+                        for="titulo"
+                        value="Titulo"
+                        />
+                    <p:inputText
+                        id="titulo"
+                        value=""
+                        required="true"
+                        requiredMessage="O título é obrigatório"
+                        />
+                    <p:outputLabel
+                        for="descricao"
+                        value="Descrição"
+                        />
+                    <p:inputTextarea
+                        id="descricao"
+                        value=""/>
+                </p:panelGrid>
+
+                <div class="flex envio">
+                    <p:linkButton
+                        href="../../index.xhtml">Voltar</p:linkButton>
+                    <p:commandButton
+                        value="Cadastrar"
+                        process="@form"/>
+                </div>
+            </h:form>
+        </div>
+
+    </ui:define>
+
+</ui:composition>
