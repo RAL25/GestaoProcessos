@@ -43,7 +43,7 @@ public class RecoveryPass extends HttpServlet {
             Usuario user = usuarioService.buscarPorEmail(email);
             
             if (user != null && user.getKey().toString().equals(key)) {
-                response.sendRedirect("app/novaSenha.xhtml");
+                response.sendRedirect("novaSenha.xhtml");
             } else {
                 response.sendRedirect("index.xhtml");
             }
