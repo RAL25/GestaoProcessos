@@ -7,33 +7,7 @@
                 xmlns:p="http://primefaces.org/ui">
 
     <ui:define name="content">
-
-        <p:messages id="msgs">
-            <p:autoUpdate />
-        </p:messages>
-        
-        <h:form id="menu">
-            <h1>Olá #{userService.usuario.nome}!</h1>
-            <span>
-                Logado como #{userService.usuario.tipo}
-            </span>
-            <p:tieredMenu style="width:200px">
-                <p:submenu label="Perfil" icon="pi pi-fw pi-user">
-                    <p:menuitem value="Recuperar senha" action="#{userService.recuperaSenha()}" icon="pi pi-lock"/>
-                </p:submenu>
-
-                <p:submenu label="Usuários" icon="pi pi-fw pi-users" rendered="#{userService.permiteCadastrarUsuario()}">
-                    <p:menuitem value="Novo usuário" action="/app/admin/cadastrarUsuario?faces-redirect=true" icon="pi pi-fw pi-user-plus" />
-                    <p:menuitem value="Edita/Remover usuário" action="/app/admin/usuarios?faces-redirect=true" icon="pi pi-users" />
-                </p:submenu>
-
-                <p:divider />
-                <p:menuitem value="Quit" action="#{userService.logout()}" icon="pi pi-fw pi-power-off"/>
-            </p:tieredMenu>
-        </h:form>
-
-        <div class="container">
-
+        <div >
             <div class="notice-card">
                 <p:panel header="Titulo Notícia 1" style="width: 750px;">
                     <p:outputPanel>

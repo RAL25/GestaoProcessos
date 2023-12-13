@@ -96,6 +96,10 @@ public class UserService implements Serializable {
     public boolean permiteCadastrarUsuario() {
         return securityContext.isCallerInRole("0");
     }
+    
+    public boolean permiteCadastrarNoticias() {
+        return securityContext.isCallerInRole("1");
+    }
 
     public String userRegistration() {
         usuario.setKey(UUID.randomUUID());
