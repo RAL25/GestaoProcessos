@@ -6,7 +6,7 @@
             primefaces.PRIVATE_CAPTCHA_KEY
         </param-name>
         <param-value>
-            Lf6_SgpAAAAALlPTvieJFrD20yHUuuzMDN8zd-U
+           6Lfd-jEpAAAAACS5riaGaxuPDgZpk89TH096aFBF
         </param-value>
     </context-param>
 
@@ -15,10 +15,9 @@
             primefaces.PUBLIC_CAPTCHA_KEY
         </param-name>
         <param-value>
-            6Lf6_SgpAAAAAF7l_Y1DziIpQRWPvc1Okibsll5r
+            6Lfd-jEpAAAAANKH511tXzTYkYLpWwCTm296O-_-
         </param-value>
     </context-param>
-    
     
     <context-param>
         <param-name>javax.faces.PROJECT_STAGE</param-name>
