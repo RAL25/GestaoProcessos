@@ -15,7 +15,6 @@ servlets/PersistenceTestServlet.class
 util/MailServiceLocal.class
 beans/MenuAplication.class
 controllers/NewUserController.class
-gestaoProcessos/ArquivoEdital.class
 util/MailService.class
 beans/ArquivoServiceLocal.class
 util/Util.class
@@ -23,8 +22,6 @@ beans/UsuarioServiceLocal.class
 beans/CargaDadosService.class
 gestaoProcessos/TipoUsuario.class
 beans/ProvaService.class
-gestaoProcessos/ArquivoGabarito.class
-gestaoProcessos/ArquivoProva.class
 gestaoProcessos/Edital.class
 beans/ProcessoSeletivoServiceLocal.class
 gestaoProcessos/ProcessoSeletivo.class
