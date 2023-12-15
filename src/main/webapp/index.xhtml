@@ -4,6 +4,7 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:p="http://primefaces.org/ui"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
                 template="./WEB-INF/templates/template1.xhtml">
 
     <ui:define name="top">
@@ -17,42 +18,23 @@
         </p:messages>
 
         <div class="container">
-            <div class="notice-card">
-                <p:panel header="Titulo Notícia 1" style="width: 750px;">
-                    <p:outputPanel>
-                        <h1>Subtitulo  Notícia 1</h1>
-                        <p>
-                            Quisque tincidunt luctus turpis eu hendrerit. Sed vestibulum, arcu nec sollicitudin ultrices, nulla sapien mattis lectus, ac sodales nulla ex vel lacus. Praesent justo ante, volutpat gravida aliquam vehicula, vehicula ac eros. In hendrerit orci in nisi convallis, et tempus lacus ornare. Quisque efficitur tempor suscipit. Sed pulvinar euismod nunc, eget congue elit blandit nec. Cras at diam sed urna finibus imperdiet eget accumsan erat. Suspendisse ipsum erat, tempus eu rutrum ac, dictum mollis ligula. Donec quis erat ac ligula sodales pharetra. Vestibulum est leo, ultrices in blandit sed, consectetur sed nibh. Nulla quis pulvinar mauris. Sed fringilla quam nulla, et ultricies nulla interdum et.
-                        </p>
-                        <h:outputText value="Conteúdo do Card" />
-                    </p:outputPanel>
-                </p:panel>
-            </div>
 
-            <div class="notice-card">
-                <p:panel header="Titulo Notícia 2" style="width: 750px;">
-                    <p:outputPanel>
-                        <h1>Subtitulo  Notícia 2</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel euismod sem. Aliquam a lacus orci. Praesent pellentesque, est eu varius eleifend, arcu risus interdum lorem, vel varius orci purus non mauris. Nullam eu tincidunt erat. Donec sit amet cursus nisi, ac ultricies orci. Donec consequat dolor felis, sit amet fermentum sem aliquam ut. Aenean tincidunt arcu tempor dui venenatis, in maximus ipsum elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam porta, dui scelerisque auctor fringilla, libero magna pellentesque ante, sagittis rhoncus erat urna eu leo. Curabitur turpis risus, molestie nec volutpat a, rutrum eu tortor. Nullam vitae neque malesuada diam pulvinar vehicula vitae sit amet felis. Sed convallis porttitor enim, ac bibendum tortor vehicula at.
-                        </p>
-                        <h:outputText value="Conteúdo do Card" />
-                    </p:outputPanel>
-                </p:panel>
-            </div>
-            <div class="notice-card">
-                <p:panel header="Titulo Notícia 3" style="width: 750px;">
-                    <p:outputPanel>
-                        <h1>Subtitulo  Notícia 3</h1>
-                        <p>
-                            Praesent pulvinar sit amet arcu et maximus. Duis venenatis augue nisi, sed viverra erat pulvinar ut. Nunc gravida tincidunt justo, vitae pellentesque dui. Etiam gravida porttitor ligula id blandit. Proin et blandit nisi, in vestibulum nisl. Morbi nec magna porttitor, ultrices ante at, dapibus erat. Donec lobortis, mauris in varius cursus, velit orci aliquet augue, tincidunt varius sapien eros et tortor. Praesent gravida lacus porttitor libero elementum dapibus. Mauris faucibus dictum auctor. Suspendisse suscipit dui a risus congue interdum. Morbi fermentum dignissim consequat. Nullam nec nisi in nisl dictum interdum. Morbi vitae ante quis dui interdum tincidunt.
-                        </p>
-                        <h:outputText value="Conteúdo do Card" />
-                    </p:outputPanel>
-                </p:panel>
-            </div>
-
+            <ui:repeat value="#{publicacaoController.publicacoes}" var="publicacao">
+                <div class="notice-card">
+                    <p:panel header="#{publicacao.titulo}" style="width: 750px;">
+                        
+                        <p:outputPanel>
+                            <p>#{publicacao.conteudo}</p>
+                        </p:outputPanel>
+                        <br />
+                        <p style="font-size: 12px;">Data de Criação: #{publicacaoController.formatarDataHora(publicacao.createdAt)} 
+                            Atualização: #{publicacaoController.formatarDataHora(publicacao.updatedAt)}</p>
+                    </p:panel>
+                </div>
+            </ui:repeat>
         </div>
+
+
 
     </ui:define>
 

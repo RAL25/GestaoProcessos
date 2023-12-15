@@ -1,3 +1,4 @@
+controllers/PublicacaoController.class
 beans/UsuarioService.class
 beans/PublicacaoServiceLocal.class
 beans/ProvaSessionServiceLocal.class
@@ -7,6 +8,7 @@ controllers/LoginController.class
 controllers/UsuarioController.class
 gestaoProcessos/Inscricao.class
 beans/PublicacaoService.class
+controllers/ArquivoController.class
 controllers/LoginController$1.class
 gestaoProcessos/Usuario.class
 beans/EditalService.class
@@ -15,7 +17,7 @@ servlets/PersistenceTestServlet.class
 util/MailServiceLocal.class
 beans/MenuAplication.class
 controllers/NewUserController.class
-gestaoProcessos/ArquivoEdital.class
+gestaoProcessos/TipoArquivo.class
 util/MailService.class
 beans/ArquivoServiceLocal.class
 util/Util.class
@@ -23,8 +25,6 @@ beans/UsuarioServiceLocal.class
 beans/CargaDadosService.class
 gestaoProcessos/TipoUsuario.class
 beans/ProvaService.class
-gestaoProcessos/ArquivoGabarito.class
-gestaoProcessos/ArquivoProva.class
 gestaoProcessos/Edital.class
 beans/ProcessoSeletivoServiceLocal.class
 gestaoProcessos/ProcessoSeletivo.class
