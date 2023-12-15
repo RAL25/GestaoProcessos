@@ -30,14 +30,17 @@ public class Arquivo implements Serializable {
     
     private String path;
     
+    private TipoArquivo tipo;
+    
     //<editor-fold defaultstate="collapsed" desc="construtores">
 
         public Arquivo() {
         }
         
-        public Arquivo(String nome, String path) {
+        public Arquivo(String nome, String path, TipoArquivo tipo) {
             this.nome = nome;
             this.path = path;
+            this.tipo = tipo;
         }
 
     //</editor-fold>
@@ -58,6 +61,15 @@ public class Arquivo implements Serializable {
         public void setPath(String path) {
             this.path = path;
         }
+        
+        public TipoArquivo getTipo ()  {
+            return this.tipo;
+        }
+        
+        public void setTipo (TipoArquivo tipo) {
+            this.tipo = tipo;
+        }
+        
     //</editor-fold>
 
     @Override

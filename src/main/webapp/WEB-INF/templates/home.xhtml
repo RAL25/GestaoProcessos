@@ -2,6 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
 
     <h:head>
@@ -12,15 +13,50 @@
     </h:head>
 
     <h:body>
-        
+
         <header id="top">
             <ui:include src="navbarUser.xhtml" />
         </header>
-        
-        <main id="content">
-            <ui:insert name="content">Bâo?</ui:insert>
+
+        <main id="content" class="flex-home flex-row">
+            <div>
+                <p:messages id="msgs">
+                    <p:autoUpdate />
+                </p:messages>
+
+                <h:form id="menu">
+<!--                    <h1>Olá #{userService.usuario.nome}!</h1>
+                    <span>
+                        Logado como #{userService.usuario.tipo}
+                    </span>-->
+                    <p:tieredMenu style="width:200px">
+                        <p:submenu label="Perfil" icon="pi pi-fw pi-user">
+                            <p:menuitem value="Recuperar senha" action="#{userService.recuperaSenha()}" icon="pi pi-lock"/>
+                        </p:submenu>
+
+                        <p:submenu label="Publicações" icon="pi pi-fw pi-book" rendered="#{userService.permiteCadastrarNoticias()}">
+                            <p:menuitem value="Nova Publicação" action="/app/editor/publicacoes/create?faces-redirect=true" icon="pi pi-fw pi-plus" />
+                            <p:menuitem value="Edita/Remover Publicação" action="/app/editor/publicacoes/index?faces-redirect=true" icon="pi pi-book" />
+                            <p:menuitem value="Novo Arquivo" action="/app/editor/arquivos/create?faces-redirect=true" icon="pi pi-file-pdf" />
+
+                        </p:submenu>
+
+                        <p:submenu label="Usuários" icon="pi pi-fw pi-users" rendered="#{userService.permiteCadastrarUsuario()}">
+                            <p:menuitem value="Novo usuário" action="/app/admin/cadastrarUsuario?faces-redirect=true" icon="pi pi-fw pi-user-plus" />
+                            <p:menuitem value="Edita/Remover usuário" action="/app/admin/usuarios?faces-redirect=true" icon="pi pi-user" />
+                        </p:submenu>
+
+                        <p:divider />
+                        <p:menuitem value="Quit" action="#{userService.logout()}" icon="pi pi-fw pi-power-off"/>
+                    </p:tieredMenu>
+                </h:form>
+            </div>
+
+            <div class="container">
+                <ui:insert name="content"></ui:insert>
+            </div>
         </main>
-        
+
         <footer>
             <ui:include src="footer.xhtml" />
         </footer>
