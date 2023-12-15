@@ -29,10 +29,10 @@ public class Prova implements Serializable {
     
     private LocalDate dataProva;
     
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER)
     private Arquivo arquivoprova;
     
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER)
     private Arquivo arquivoGabarito;
     
     private Short dia;

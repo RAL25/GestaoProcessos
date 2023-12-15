@@ -5,6 +5,8 @@
 package beans;
 
 import gestaoProcessos.Arquivo;
+import gestaoProcessos.TipoArquivo;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -30,11 +32,42 @@ public class ArquivoService implements ArquivoServiceLocal {
 
     @Override
     public void editar(Arquivo arquivo) {
-        entityManager.refresh(arquivo);
+        entityManager.merge(arquivo);
     }
 
     @Override
     public void deletar(Arquivo arquivo) {
         entityManager.remove(arquivo);
+    }
+
+    @Override
+    public List<Arquivo> buscarTodos() {
+        return entityManager.createQuery("SELECT arquivo FROM Arquivo arquivo", Arquivo.class).getResultList();
+    }
+
+    @Override
+    public void deletarPorPath(String path) {
+        Arquivo arquivo = this.buscarPorPath(path);
+        this.deletar(arquivo);
+    }
+
+    @Override
+    public Arquivo buscarPorPath(String path) {
+         List<Arquivo> arquivos = entityManager.createQuery("SELECT arquivo FROM Arquivo arquivo WHERE arquivo.path = :path", Arquivo.class)
+                .setParameter("path", path)
+                .getResultList();
+
+        if (arquivos.isEmpty()) {
+            return null;
+        } else {
+            return arquivos.get(0);
+        }
+    }
+
+    @Override
+    public List<Arquivo> buscarArquivosPorTipo(TipoArquivo tipo) {
+        return entityManager.createQuery("SELECT arquivo FROM Arquivo arquivo WHERE arquivo.tipo = :tipo", Arquivo.class)
+                .setParameter("tipo", tipo)
+                .getResultList();
     }
 }

@@ -5,6 +5,8 @@
 package beans;
 
 import gestaoProcessos.Arquivo;
+import gestaoProcessos.TipoArquivo;
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -13,13 +15,21 @@ import javax.ejb.Local;
  */
 @Local
 public interface ArquivoServiceLocal {
-    
+
     public void salvar(Arquivo arquivo);
-    
+
+    public List<Arquivo> buscarTodos();
+
+    public void deletarPorPath(String path);
+
+    public List<Arquivo> buscarArquivosPorTipo(TipoArquivo tipo);
+
+    public Arquivo buscarPorPath(String path);
+
     public Arquivo buscarPorId(Long id);
-    
+
     public void editar(Arquivo arquivo);
-    
+
     public void deletar(Arquivo arquivo);
-    
+
 }
