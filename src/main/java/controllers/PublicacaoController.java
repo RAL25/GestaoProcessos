@@ -32,6 +32,12 @@ public class PublicacaoController implements Serializable {
 
     List<Publicacao> publicacoesNoticias;
 
+    List<Publicacao> publicacoesEditais;
+
+    List<Publicacao> publicacoesProvas;
+    
+    List<Publicacao> publicacoesOrientacoes;
+
     @PostConstruct
     public void init() {
         publicacoes = this.getPublicacoes();
@@ -59,6 +65,36 @@ public class PublicacaoController implements Serializable {
 
     public void setPublicacoesNoticias(List<Publicacao> publicacoesNoticias) {
         this.publicacoesNoticias = publicacoesNoticias;
+    }
+
+    public List<Publicacao> getPublicacoesEditais() {
+        this.publicacoesNoticias = dataService.buscarTodosTipado(Categoria.EDITAL);
+        System.out.println(">> " + publicacoesNoticias);
+        return publicacoesNoticias;
+    }
+    
+    public void setPublicacoesEditais(List<Publicacao> publicacoesEditais) {
+        this.publicacoesEditais = publicacoesEditais;
+    }
+    
+    public List<Publicacao> getPublicacoesProvas() {
+        this.publicacoesNoticias = dataService.buscarTodosTipado(Categoria.PROVA_GABARITO);
+        System.out.println(">> " + publicacoesNoticias);
+        return publicacoesNoticias;
+    }
+
+    public void setPublicacoesProvas(List<Publicacao> publicacoesProvas) {
+        this.publicacoesProvas = publicacoesProvas;
+    }
+
+    public List<Publicacao> getPublicacoesOrientacoes() {
+        this.publicacoesNoticias = dataService.buscarTodosTipado(Categoria.ORIENTACAO);
+        System.out.println(">> " + publicacoesNoticias);
+        return publicacoesNoticias;
+    }
+
+    public void setPublicacoesOrientacoes(List<Publicacao> publicacoesOrientacoes) {
+        this.publicacoesOrientacoes = publicacoesOrientacoes;
     }
 
     public String formatarDataHora(LocalDateTime dataHora) {
