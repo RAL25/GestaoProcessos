@@ -27,4 +27,6 @@ public interface UsuarioServiceLocal {
     public Usuario buscarPorEmail(String email);
 
     List<Usuario> buscarTodos();
+
+    void editarActivation(Usuario usuarios);
 }

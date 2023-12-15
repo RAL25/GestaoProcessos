@@ -19,7 +19,6 @@ import javax.security.enterprise.identitystore.Pbkdf2PasswordHash;
  *
  * @author Gabriel Sizilio <gabriel.sizilio>
  */
-
 @Stateless
 public class UsuarioService implements UsuarioServiceLocal {
 
@@ -36,11 +35,11 @@ public class UsuarioService implements UsuarioServiceLocal {
         parameters.put("Pbkdf2PasswordHash.Iterations", "3071");
         parameters.put("Pbkdf2PasswordHash.Algorithm", "PBKDF2WithHmacSHA512");
         parameters.put("Pbkdf2PasswordHash.SaltSizeBytes", "64");
-        
+
         passwordHasher.initialize(parameters);
-        
+
         usuario.setSenha(passwordHasher.generate(usuario.getSenha().toCharArray()));
-        
+
         entityManager.persist(usuario);
     }
 
@@ -61,7 +60,7 @@ public class UsuarioService implements UsuarioServiceLocal {
             return usuarios.get(0);
         }
     }
-    
+
     @Override
     public List<Usuario> buscarTodos() {
         return entityManager.createQuery("SELECT usuario FROM Usuario usuario", Usuario.class).getResultList();
@@ -69,15 +68,15 @@ public class UsuarioService implements UsuarioServiceLocal {
 
     @Override
     public void editar(Usuario usuario) {
-         Map<String, String> parameters = new HashMap<>();
+        Map<String, String> parameters = new HashMap<>();
         parameters.put("Pbkdf2PasswordHash.Iterations", "3071");
         parameters.put("Pbkdf2PasswordHash.Algorithm", "PBKDF2WithHmacSHA512");
         parameters.put("Pbkdf2PasswordHash.SaltSizeBytes", "64");
-        
-         passwordHasher.initialize(parameters);
-        
+
+        passwordHasher.initialize(parameters);
+
         usuario.setSenha(passwordHasher.generate(usuario.getSenha().toCharArray()));
-        
+
         entityManager.merge(usuario);
     }
 
@@ -86,5 +85,9 @@ public class UsuarioService implements UsuarioServiceLocal {
         entityManager.remove(usuario);
     }
 
-    
+    @Override
+    public void editarActivation(Usuario usuario) {
+        entityManager.merge(usuario);
+    }
+
 }

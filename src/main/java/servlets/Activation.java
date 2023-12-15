@@ -32,25 +32,26 @@ public class Activation extends HttpServlet {
             HttpServletRequest request,
             HttpServletResponse response)
             throws ServletException, IOException {
-
+        
         String email = request.getParameter("email");
         String key = request.getParameter("activationKey");
         System.out.println(">> " + email);
-
+        
         if (email == null || key == null) {
             response.sendRedirect("index.xhtml");
-
+            System.out.println(">> Email ou key null!");
         } else {
 
             Usuario user = usuarioService.buscarPorEmail(email);
             if (user != null && user.getKey().toString().equals(key)) {
                 user.setAtivo(true);
-                usuarioService.editar(user);
+                usuarioService.editarActivation(user);
+                System.out.println(">> >> "+user.toString());
+                
                 response.sendRedirect("login.xhtml");
             } else {
                 response.sendRedirect("checkemail.xhtml");
             }
-            response.sendRedirect("activation.xhtml");
         }
     }
 
