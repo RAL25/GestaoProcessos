@@ -53,15 +53,12 @@ public class PublicacaoService implements PublicacaoServiceLocal {
     @Override
     public List<Publicacao> buscarTodosTipado(Categoria tipo) {
         List<Publicacao> publicacoes = entityManager.createQuery(
-                "SELECT publicacao FROM Publicacao publicacao WHERE publicacao.categoria :tipo", Publicacao.class)
+                "SELECT publicacao FROM Publicacao publicacao WHERE publicacao.categoria = :tipo", Publicacao.class)
                 .setParameter("tipo", tipo)
                 .getResultList();
+        
+        return publicacoes;
 
-        if (publicacoes.isEmpty()) {
-            return null;
-        } else {
-            return (List<Publicacao>) publicacoes.get(0);
-        }
     }
 
 }
