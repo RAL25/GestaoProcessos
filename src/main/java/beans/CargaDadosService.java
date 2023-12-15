@@ -9,6 +9,7 @@ import gestaoProcessos.Edital;
 import gestaoProcessos.Inscricao;
 import gestaoProcessos.ProcessoSeletivo;
 import gestaoProcessos.Arquivo;
+import gestaoProcessos.Categoria;
 import gestaoProcessos.Publicacao;
 import gestaoProcessos.TipoUsuario;
 import gestaoProcessos.Usuario;
@@ -84,6 +85,7 @@ public class CargaDadosService {
         publicacao.setProva(provaDia1);
         publicacao.setTitulo("Edital para prova do dia 1");
         publicacao.setUpdatedAt(LocalDateTime.now());
+        publicacao.setCategoria(Categoria.NOTICIA);
         
         Arquivo arquivo = new Arquivo();
         arquivo.setNome("Edital numero 59");
