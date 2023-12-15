@@ -55,50 +55,50 @@ public class CargaDadosService {
         ProcessoSeletivo processo = new ProcessoSeletivo();
         
         
-        Prova provaDia1 = new Prova();
-        provaDia1.setCor("azul");
-        provaDia1.setData(LocalDate.of(2023, 11, 5));
-        provaDia1.setDia((short)1);
-        Prova provaDia2 = new Prova();
-        provaDia2.setCor("amarelo");
-        provaDia2.setData(LocalDate.of(2023, 11, 12));
-        provaDia2.setDia((short)2);
+//        Prova provaDia1 = new Prova();
+//        provaDia1.setCor("azul");
+//        provaDia1.setData(LocalDate.of(2023, 11, 5));
+//        provaDia1.setDia((short)1);
+//        Prova provaDia2 = new Prova();
+//        provaDia2.setCor("amarelo");
+//        provaDia2.setData(LocalDate.of(2023, 11, 12));
+//        provaDia2.setDia((short)2);
+//        
+//        Edital edital = new Edital();
+//        edital.setData(LocalDate.of(2023, 8, 23));
+//        edital.setDescricao("O PRESIDENTE DO INSTITUTO NACIONAL DE ESTUDOS E PESQUISAS EDUCACIONAIS ANÍSIO TEIXEIRA -INEP, no uso das suas atribuições, em cumprimento aos dispositivos da Chamada Pública nº 43, de 19 de Junho de 2023, torna pública a relação, em ordem alfabética dos interessados confirmados/não confirmados e dos convocados para o curso de capacitação na modalidade a distância que atenderam integralmente aos requisitos estabelecidos no item 3 do Edital de Chamada Pública, disponível no endereço eletrônico: http://certificadores.inep.gov.br/");
+//        edital.setNumero(59);
         
-        Edital edital = new Edital();
-        edital.setData(LocalDate.of(2023, 8, 23));
-        edital.setDescricao("O PRESIDENTE DO INSTITUTO NACIONAL DE ESTUDOS E PESQUISAS EDUCACIONAIS ANÍSIO TEIXEIRA -INEP, no uso das suas atribuições, em cumprimento aos dispositivos da Chamada Pública nº 43, de 19 de Junho de 2023, torna pública a relação, em ordem alfabética dos interessados confirmados/não confirmados e dos convocados para o curso de capacitação na modalidade a distância que atenderam integralmente aos requisitos estabelecidos no item 3 do Edital de Chamada Pública, disponível no endereço eletrônico: http://certificadores.inep.gov.br/");
-        edital.setNumero(59);
+//        Inscricao participacao = new Inscricao();;
+//        participacao.setProcessoSeletivo(processo);
+//        
+//        processo.setAberto(Boolean.TRUE);
+//        processo.getCandidatos().add(participacao);
+//        processo.setDescricao("descricao");
+//        processo.setEdital(edital);
         
-        Inscricao participacao = new Inscricao();
-        participacao.setProcessoSeletivo(processo);
-        
-        processo.setAberto(Boolean.TRUE);
-        processo.getCandidatos().add(participacao);
-        processo.setDescricao("descricao");
-        processo.setEdital(edital);
-        
-        Publicacao publicacao = new Publicacao();
-        publicacao.setConteudo("O PRESIDENTE DO INSTITUTO NACIONAL DE ESTUDOS E PESQUISAS EDUCACIONAIS ANÍSIO TEIXEIRA -INEP, no uso das suas atribuições, em cumprimento aos dispositivos da Chamada Pública nº 43, de 19 de Junho de 2023, torna pública a relação, em ordem alfabética dos interessados confirmados/não confirmados e dos convocados para o curso de capacitação na modalidade a distância que atenderam integralmente aos requisitos estabelecidos no item 3 do Edital de Chamada Pública, disponível no endereço eletrônico: http://certificadores.inep.gov.br/");
-        publicacao.setCreatedAt(LocalDateTime.now());
-        publicacao.setEdital(edital);
-        publicacao.setProva(provaDia1);
-        publicacao.setTitulo("Edital para prova do dia 1");
-        publicacao.setUpdatedAt(LocalDateTime.now());
-        
-        Arquivo arquivo = new Arquivo();
-        arquivo.setNome("Edital numero 59");
-        
-        provaBean.salvar(provaDia1);
-        
-        editalBean.salvar(edital);
-        
-        participacaoBean.salvar(participacao);
-        
+//        Publicacao publicacao = new Publicacao();
+//        publicacao.setConteudo("O PRESIDENTE DO INSTITUTO NACIONAL DE ESTUDOS E PESQUISAS EDUCACIONAIS ANÍSIO TEIXEIRA -INEP, no uso das suas atribuições, em cumprimento aos dispositivos da Chamada Pública nº 43, de 19 de Junho de 2023, torna pública a relação, em ordem alfabética dos interessados confirmados/não confirmados e dos convocados para o curso de capacitação na modalidade a distância que atenderam integralmente aos requisitos estabelecidos no item 3 do Edital de Chamada Pública, disponível no endereço eletrônico: http://certificadores.inep.gov.br/");
+//        publicacao.setCreatedAt(LocalDateTime.now());
+//        publicacao.setEdital(edital);
+//        publicacao.setProva(provaDia1);
+//        publicacao.setTitulo("Edital para prova do dia 1");
+//        publicacao.setUpdatedAt(LocalDateTime.now());
+//        
+//        Arquivo arquivo = new Arquivo();
+//        arquivo.setNome("Edital numero 59");
+//        
+//        provaBean.salvar(provaDia1);
+//        
+//        editalBean.salvar(edital);
+//        
+//        participacaoBean.salvar(participacao);
+//        
         processoBean.salvar(processo);
         
-        publicacaoBean.salvar(publicacao);
-        
-        arquivoBean.salvar(arquivo);
+//        publicacaoBean.salvar(publicacao);
+//        
+//        arquivoBean.salvar(arquivo);
         
         Usuario usuario = new Usuario();
         usuario.setAtivo(Boolean.TRUE);

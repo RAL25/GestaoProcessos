@@ -4,8 +4,8 @@
  */
 package controllers;
 
+import beans.ArquivoServiceLocal;
 import gestaoProcessos.Arquivo;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
@@ -17,8 +17,7 @@ import java.util.UUID;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import javax.faces.context.FacesContext;
-import javax.faces.view.ViewScoped;
-import javax.servlet.http.Part;
+import javax.inject.Inject;
 import org.primefaces.model.file.UploadedFileWrapper;
 
 /**
@@ -29,6 +28,9 @@ import org.primefaces.model.file.UploadedFileWrapper;
 @RequestScoped
 public class ArquivoController implements Serializable {
 
+    @Inject
+    ArquivoServiceLocal dataService;
+    
     private Arquivo arquivo;
 
     private UploadedFileWrapper file;
@@ -53,12 +55,11 @@ public class ArquivoController implements Serializable {
         this.arquivo = arquivo;
     }
 
-    public void cadastrarArquivo() {
+    public String cadastrarArquivo() {
         if (file != null) {
             try {
                 String nomeArquivo = getNomeArquivo();
 
-                // Verifica se nomeArquivo é nulo antes de substituir espaços em branco
                 if (nomeArquivo != null) {
                     String identificadorUnico = UUID.randomUUID().toString();
                     String nomeArquivoUnico = identificadorUnico + "_" + nomeArquivo;
@@ -66,16 +67,16 @@ public class ArquivoController implements Serializable {
 
                     String destino = FacesContext.getCurrentInstance().getExternalContext().getRealPath("/WEB-INF/uploads/");
 
-                    // Adiciona uma barra invertida antes do nome do arquivo
                     Path caminhoCompleto = Paths.get(destino, nomeArquivoUnico);
 
-                    // Cria o diretório se não existir
                     Files.createDirectories(caminhoCompleto.getParent());
 
                     arquivo.setPath(caminhoCompleto.toString());
 
                     try (InputStream inputStream = file.getInputStream()) {
                         Files.copy(inputStream, caminhoCompleto, StandardCopyOption.REPLACE_EXISTING);
+                        dataService.salvar(arquivo);
+                        return "/app/editor/arquivos/index?faces-redirect=true";
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -89,6 +90,7 @@ public class ArquivoController implements Serializable {
         } else {
             System.out.println("O arquivo é nulo.");
         }
+        return null;
     }
 
     private String getNomeArquivo() {

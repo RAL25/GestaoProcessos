@@ -37,8 +37,8 @@
                         <p:submenu label="Publicações" icon="pi pi-fw pi-book" rendered="#{userService.permiteCadastrarNoticias()}">
                             <p:menuitem value="Nova Publicação" action="/app/editor/publicacoes/create?faces-redirect=true" icon="pi pi-fw pi-plus" />
                             <p:menuitem value="Edita/Remover Publicação" action="/app/editor/publicacoes/index?faces-redirect=true" icon="pi pi-book" />
-                            <p:menuitem value="Novo Arquivo" action="/app/editor/arquivos/create?faces-redirect=true" icon="pi pi-file-pdf" />
-
+                            <p:menuitem value="Novo Arquivo" action="/app/editor/arquivos/create?faces-redirect=true" icon="pi pi-fw pi-plus"/>
+                            <p:menuitem value="Edita/Remover Arquivo" action="/app/editor/arquivos/index?faces-redirect=true" icon="pi pi-file-pdf" />
                         </p:submenu>
 
                         <p:submenu label="Usuários" icon="pi pi-fw pi-users" rendered="#{userService.permiteCadastrarUsuario()}">

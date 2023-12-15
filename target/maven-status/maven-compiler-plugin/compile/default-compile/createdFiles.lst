@@ -36,5 +36,6 @@ gestaoProcessos\TipoUsuario.class
 beans\CargaDadosService.class
 beans\ProcessoSeletivoService.class
 beans\ProcessoSeletivoServiceLocal.class
+controllers\ListaArquivo.class
 gestaoProcessos\Prova.class
 util\MailServiceLocal.class
