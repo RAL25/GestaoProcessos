@@ -139,24 +139,5 @@ public class UserService implements Serializable {
         return "/index?faces-redirect=true";
     }
 
-    public void recuperaSenha() {
-        String link = "http://127.0.0.1:8080"
-                + "/gestaoprocessos"
-                + "/Recuperar-senha?email=" + usuario.getEmail()
-                + "&activationKey=" + usuario.getKey();
-        System.out.println(">> " + link);
 
-        try {
-
-            mailService.recoveryPass(usuario.getNome(),
-                    usuario.getEmail(), link);
-
-            FacesContext.getCurrentInstance().addMessage("msgs", new FacesMessage(FacesMessage.SEVERITY_INFO,
-                    "Um link para recuperação foi enviada para seu email!", null));
-
-        } catch (MessagingException ex) {
-            Logger.getLogger(UserService.class.getName())
-                    .log(Level.SEVERE, null, ex);
-        }
-    }
 }

@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import beans.UsuarioServiceLocal;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.context.FacesContext;
 
 /**
  *
@@ -39,11 +40,11 @@ public class RecoveryPass extends HttpServlet {
             response.sendRedirect("index.xhtml");
 
         } else {
-
-            Usuario user = usuarioService.buscarPorEmail(email);
             
+            Usuario user = usuarioService.buscarPorEmail(email);
+                                    
             if (user != null && user.getKey().toString().equals(key)) {
-                response.sendRedirect("novaSenha.xhtml");
+                response.sendRedirect("novaSenha.xhtml?email="+ email);
             } else {
                 response.sendRedirect("index.xhtml");
             }

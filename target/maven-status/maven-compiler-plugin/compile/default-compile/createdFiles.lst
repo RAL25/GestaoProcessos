@@ -34,6 +34,7 @@ beans/ArquivoService.class
 beans/ParticipacaoService.class
 gestaoProcessos/Prova.class
 servlets/RecoveryPass.class
+controllers/RecuperaPassController.class
 gestaoProcessos/Publicacao.class
 gestaoProcessos/Categoria.class
 beans/EditalServiceLocal.class
