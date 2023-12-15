@@ -12,25 +12,45 @@
             <h1>Cadastrar nova prova</h1>
 
             <h:form>
-                <p:messages id="messages" showDetail="false">
-                    <p:autoUpdate/>
-                </p:messages>
-                <p:panelGrid
-                    columns="2">
-                    // dia int 
-                    // data LocalDate
-                    // cor String
+                <p:messages id="messages" showDetail="false" />
 
+                <p:panelGrid columns="2">
+                    <p:outputLabel for="dia" value="Dia:" />
+                    <p:selectOneMenu id="dia" value="#{newProvaController.prova.dia}">
+                        <f:selectItem itemValue="1" itemLabel="Primeiro" />
+                        <f:selectItem itemValue="2" itemLabel="Segundo" />
+                    </p:selectOneMenu>
+
+                    <p:outputLabel for="data" value="Data:" />
+                    <p:calendar id="data" showOn="button" value="#{newProvaController.prova.data}" />
+
+                    <p:outputLabel for="cor" value="Cor:" />
+                    <p:selectOneMenu id="cor" value="#{newProvaController.prova.cor}">
+                        <f:selectItem itemValue="Amarelo" itemLabel="Amarelo" />
+                        <f:selectItem itemValue="Azul" itemLabel="Azul" />
+                        <f:selectItem itemValue="Branco" itemLabel="Branco" />
+                        <f:selectItem itemValue="Cinza" itemLabel="Cinza" />
+                        <f:selectItem itemValue="Rosa" itemLabel="Rosa" />
+                    </p:selectOneMenu>
+
+                    <p:outputLabel for="arquivoTipoProva" value="Arquivo Prova:" />
+                    <p:selectOneMenu id="arquivoTipoProva" value="#{newProvaController.pathProva}">
+                        <f:selectItems value="#{provaController.arquivosProva}" var="arquivo" itemLabel="#{arquivo.nome}" itemValue="#{arquivo.path}" />
+                    </p:selectOneMenu>
+
+                    <p:outputLabel for="arquivoTipoGabarito" value="Arquivo Gabarito:" />
+                    <p:selectOneMenu id="arquivoTipoGabarito" value="#{newProvaController.pathGabarito}">
+                        <f:selectItems value="#{provaController.arquivosGabarito}" var="arquivo" itemLabel="#{arquivo.nome}" itemValue="#{arquivo.path}" />
+                    </p:selectOneMenu>
                 </p:panelGrid>
 
                 <div class="flex envio">
-                    <p:linkButton
-                        href="../../index.xhtml">Voltar</p:linkButton>
-                    <p:commandButton
-                        value="Cadastrar"
-                        process="@form"/>
+                    <p:linkButton href="../../index.xhtml">Voltar</p:linkButton>
+                    <p:commandButton value="Cadastrar" action="#{newProvaController.cadastrarProva}" />
                 </div>
             </h:form>
+
+        </div>
     </ui:define>
 
 </ui:composition>

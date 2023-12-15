@@ -5,6 +5,7 @@
 package beans;
 
 import gestaoProcessos.Arquivo;
+import gestaoProcessos.TipoArquivo;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -61,5 +62,12 @@ public class ArquivoService implements ArquivoServiceLocal {
         } else {
             return arquivos.get(0);
         }
+    }
+
+    @Override
+    public List<Arquivo> buscarArquivosPorTipo(TipoArquivo tipo) {
+        return entityManager.createQuery("SELECT arquivo FROM Arquivo arquivo WHERE arquivo.tipo = :tipo", Arquivo.class)
+                .setParameter("tipo", tipo)
+                .getResultList();
     }
 }
