@@ -4,8 +4,10 @@
  */
 package beans;
 
+import gestaoProcessos.Categoria;
 import gestaoProcessos.Publicacao;
 import java.time.LocalDateTime;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -16,6 +18,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class PublicacaoService implements PublicacaoServiceLocal {
+
     @PersistenceContext
     EntityManager entityManager;
 
@@ -41,4 +44,24 @@ public class PublicacaoService implements PublicacaoServiceLocal {
     public void deletar(Publicacao publicacao) {
         entityManager.remove(publicacao);
     }
+
+    @Override
+    public List<Publicacao> buscarTodos() {
+        return entityManager.createQuery("SELECT publicacao FROM Publicacao publicacao", Publicacao.class).getResultList();
+    }
+
+    @Override
+    public List<Publicacao> buscarTodosTipado(Categoria tipo) {
+        List<Publicacao> publicacoes = entityManager.createQuery(
+                "SELECT publicacao FROM Publicacao publicacao WHERE publicacao.categoria :tipo", Publicacao.class)
+                .setParameter("tipo", tipo)
+                .getResultList();
+
+        if (publicacoes.isEmpty()) {
+            return null;
+        } else {
+            return (List<Publicacao>) publicacoes.get(0);
+        }
+    }
+
 }

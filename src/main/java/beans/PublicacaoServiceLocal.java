@@ -4,7 +4,9 @@
  */
 package beans;
 
+import gestaoProcessos.Categoria;
 import gestaoProcessos.Publicacao;
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -21,5 +23,9 @@ public interface PublicacaoServiceLocal {
     public void editar(Publicacao publicacao);
     
     public void deletar(Publicacao publicacao);
+
+    List<Publicacao> buscarTodos();
+
+    List<Publicacao> buscarTodosTipado(Categoria tipo);
     
 }
