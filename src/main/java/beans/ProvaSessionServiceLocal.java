@@ -5,6 +5,7 @@
 package beans;
 
 import gestaoProcessos.Prova;
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -17,6 +18,8 @@ public interface ProvaSessionServiceLocal {
     public void salvar(Prova prova);
     
     public Prova buscarPorId(Long id);
+    
+    public List<Prova> buscarTodas();
     
     public void editar(Prova prova);
     

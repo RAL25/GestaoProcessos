@@ -22,11 +22,16 @@
                         for="tipo"
                         value="Tipo de Publicação"
                         />
-                    <p:selectOneMenu id="tipo" value="">
+                    <p:selectOneMenu id="tipo" value="#{newPublicacaoController.publicacao.categoria}">
                         <f:selectItem itemLabel="Noticia" itemValue="NOTICIA"/>                  
                         <f:selectItem itemLabel="Provas e Gabaritos" itemValue="PROVA_GABARITO"/>
                         <f:selectItem itemLabel="Edital" itemValue="EDITAL"/>                       
                         <f:selectItem itemLabel="Orientações Gerais" itemValue="ORIENTACAO"/>
+                    </p:selectOneMenu>
+
+                    <p:outputLabel for="arquivoProva" value="Arquivo de Prova"/>
+                    <p:selectOneMenu id="arquivoProva" value="#{newPublicacaoController.id}">
+                        <f:selectItems value="#{listaProva.provas}" var="prova" itemLabel="#{prova.nome}" itemValue="#{prova.id}" />
                     </p:selectOneMenu>
 
                     <p:outputLabel
@@ -35,17 +40,17 @@
                         />
                     <p:inputText
                         id="titulo"
-                        value=""
+                        value="#{newPublicacaoController.publicacao.titulo}"
                         required="true"
                         requiredMessage="O título é obrigatório"
                         />
                     <p:outputLabel
-                        for="descricao"
-                        value="Descrição"
+                        for="conteudo"
+                        value="Conteudo"
                         />
                     <p:inputTextarea
-                        id="descricao"
-                        value=""/>
+                        id="conteudo"
+                        value="#{newPublicacaoController.publicacao.conteudo}"/>
                 </p:panelGrid>
 
                 <div class="flex envio">
@@ -53,6 +58,7 @@
                         href="../../index.xhtml">Voltar</p:linkButton>
                     <p:commandButton
                         value="Cadastrar"
+                        action="#{newPublicacaoController.cadastrarPublicacao()}"
                         process="@form"/>
                 </div>
             </h:form>

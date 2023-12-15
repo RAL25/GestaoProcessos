@@ -5,6 +5,7 @@
 package beans;
 
 import gestaoProcessos.Prova;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -40,4 +41,9 @@ public class ProvaService implements ProvaSessionServiceLocal {
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
+
+    @Override
+    public List<Prova> buscarTodas() {
+        return em.createQuery("SELECT prova FROM Prova prova", Prova.class).getResultList();
+    }
 }

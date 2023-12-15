@@ -15,6 +15,9 @@
                 <p:messages id="messages" showDetail="false" />
 
                 <p:panelGrid columns="2">
+                    
+                    <p:outputLabel for="nome" value="Nome:" />
+                    <p:inputText id="nome" value="#{newProvaController.prova.nome}"></p:inputText>
                     <p:outputLabel for="dia" value="Dia:" />
                     <p:selectOneMenu id="dia" value="#{newProvaController.prova.dia}">
                         <f:selectItem itemValue="1" itemLabel="Primeiro" />
