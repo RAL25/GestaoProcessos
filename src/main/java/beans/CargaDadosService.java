@@ -143,10 +143,11 @@ public class CargaDadosService {
         usuario.setTipo(TipoUsuario.ADMINISTRADOR);
         
         Usuario candidato = new Usuario("Rian", "98765432199", "rian@mail.com", "123", 
-                Boolean.TRUE, TipoUsuario.CANDIDATO, Boolean.TRUE);
-        
-        Usuario editora = new Usuario("Yodemisa", "54312387612", "yodemis@mail.com", "123", 
                 Boolean.TRUE, TipoUsuario.EDITOR, Boolean.TRUE);
+        
+        Usuario editora = new Usuario("Yodemis", "54312387612", "yjsn@aluno.ifnmg.edu.br", "123", 
+                Boolean.TRUE, TipoUsuario.CANDIDATO, Boolean.TRUE);
+        editora.setKey(UUID.randomUUID());
         
         usuarioBean.salvar(usuario);
         usuarioBean.salvar(candidato);

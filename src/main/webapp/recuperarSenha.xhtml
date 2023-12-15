@@ -13,7 +13,6 @@
 
     <ui:define name="content">
 
-        <h1>Recuperar  senha</h1>
         <div class="container flex flex-column vertical-center">
 
             <h:form class="flex flex-column form-container" id="recuperarSenha">
@@ -29,6 +28,7 @@
                     <p:outputLabel
                         for="email"
                         value="Email"/>
+                    
                     <p:inputText
                         id="email"
                         required="true"
@@ -37,17 +37,17 @@
 
                     </p:inputText>
 
-                </p:panelGrid>
-
-                <div class="flex envio">
+                    <p:linkButton
+                        value="Voltar"
+                        href="/gestaoprocessos/login.xhtml" />
+                    
                     <p:commandButton
                         id="recuperar"
                         value="Recuperar"
                         action="#{loginController.recuperarSenha()}" />
-                </div>
-                <p:commandButton
-                    value="Voltar"
-                    action="/login?faces-redirect=true" />
+                    
+
+                </p:panelGrid>
 
                 <p:blockUI
                     block="recuperarSenha"
